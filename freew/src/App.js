@@ -31,6 +31,7 @@ class App extends Component {
         <p className="App-intro">
           <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginGoogle}>Login con Google</button>
         </p>
+        <div>
         <h4> Registro de Usuarios </h4>
         <nav className="navbar navbar-light bg-light">
           <a className="navbar-brand">Navbar</a>
@@ -38,6 +39,17 @@ class App extends Component {
           <input id="contrasena" type="password" placeholder="ingresa tu password" className="form-control mr-sm-2"></input>
           <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmail}>Registrarse</button>
           </nav>
+          </div>
+          <div>
+          <h4> Ingreso de Usuarios </h4>
+          <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand">Navbar</a>
+            <input id="emailIngreso" placeholder="ingresa tu email" className="form-control mr-sm-2"></input>
+            <input id="contrasenaIngreso" placeholder="ingresa tu password" className="form-control mr-sm-2"></input>
+            <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmailIngreso}>Ingresa</button>
+
+          </nav>
+          </div>
       </div>
       
     );
