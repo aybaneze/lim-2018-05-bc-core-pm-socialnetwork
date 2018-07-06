@@ -13,5 +13,6 @@ firebase.initializeApp({
     storageBucket: "freew-b52fa.appspot.com",
     messagingSenderId: "1032864076994"
 });
+
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
