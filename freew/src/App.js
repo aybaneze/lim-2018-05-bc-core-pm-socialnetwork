@@ -4,6 +4,12 @@ import './App.css';
 
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      user:null
+    }
+  }
   loginFace(){
     const log = new firebase.auth.FacebookAuthProvider();
      log.addScope('public_profile');
@@ -16,6 +22,19 @@ class App extends Component {
     firebase.auth().signInWithPopup(log)
       .then(result => console.log(`${result.user.email}  Iniciaste Sesion`))
       .catch(error => console.log(`Error ${error.code}:${error.message}`))
+  }
+  renderLogin(){
+    //si esta logeado
+    if (this.state.user){
+      return (
+        <div>
+          
+        </div>
+      );
+    }else{
+      <button id="google" className="btn btn-dark my-2 my-sm-0" onClick={this.loginGoogle}>Login con Google</button>
+    }
+    //si no esta
   }
   loginEmail() {
     const email = document.getElementById("email").value;
@@ -63,7 +82,7 @@ cerrar(){
               <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmail}>Registrarse</button>
               <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmailIngreso}>Ingresa</button>
               <p className='form-block'>
-                <button id="google" className="btn btn-dark my-2 my-sm-0" onClick={this.loginGoogle}>Login con Google</button>
+                {this.renderLogin()}
                 <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginFace}>Login con Facebook</button>
               </p>
               </div>
