@@ -13,7 +13,6 @@ class App extends Component {
     this.cerrar = this.cerrar.bind(this);
     this.renderLogin = this.renderLogin.bind(this);
     this.renderLgin2=this.renderLgin2.bind(this);
-    this.renderLog3=this.renderLog3.bind(this);
   }
   
   componentDidMount(){
@@ -53,29 +52,9 @@ class App extends Component {
       );
     }
 }
-renderLog3(){
-  if (this.state.user) {
-
-    return (
-      <div>
-        <img src={this.state.user.photoURL} alt={this.user}></img>
-        <p>Hola {this.state.user.displayName}!</p>
-        <button className="btn btn-dark my-2 my-sm-0" onClick={this.cerrar}>Cerrer Sesion </button>
-      </div>
-    );
-  } else {
-    return (
-      <div className="form-block">
-        <input id="email" type="email" placeholder="ingresa tu email" className="form-control mr-sm-2"></input>
-        <input id="contrasena" type="password" placeholder="ingresa tu password" className="form-control mr-sm-2"></input>
-        <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmail}>Registrarse</button>
-        <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmailIngreso}>Ingresa</button></div>
-    );
-  }
-}
-  loginFace() {
+loginFace(){
     const log = new firebase.auth.FacebookAuthProvider();
-    log.addScope('public_profile');
+     log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
       .then(result => console.log(`${result.user.email}  Iniciaste Sesion`))
       .catch(error => console.log(`Error ${error.code}:${error.message}`))
@@ -126,11 +105,15 @@ cerrar(){
         <div className="form-block">
         <h4> Registro de Usuarios </h4>
         <nav className="navbar navbar-light bg-light">
-            
+            <div className="form-block"> 
+              <input id="email" type="email" placeholder="ingresa tu email" className="form-control mr-sm-2"></input>
+              <input id="contrasena" type="password" placeholder="ingresa tu password" className="form-control mr-sm-2"></input>
+              <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmail}>Registrarse</button>
+              <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmailIngreso}>Ingresa</button>
                 {this.renderLogin()}
                 {this.renderLgin2()}
-                {this.renderLog3()}
-            
+               
+              </div>
           </nav>
           </div>
       </div>
