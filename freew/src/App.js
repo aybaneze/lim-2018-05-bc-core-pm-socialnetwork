@@ -8,13 +8,14 @@ class App extends Component {
     const log = new firebase.auth.FacebookAuthProvider();
      log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
-      .then(result => console.log(`${result.user.credential.accesstoken.displayName} Iniciaste con Face`))
+      .then(result => console.log(`${result.user.email}  Iniciaste Sesion`))
       .catch(error => console.log(`Error ${error.code}:${error.message}`))
   }
   loginGoogle() {
     const log = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(log)
-      .then(result => console.log(`${result.user}  E-mail registrado`))
+      .then(result => console.log(`${result.user.email}  Iniciaste Sesion`))
+      .catch(error => console.log(`Error ${error.code}:${error.message}`))
   }
   loginEmail() {
     const email = document.getElementById("email").value;
