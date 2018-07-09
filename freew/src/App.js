@@ -102,21 +102,22 @@ cerrar(){
         <header className="App-header">
           <h1 className="App-title"> ¡FreeW! </h1>
         </header>
-        <div className="form-block">
-        <h4> Registro de Usuarios </h4>
         <nav className="navbar navbar-light bg-light">
-            <div className="form-block"> 
-              <input id="email" type="email" placeholder="ingresa tu email" className="form-control mr-sm-2"></input>
-              <input id="contrasena" type="password" placeholder="ingresa tu password" className="form-control mr-sm-2"></input>
+         <h4> Registro de Usuarios </h4>
+         </nav>  
+              <div className="form-block"> 
+              {this.renderLogin()}<br/>
+              <label>-o-</label><br/>
+              {this.renderLgin2()}<br/> 
+              
+              <input id="email" type="email" placeholder="ingresa tu email"></input><br/>
+              <input id="contrasena" type="password" placeholder="ingresa tu password"></input><br/>
+
               <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmail}>Registrarse</button>
               <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmailIngreso}>Ingresa</button>
-                {this.renderLogin()}
-                {this.renderLgin2()}
-               
+            
               </div>
-          </nav>
           </div>
-      </div>
       
     );
   }
