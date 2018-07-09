@@ -8,11 +8,74 @@ class App extends Component {
     super();
     this.state = {
       user:null
-    }
+    };
+    this.loginGoogle = this.loginGoogle.bind(this);
+    this.cerrar = this.cerrar.bind(this);
+    this.renderLogin = this.renderLogin.bind(this);
+    this.renderLgin2=this.renderLgin2.bind(this);
+    this.renderLog3=this.renderLog3.bind(this);
   }
-  loginFace(){
+  
+  componentDidMount(){
+    firebase.auth().onAuthStateChanged(user => {
+       this.setState({user})
+    })
+  }
+  renderLogin(){
+    //si esta logeado
+    if (this.state.user){
+      
+      return (
+        <div>
+          <img src={this.state.user.photoURL} alt={this.state.user.displayName}></img>
+          <p>Hola {this.state.user.displayName}!</p>
+          <button className="btn btn-dark my-2 my-sm-0" onClick={this.cerrar}>Cerrer Sesion </button>
+        </div>
+      );
+    }else { 
+      return (
+      <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginGoogle}>Login con Google</button>
+    );}
+  }
+  renderLgin2(){
+    if (this.user) {
+
+      return (
+        <div>
+          <img src={this.state.user.photoURL} alt={this.user}></img>
+          <p>Hola {this.state.user.displayName}!</p>
+          <button className="btn btn-dark my-2 my-sm-0" onClick={this.cerrar}>Cerrer Sesion </button>
+        </div>
+      );
+    } else {
+      return (
+        <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginFace}>Login con Facebook</button>
+      );
+    }
+}
+renderLog3(){
+  if (this.state.user) {
+
+    return (
+      <div>
+        <img src={this.state.user.photoURL} alt={this.user}></img>
+        <p>Hola {this.state.user.displayName}!</p>
+        <button className="btn btn-dark my-2 my-sm-0" onClick={this.cerrar}>Cerrer Sesion </button>
+      </div>
+    );
+  } else {
+    return (
+      <div className="form-block">
+        <input id="email" type="email" placeholder="ingresa tu email" className="form-control mr-sm-2"></input>
+        <input id="contrasena" type="password" placeholder="ingresa tu password" className="form-control mr-sm-2"></input>
+        <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmail}>Registrarse</button>
+        <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmailIngreso}>Ingresa</button></div>
+    );
+  }
+}
+  loginFace() {
     const log = new firebase.auth.FacebookAuthProvider();
-     log.addScope('public_profile');
+    log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
       .then(result => console.log(`${result.user.email}  Iniciaste Sesion`))
       .catch(error => console.log(`Error ${error.code}:${error.message}`))
@@ -22,19 +85,6 @@ class App extends Component {
     firebase.auth().signInWithPopup(log)
       .then(result => console.log(`${result.user.email}  Iniciaste Sesion`))
       .catch(error => console.log(`Error ${error.code}:${error.message}`))
-  }
-  renderLogin(){
-    //si esta logeado
-    if (this.state.user){
-      return (
-        <div>
-          
-        </div>
-      );
-    }else{
-      <button id="google" className="btn btn-dark my-2 my-sm-0" onClick={this.loginGoogle}>Login con Google</button>
-    }
-    //si no esta
   }
   loginEmail() {
     const email = document.getElementById("email").value;
@@ -76,20 +126,12 @@ cerrar(){
         <div className="form-block">
         <h4> Registro de Usuarios </h4>
         <nav className="navbar navbar-light bg-light">
-            <div className="form-block"> 
-              <input id="email" type="email" placeholder="ingresa tu email" className="form-control mr-sm-2"></input>
-              <input id="contrasena" type="password" placeholder="ingresa tu password" className="form-control mr-sm-2"></input>
-              <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmail}>Registrarse</button>
-              <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginEmailIngreso}>Ingresa</button>
-              <p className='form-block'>
+            
                 {this.renderLogin()}
-                <button className="btn btn-dark my-2 my-sm-0" onClick={this.loginFace}>Login con Facebook</button>
-              </p>
-              </div>
+                {this.renderLgin2()}
+                {this.renderLog3()}
+            
           </nav>
-          </div>
-          <div>
-          <button className="btn btn-dark my-2 my-sm-0" onClick={this.cerrar}>Cerrer Sesion </button>
           </div>
       </div>
       
