@@ -5,10 +5,11 @@ function loginGoogle() {
         .then(result => console.log(`${result.user}  Iniciaste Sesion`))
         .catch(error => console.log(`Error ${error.code}:${error.message}`))
 }
+
 document.getElementById('facebook').addEventListener("click", loginFace);
 function loginFace() {
     const log = new firebase.auth.FacebookAuthProvider();
-    log.addScope('public_profile');
+    // log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
         .then(result => console.log(`${result.user.email}  Iniciaste Sesion`))
         .catch(error => console.log(`Error ${error.code}:${error.message}`))
