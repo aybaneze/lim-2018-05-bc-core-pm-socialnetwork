@@ -1,14 +1,3 @@
-//Configuración de firebase
-   let config = {
-    apiKey: "AIzaSyCK3gtzmgVwu0Z3RgTKLnCDGyqPZp56UI4",
-    authDomain: "freew-b52fa.firebaseapp.com",
-    databaseURL: "https://freew-b52fa.firebaseio.com",
-    projectId: "freew-b52fa",
-    storageBucket: "freew-b52fa.appspot.com",
-    messagingSenderId: "1032864076994"
-};
-firebase.initializeApp(config);
-
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click(function () {
     firebase.auth().signInWithPopup(provider)
