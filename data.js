@@ -57,3 +57,25 @@ function cerrar(){
             $('#root').show();
         });
         } 
+firebase.initializeApp({
+    apiKey: "AIzaSyCK3gtzmgVwu0Z3RgTKLnCDGyqPZp56UI4",
+    authDomain: "freew-b52fa.firebaseapp.com",
+    projectId: "freew-b52fa"
+});
+
+// Initialize Cloud Firestore through Firebase
+var db = firebase.firestore();
+
+$('#postea').click(function () {
+    let contenido = document.getElementById('post').value;
+    db.collection("users").add({
+        first: "contenido"
+    })
+        .then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function (error) {
+            console.error("Error adding document: ", error);
+        });
+
+})   
