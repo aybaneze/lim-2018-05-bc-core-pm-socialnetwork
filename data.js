@@ -1,11 +1,10 @@
-
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click(function () {
     firebase.auth().signInWithPopup(provider)
         .then(result => {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<img src = '" + result.user.photoURL + "'/>").show().style.display='block';
+            $('#data').append("<img src = '" + result.user.photoURL + "'/>");
         });
 });
 document.getElementById('facebook').addEventListener("click", loginFace);
