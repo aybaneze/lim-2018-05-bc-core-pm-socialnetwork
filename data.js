@@ -1,28 +1,19 @@
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 01e48ac236c1fd65618cd14b84cd7027036b8c66
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click(function () {
     firebase.auth().signInWithPopup(provider)
         .then(result => {
             console.log(result.user);
             $('#root').hide();
-<<<<<<< HEAD
             $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
            
-=======
-            $('#data').show();
->>>>>>> 01e48ac236c1fd65618cd14b84cd7027036b8c66
         });
 })
 const log = new firebase.auth.FacebookAuthProvider();
 $('#facebook').click(function(){
     log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
-<<<<<<< HEAD
+
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
@@ -41,7 +32,7 @@ $('#ingresa').click(function(){
             $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
 });
 })
-=======
+
         .then(result => {
             $('#root').hide();
             $('#data').show();
@@ -60,7 +51,7 @@ function loginEmailIngreso() {
             console.log(`${result.user.email}  Iniciaste Sesion`)})
         .catch(error => console.log(`Error ${error.code}:${error.message}`))
 }
->>>>>>> 01e48ac236c1fd65618cd14b84cd7027036b8c66
+
 document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
     const email = document.getElementById("email").value;
