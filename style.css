@@ -1,64 +1,9 @@
-<<<<<<< HEAD
-body{
- background: white;;   
-}
-=======
->>>>>>> 01e48ac236c1fd65618cd14b84cd7027036b8c66
 .container1{
     float: left;
     margin: 5%;
 }
 .img{
     float: left;
-<<<<<<< HEAD
-    margin: 2%;
-}
-
-#data{
-    display: none;
-}
-.foto{
-width:50%; 
-height:50%;
-margin-top: 10%;
-margin-left: 35%;
-}
-.free{
-    border-radius: 50px;
-    margin-top: 10px;
-}
-
-#facebook{
-
-    margin-left: 160px;
-    font-family: 'Amatic SC', cursive;
-    font-weight: bold;
-    font-size: 17px;
-}
-#google{
-    margin-left: 164px;
-    font-family: 'Amatic SC', cursive;
-    font-weight: bold;
-    font-size: 17px;
-    
-}
-#input{
-    margin-left: 110px;
-}
-#registrar{
-     margin-left: 45px;
-     font-family: 'Amatic SC', cursive;
-    font-weight: bold;
-    font-size:17px;
-}
-#ingresa{
-     font-family: 'Amatic SC', cursive;
-    font-weight: bold;
-    font-size:17px;
-}
-#data{
-    display: none;
-=======
     margin: 5%;
 }
 
@@ -71,5 +16,4 @@ margin-left: 35%;
 
 #data{
   display: none;
->>>>>>> 01e48ac236c1fd65618cd14b84cd7027036b8c66
 }
