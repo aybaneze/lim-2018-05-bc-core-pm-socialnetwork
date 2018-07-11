@@ -5,18 +5,22 @@ $('#google').click(function () {
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<img src = '" + result.user.photoURL + "'/>").show().style.display = 'block';
+            $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
            
         });
-});
-document.getElementById('facebook').addEventListener("click", loginFace);
-function loginFace() {
-    const log = new firebase.auth.FacebookAuthProvider();
+})
+const log = new firebase.auth.FacebookAuthProvider();
+$('#facebook').click(function(){
     log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
-        .then(result => console.log(`${result.user.email}  Iniciaste Sesion`))
-        .catch(error => console.log(`Error ${error.code}:${error.message}`))
-}
+        .then(function (result) {
+            console.log(result.user);
+            $('#root').hide();
+            $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
+
+        });
+})
+
 document.getElementById('ingresa').addEventListener("click", loginEmailIngreso);
 function loginEmailIngreso() {
     const emailIngreso = document.getElementById("email").value;
