@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 body{
  background: white;;   
 }
-=======
->>>>>>> 01e48ac236c1fd65618cd14b84cd7027036b8c66
 .container1{
     float: left;
     margin: 5%;
 }
 .img{
     float: left;
-<<<<<<< HEAD
     margin: 2%;
 }
 
@@ -58,18 +54,4 @@ margin-left: 35%;
 }
 #data{
     display: none;
-=======
-    margin: 5%;
-}
-
-.h1{
-    width: 100%;
-    background: #9af1d4;
-    height: 5%;
-
-}
-
-#data{
-  display: none;
->>>>>>> 01e48ac236c1fd65618cd14b84cd7027036b8c66
 }
