@@ -80,21 +80,19 @@ function guardar() {
         });
 
 }   
+
 // leer datos
 let content = document.getElementById('content');
 db.collection("users").onSnapshot((querySnapshot) => {
     content.innerHTML = '';
     querySnapshot.forEach((doc) => {
         content.innerHTML +=`
-        <tr>
-                <th id = "celda">${doc.id}</th>
-                <td>${doc.data().first}</td>
+           <div id=${doc.id}></div>
+                <div>${doc.data().first}</div>
                 <button class = "btn btn-danger" onclick = "eliminar('${doc.id}')">Elimina</button> 
-                <br>
+            
                  <button class="btn btn-warning" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
-            </tr>`
-                
-
+            `
     });
 });
 
@@ -137,3 +135,10 @@ function editar(id,post){
 
     }
 }
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
