@@ -61,3 +61,79 @@ firebase.initializeApp({
     authDomain: "freew-b52fa.firebaseapp.com",
     projectId: "freew-b52fa"
 });
+
+// Initialize Cloud Firestore through Firebase
+var db = firebase.firestore();
+
+function guardar() {
+
+    let post = document.getElementById('post').value;
+    db.collection("users").add({
+        first: post
+    })
+        .then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            document.getElementById("post").value = '';
+        })
+        .catch(function (error) {
+            console.error("Error adding document: ", error);
+        });
+
+}   
+// leer datos
+let content = document.getElementById('content');
+db.collection("users").onSnapshot((querySnapshot) => {
+    content.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+        content.innerHTML +=`
+        <tr>
+                <th id = "celda">${doc.id}</th>
+                <td>${doc.data().first}</td>
+                <button class = "btn btn-danger" onclick = "eliminar('${doc.id}')">Elimina</button> 
+                <br>
+                 <button class="btn btn-warning" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
+            </tr>`
+                
+
+    });
+});
+
+//borrar datos
+
+function eliminar(id){
+    db.collection("users").doc(id).delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing document: ", error);
+    });
+}
+
+
+//editar
+function editar(id,post){
+    document.getElementById('post').value = post;
+
+    let boton = document.getElementById('botonpostea');
+    boton.innerHTML = 'Editar';
+
+    boton.onclick = function () {
+        var washingtonRef = db.collection("users").doc(id);
+
+        let post = document.getElementById('post').value;
+
+        return washingtonRef.update({
+            first: post
+        })
+            .then(function () {
+                console.log("Document successfully updated!");
+                boton.innerHTML = 'Comparte';
+            })
+            .catch(function (error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+
+
+
+    }
+}
