@@ -1,40 +1,17 @@
-
-
-
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click(function () {
     firebase.auth().signInWithPopup(provider)
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').show();
+            $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
+           
         });
-});
-document.getElementById('facebook').addEventListener("click", loginFace);
-function loginFace() {
-    const log = new firebase.auth.FacebookAuthProvider();
+})
+const log = new firebase.auth.FacebookAuthProvider();
+$('#facebook').click(function(){
     log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
-<<<<<<< HEAD
-        .then(result => {
-            $('#root').hide();
-            $('#data').show();
-            console.log(`${result.user.email}  Iniciaste Sesion`)})
-
-        .catch(error => console.log(`Error ${error.code}:${error.message}`))
-}
-document.getElementById('ingresa').addEventListener("click", loginEmailIngreso);
-function loginEmailIngreso() {
-    const emailIngreso = document.getElementById("email").value;
-    const contrasenaIngreso = document.getElementById("contrasena").value;
-    firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
-        .then(result => { 
-            $('#root').hide();
-            $('#data').show();
-            console.log(`${result.user.email}  Iniciaste Sesion`)})
-        .catch(error => console.log(`Error ${error.code}:${error.message}`))
-}
-=======
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
@@ -53,7 +30,6 @@ $('#ingresa').click(function(){
             $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
 });
 })
->>>>>>> 10965c707fbc1fbadc0af52e17584371e2aa3c32
 document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
     const email = document.getElementById("email").value;
@@ -80,3 +56,8 @@ function cerrar(){
             $('#root').show();
         });
         } 
+firebase.initializeApp({
+    apiKey: "AIzaSyCK3gtzmgVwu0Z3RgTKLnCDGyqPZp56UI4",
+    authDomain: "freew-b52fa.firebaseapp.com",
+    projectId: "freew-b52fa"
+});
