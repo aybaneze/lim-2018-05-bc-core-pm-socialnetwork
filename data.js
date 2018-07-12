@@ -66,7 +66,8 @@ firebase.initializeApp({
 // Initialize Cloud Firestore through Firebase
 var db = firebase.firestore();
 
-$('#botonpostea').click(function () {
+function guardar() {
+
     let post = document.getElementById('post').value;
     db.collection("users").add({
         first: post
@@ -79,11 +80,11 @@ $('#botonpostea').click(function () {
             console.error("Error adding document: ", error);
         });
 
-})   
+}   
 // leer datos
-var content = document.getElementById('content');
+let content = document.getElementById('content');
 db.collection("users").onSnapshot((querySnapshot) => {
-    content.innerHTML = "";
+    content.innerHTML = '';
     querySnapshot.forEach((doc) => {
         content.innerHTML +=`
         <tr>

@@ -52,12 +52,15 @@
 
     <div id='data'>
         <h1 class='h1'>Freew!</h1>
+       
         <button id='cerrar' class="btn btn-dark my-2 my-sm-0"> Cerrar Sesion </button>
+      
         <input id="post" type="text" placeholder='Haz que el mundo te escuche escribe' >
-        <button class='btn btn-info' id = 'botonpostea'>Compartir</button>
+        <button class='btn btn-info' id = 'botonpostea' onclick = 'guardar()'>Compartir</button>
     <table class="table">
         <thead>
             <tr>
+                <th id="celda">#</th>
                 <th scope="col">Post</th>
             </tr>
         </thead>
