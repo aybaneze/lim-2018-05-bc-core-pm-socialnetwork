@@ -26,10 +26,17 @@ margin-left: 35%;
 
 #facebook{
 
-    margin-left: 160px;
+    /* margin-left: 160px;
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 17px; */
+
+    background: #4267b2;
+    border-radius: 5px;
+    color: white;
+    height: 40px;
+    text-align: center;
+    width: 250px;
 }
 #google{
     margin-left: 164px;
