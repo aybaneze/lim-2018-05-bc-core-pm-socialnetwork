@@ -4,7 +4,7 @@ $('#google').click(function () {
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
+            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
            
         });
 })
@@ -15,7 +15,7 @@ $('#facebook').click(function(){
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
+            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
 
         });
 })
@@ -27,7 +27,7 @@ $('#ingresa').click(function(){
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<img src = '" + result.user.photoURL + "'/>").show();
+            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
 });
 })
 document.getElementById('registrar').addEventListener("click", loginEmail);
@@ -89,8 +89,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
         content.innerHTML +=`
            <div id=${doc.id}></div>
                 <div>${doc.data().first}</div>
-                <button class = "btn btn-danger" onclick = "eliminar('${doc.id}')">Elimina</button> 
-            
+                <button class = "btn btn-danger" onclick = "eliminar('${doc.id}')">Elimina</button>           
                  <button class="btn btn-warning" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
             `
     });
@@ -135,10 +134,28 @@ function editar(id,post){
 
     }
 }
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+function renderIlike() {
+    var element = document.createElement('script'); 
+    element.type = "text/javascript"; 
+    element.id = "facebook-jssdk"
+    element.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+    var s = document.getElementsByTagName('script')[0]; 
+    s.parentNode.insertBefore(element, s);
+    };
+    window.onload=function(){
+    renderIlike();}
+
+    function renderPlusone() {
+        gapi.plusone.render("plusone-div");}
+        function renderIlike() {
+        var element = document.createElement('script'); 
+        element.type = "text/javascript"; 
+        element.id = "facebook-jssdk"
+        element.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+        var s = document.getElementsByTagName('script')[0]; 
+        s.parentNode.insertBefore(element, s);};
+        window.onload=function(){
+        renderPlusone();
+        renderIlike();}
+
+       
