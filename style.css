@@ -1,5 +1,5 @@
 body{
- background: white;;   
+ background: white;   
 }
 .container1{
     float: left;
@@ -23,28 +23,28 @@ margin-left: 35%;
     border-radius: 50px;
     margin-top: 10px;
 }
-
-#facebook{
+/* 
+#facebook{ */
 
     /* margin-left: 160px;
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
     font-size: 17px; */
 
-    background: #4267b2;
+    /* background: #4267b2;
     border-radius: 5px;
     color: white;
     height: 40px;
     text-align: center;
     width: 250px;
-}
-#google{
+} */
+/* #google{
     margin-left: 164px;
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
     font-size: 17px;
     
-}
+} */
 #input{
     margin-left: 110px;
 }
@@ -64,4 +64,52 @@ margin-left: 35%;
 }
 #celda{
     display: none;
+}
+input[type="email"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+  outline: none;
+}
+button.social-signup {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+button.social-signup:hover,
+button.social-signup:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signup:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signup.facebook {
+  background: #32508E;
+}
+button.social-signup.google {
+  background: #DD4B39;
 }
