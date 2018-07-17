@@ -1,9 +1,14 @@
 body{
- background: white;   
+ background: rgb(67, 245, 156);  
+ font-family: 'Amatic SC'; 
 }
+
 .container1{
     float: left;
-    margin: 5%;
+    text-align: center;
+ 
+    
+
 }
 .img{
     float: left;
@@ -23,30 +28,12 @@ margin-left: 35%;
     border-radius: 50px;
     margin-top: 10px;
 }
-/* 
-#facebook{ */
 
-    /* margin-left: 160px;
-    font-family: 'Amatic SC', cursive;
-    font-weight: bold;
-    font-size: 17px; */
-
-    /* background: #4267b2;
-    border-radius: 5px;
-    color: white;
-    height: 40px;
-    text-align: center;
-    width: 250px;
-} */
-/* #google{
-    margin-left: 164px;
-    font-family: 'Amatic SC', cursive;
-    font-weight: bold;
-    font-size: 17px;
-    
-} */
 #input{
-    margin-left: 110px;
+padding: 15px;
+background-color: #FFF;
+
+
 }
 #registrar{
      margin-left: 45px;
@@ -59,9 +46,7 @@ margin-left: 35%;
     font-weight: bold;
     font-size:17px;
 }
-#data{
-    display: none;
-}
+
 #celda{
     display: none;
 }
@@ -71,7 +56,7 @@ input[type="password"] {
   box-sizing: border-box;
   margin-bottom: 20px;
   padding: 4px;
-  width: 220px;
+  width: 330px;
   height: 32px;
   border: none;
   border-bottom: 1px solid #AAA;
@@ -86,7 +71,7 @@ input[type="password"] {
 }
 button.social-signup {
   margin-bottom: 20px;
-  width: 220px;
+  width: 230px;
   height: 36px;
   border: none;
   border-radius: 2px;
@@ -95,6 +80,7 @@ button.social-signup {
   font-weight: 500;
   transition: 0.2s ease;
   cursor: pointer;
+  padding: 10px;
 }
 button.social-signup:hover,
 button.social-signup:focus {
@@ -108,8 +94,27 @@ button.social-signup:active {
 }
 
 button.social-signup.facebook {
-  background: #32508E;
+  background: #4A6EA8;
+  border: radius 20px; 
+  width: 30%;
+ border-radius: 15px;
+ font-size: 12px;
 }
+
 button.social-signup.google {
-  background: #DD4B39;
+  background: #DF4B38; 
+  border: radius 20px; 
+  width: 30%;
+ border-radius: 15px;
+ font-size: 12px;
+}
+
+.imgLog{
+    height: 130%;
+    width: 30%;
+   
+}
+
+.redes{
+    text-align: center;
 }

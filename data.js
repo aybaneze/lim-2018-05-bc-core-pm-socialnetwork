@@ -1,5 +1,5 @@
 var provider = new firebase.auth.GoogleAuthProvider();
-$('#google').click(function () {
+$('#google').click( () => {
     firebase.auth().signInWithPopup(provider)
         .then(function (result) {
             console.log(result.user);
@@ -9,7 +9,7 @@ $('#google').click(function () {
         });
 })
 const log = new firebase.auth.FacebookAuthProvider();
-$('#facebook').click(function(){
+$('#facebook').click(() => {
     log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
         .then(function (result) {
@@ -20,14 +20,14 @@ $('#facebook').click(function(){
         });
 })
 
-$('#ingresa').click(function(){
+$('#ingresa').click(()=>{
     const emailIngreso = document.getElementById("email").value;
     const contrasenaIngreso = document.getElementById("contrasena").value;
     firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+            $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
 });
 })
 document.getElementById('registrar').addEventListener("click", loginEmail);
