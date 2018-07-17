@@ -18,39 +18,54 @@
    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
-           
-            <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>FreeW</title>
 </head>
 
 <body>
 
-    <div id='root'>
+    <header>
+            <label>FreeW!</label>
+            <button id="register" class="buttons">Registrate</button>
+            <button class="buttons">Ingresa</button>
+    </header>
+
+    <div id="containerG">
         <div class='img'>
-            <img class='foto' src='imagenes/fuerza.png'>
+            <img class='foto' src='https://i.pinimg.com/236x/b9/18/28/b918286049372dca314b63f50f880f32.jpg'>
         </div>
-        <label style="font-size: 72px">FreeW!</label><br>
+       
         <div class="container1">
-            <div id='input'>
+                <div class="opacity">
+            <div id='inForm'>
                 <input id="email" type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 <br>
                 <input id="contrasena" type="password" placeholder=" password" class="form-control mr-sm-2"></input>
                 <br>
-                <button id="registrar" class="btn btn-success btn-sm my-2 my-sm-0">Registrarse</button>
                 <button id='ingresa' class="btn btn-success btn-sm my-2 my-sm-0">Ingresa</button><br>
-                <center><label>Ingresa con:</label></center>
+                <center><p>Ingresa con:</p></center>
                 <div class='redes'>
-                <br>
-                <button id="google" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 "><img src="imagenes/gmail.png" class="imgLog">Google </button>
-                <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog">Facebook </button>
+                    <br>
+                    <button id="google" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 "><img src="imagenes/gmail.png" class="imgLog">Google </button>
+                     <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog">Facebook </button>
+                </div>
             </div>
             </div>
-            
-          
-           
+                 <div id="outForm" class="form">
+                    <input id="email" type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <br>
+                    <input id="contrasena" type="password" placeholder=" password" class="form-control mr-sm-2"></input>
+                    <br>
+                    <button id="registrar" class="btn btn-success btn-sm my-2 my-sm-0">Registrarse</button>
+                    <button id='ingresa' class="btn btn-success btn-sm my-2 my-sm-0">Ingresa</button><br>
+                    <center><p>Ingresa con:</p></center>
+                    <div class='redes'>
+                        <br>
+                        <button id="google" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 "><img src="imagenes/gmail.png" class="imgLog">Google </button>
+                        <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog">Facebook </button>
+                     </div>
+                 </div>
         </div>
     </div>
 
@@ -80,12 +95,9 @@
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"> {parsetags : "onload"}
         </script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script>
@@ -98,11 +110,11 @@
             storageBucket: "freew-b52fa.appspot.com",
             messagingSenderId: "1032864076994"
         };
-        firebase.initializeApp(config);
+            firebase.initializeApp(config);
     </script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-    
+        
     <script src="data.js"></script>
     <script src="main.js"></script>
 </body>

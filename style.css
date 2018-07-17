@@ -1,18 +1,20 @@
-body{
- background: rgb(67, 245, 156);  
+body{ 
  font-family: 'Amatic SC'; 
 }
 
 .container1{
     float: left;
     text-align: center;
- 
-    
-
 }
+
+#containerG {
+margin: 0px;
+}
+
 .img{
     float: left;
     margin: 2%;
+
 }
 
 #data{
@@ -29,12 +31,6 @@ margin-left: 35%;
     margin-top: 10px;
 }
 
-#input{
-padding: 15px;
-background-color: #FFF;
-
-
-}
 #registrar{
      margin-left: 45px;
      font-family: 'Amatic SC', cursive;
@@ -91,6 +87,7 @@ button.social-signup:focus {
 button.social-signup:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: 0.2s ease;
+  display: flex; 
 }
 
 button.social-signup.facebook {
@@ -99,6 +96,7 @@ button.social-signup.facebook {
   width: 30%;
  border-radius: 15px;
  font-size: 12px;
+ 
 }
 
 button.social-signup.google {
@@ -118,3 +116,45 @@ button.social-signup.google {
 .redes{
     text-align: center;
 }
+
+.container1 label{
+    font-size: 72px;
+}
+
+.buttons:hover{
+background-color:#97B4F7;
+
+}
+.buttons{
+    float: right; 
+    margin: 10px;
+    background-color: rgb(118, 161, 152);
+    border-radius: 10px;
+    width: 15%;
+    height: 40%;
+    margin-top: 20px;
+    border: none;
+    font-size: 26px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    background: #181717;
+    height: 100px;   
+}
+
+header label{
+  font-size: 72px; 
+  color: aliceblue;
+}
+
+.form{
+    display: none;
+}
+
+.opacity{
+    background-color:rgb(#181717, #463c3c, #AAA);
+    opacity:0.6; /* Opacidad 60% */
+    width:200px;
+    height:70px;
+ }

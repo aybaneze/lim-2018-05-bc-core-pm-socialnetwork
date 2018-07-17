@@ -1,3 +1,9 @@
+const register = document.getElementById('register');
+register.addEventListener('click',()=>{
+    document.getElementById('outForm').style.display='block';
+    document.getElementById('inForm').style.display='none';
+})
+
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click( () => {
     firebase.auth().signInWithPopup(provider)
