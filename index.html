@@ -32,8 +32,7 @@
         <div class='img'>
             <img class='foto' src='imagenes/fuerza.png'>
         </div>
-        <img class='free' src="imagenes/logoFrew.png" alt="">
-
+        <label style="font-size: 72px">FreeW!</label><br>
         <div class="container1">
             <div id='input'>
                 <input id="email" type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
@@ -41,17 +40,17 @@
                 <input id="contrasena" type="password" placeholder=" password" class="form-control mr-sm-2"></input>
                 <br>
                 <button id="registrar" class="btn btn-success btn-sm my-2 my-sm-0">Registrarse</button>
-                <button id='ingresa' class="btn btn-success btn-sm my-2 my-sm-0">Ingresa</button>
+                <button id='ingresa' class="btn btn-success btn-sm my-2 my-sm-0">Ingresa</button><br>
+                <center><label>Ingresa con:</label></center>
+                <div class='redes'>
+                <br>
+                <button id="google" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 "><img src="imagenes/gmail.png" class="imgLog">Google </button>
+                <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog">Facebook </button>
             </div>
-
-
-            <div class='redes'>
-                <br>
-                <button id="google" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 ">Login con Google</button>
-                <br>
-                <br>
-                <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook">Login con Facebook</button>
             </div>
+            
+          
+           
         </div>
     </div>
 
@@ -68,18 +67,18 @@
     <div id="fb-root"></div>
     <!-- Your share button code -->
     <div class="fb-share-button" 
-      data-href="https://www.your-domain.com/your-page.html" 
       data-layout="button_count">
     </div>
-    <div class="fb-like" 
-    data-href="https://www.your-domain.com/your-page.html" 
-    data-layout="standard" 
-    data-action="like" 
-    data-show-faces="true">
-  </div>
+
+    <div id="plusone-div"></div>
+    <div id="fb-root"></div>
+    <div class="fb-like"></div><br />
 
 
     </div>
+
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"> {parsetags : "onload"}
+        </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -103,7 +102,9 @@
     </script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    
     <script src="data.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
