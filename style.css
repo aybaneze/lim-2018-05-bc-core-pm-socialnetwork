@@ -183,3 +183,11 @@ header label{
     height: 25%;
     margin: 15px; 
 }
+
+#post{
+    width: 80%;
+    height: 70px;
+    margin: 30px;
+    border-radius: 10px;
+
+}
