@@ -168,5 +168,57 @@ function renderIlike() {
         window.onload=function(){
         renderPlusone();
         renderIlike();}
+        
 
-       
+ //div donde se registra el usuario
+
+// var provider1 = new firebase.auth.GoogleAuthProvider();
+// $('#google1').click( () => {
+//     firebase.auth().signInWithPopup(provider1)
+//         .then(function (result) {
+//             console.log(result.user);
+//             $('#root').hide();
+//             $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+           
+//         });
+// })
+// const log1 = new firebase.auth.FacebookAuthProvider();
+// $('#facebook1').click(() => {
+//     log1.addScope('public_profile');
+//     firebase.auth().signInWithPopup(log1)
+//         .then(function (result) {
+//             console.log(result.user);
+//             $('#root').hide();
+//             $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+
+//         });
+// })
+
+// $('#ingresa1').click(()=>{
+//     const emailIngreso1 = document.getElementById("email1").value;
+//     const contrasenaIngreso1 = document.getElementById("pass").value;
+//     firebase.auth().signInWithEmailAndPassword(emailIngreso1, contrasenaIngreso1)
+//         .then(function (result) {
+//             console.log(result.user);
+//             $('#root').hide();
+//             $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
+// });
+// })
+// document.getElementById('registrar1').addEventListener("click", loginEmail1);
+// function loginEmail1() {
+//     const email1 = document.getElementById("email1").value;
+//     const pass = document.getElementById("pass").value;
+
+//     firebase.auth().createUserWithEmailAndPassword(email1, pass)
+//         .then(result => {
+//             const user = firebase.auth().currentUser;
+//             user.sendEmailVerification().then(function () {
+//                 // enviando Email
+//                 console.log('enviando correo---')
+//             }).catch(function (error) {
+//                 console.log(error)
+//             });
+//         })
+//         .catch(error => console.log(`Error ${error.code}:${error.message}`))
+// }
+
