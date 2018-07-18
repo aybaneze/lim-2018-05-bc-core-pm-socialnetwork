@@ -1,43 +1,40 @@
-body{
- background: rgb(67, 245, 156);  
+body{ 
  font-family: 'Amatic SC'; 
 }
 
 .container1{
     float: left;
-    text-align: center;
- 
-    
-
+    margin: 20px;
+    background: rgba(0,0,0,0.5);
+    opacity:0.5; /* Opacidad 60% */
+    width:60%;
+    height:30%;
+    border-radius: 10px;
 }
-.img{
-    float: left;
-    margin: 2%;
+
+#containerG {
+margin: 0px;
+
 }
 
 #data{
     display: none;
 }
-.foto{
-width:50%; 
-height:50%;
-margin-top: 10%;
-margin-left: 35%;
+
+.img{
+width:300px; 
+height:500px;
+margin: 40px 30px;
+float: left;
 }
 .free{
     border-radius: 50px;
     margin-top: 10px;
 }
 
-#input{
-padding: 15px;
-background-color: #FFF;
-
-
-}
 #registrar{
-     margin-left: 45px;
-     font-family: 'Amatic SC', cursive;
+    margin-left: 45px;
+    font-family: 'Amatic SC', cursive;
     font-weight: bold;
     font-size:17px;
 }
@@ -47,17 +44,12 @@ background-color: #FFF;
     font-size:17px;
 }
 
-#celda{
-    display: none;
-}
 input[type="email"],
 input[type="password"] {
   display: block;
   box-sizing: border-box;
-  margin-bottom: 20px;
-  padding: 4px;
-  width: 330px;
-  height: 32px;
+  width: 80%;
+  height: 30px;
   border: none;
   border-bottom: 1px solid #AAA;
   font-family: 'Roboto', sans-serif;
@@ -99,6 +91,7 @@ button.social-signup.facebook {
   width: 30%;
  border-radius: 15px;
  font-size: 12px;
+ 
 }
 
 button.social-signup.google {
@@ -117,4 +110,75 @@ button.social-signup.google {
 
 .redes{
     text-align: center;
+}
+
+.container1 label{
+    font-size: 72px;
+}
+
+.buttons:hover{
+background-color:#97B4F7;
+
+}
+.buttons{
+    float: right; 
+    margin: 10px;
+    background-color: rgb(118, 161, 152);
+    border-radius: 10px;
+    width: 15%;
+    height: 40%;
+    margin-top: 20px;
+    border: none;
+    font-size: 26px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    background: #181717;
+    height: 100px;   
+}
+
+header label{
+  font-size: 72px; 
+  color: aliceblue;
+}
+
+.form{
+    display: none;
+    background: #8ad6b6;
+    height: 45%;
+    width: 40%;
+    padding: 20px; 
+    margin: 20px;
+    border-radius: 15px;
+    float: right;
+    text-align: center;
+}
+#inForm{
+    display: none; 
+    background: #8ad6b6;
+    height: 45%;
+    width: 40%;
+    padding: 20px; 
+    margin: 20px;
+    border-radius: 15px;
+    float: right;
+    text-align: center;
+}
+
+.text{
+    font-family: 'sans-serif' cursive;
+    font-size: 25px;
+    float: left;
+    color: #FFF;
+    width: 45%;
+    margin: 80px 40px;
+    
+
+}
+
+.textBox{
+    width: 0%;
+    height: 25%;
+    margin: 15px; 
 }
