@@ -24,24 +24,23 @@
 </head>
 
 <body>
-
+  <div id="root">
     <header>
             <label>FreeW!</label>
             <button id="register" class="buttons">Registrate</button>
-            <button class="buttons">Ingresa</button>
+            <button id="ingreso" class="buttons">Ingresa</button>
     </header>
-
+  
     <div id="containerG">
-        <div class='img'>
-            <img class='foto' src='https://i.pinimg.com/236x/b9/18/28/b918286049372dca314b63f50f880f32.jpg'>
+        <div class="img">
+            <img  src='https://i.pinimg.com/236x/b9/18/28/b918286049372dca314b63f50f880f32.jpg'>
         </div>
        
         <div class="container1">
-                <div class="opacity">
             <div id='inForm'>
-                <input id="email" type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <input id="email" type="email" class="textBox" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 <br>
-                <input id="contrasena" type="password" placeholder=" password" class="form-control mr-sm-2"></input>
+                <input id="contrasena" type="password" placeholder=" password" class="textBox"></input>
                 <br>
                 <button id='ingresa' class="btn btn-success btn-sm my-2 my-sm-0">Ingresa</button><br>
                 <center><p>Ingresa con:</p></center>
@@ -51,14 +50,19 @@
                      <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog">Facebook </button>
                 </div>
             </div>
-            </div>
+            <div class="text">
+                    <p>"No pienses en conseguir que la mujer se adapte al mundo,
+                         piensa en lograr que el mundo se adapte a las mujeres. 
+                         Si el zapato no encaja, ¿tienes que cambiar el pie?". </p>
+                </div>
+
                  <div id="outForm" class="form">
-                    <input id="email" type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input id="email" type="email" class="textBox" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                     <br>
-                    <input id="contrasena" type="password" placeholder=" password" class="form-control mr-sm-2"></input>
+                    <input id="contrasena" type="password" placeholder=" password" class="textBox"></input>
                     <br>
-                    <button id="registrar" class="btn btn-success btn-sm my-2 my-sm-0">Registrarse</button>
-                    <button id='ingresa' class="btn btn-success btn-sm my-2 my-sm-0">Ingresa</button><br>
+                    <button id="registrar" class="buttons">Registrarse</button>
+                    <button id='ingresa' class="buttons">Ingresa</button><br>
                     <center><p>Ingresa con:</p></center>
                     <div class='redes'>
                         <br>
@@ -66,13 +70,17 @@
                         <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog">Facebook </button>
                      </div>
                  </div>
-        </div>
+            </div>
     </div>
-
+</div>
     <div id='data'>
-        <h1 class='h1'>Freew!</h1>
-       
-        <button id='cerrar' class="btn btn-dark my-2 my-sm-0"> Cerrar Sesion </button>
+
+            <header>
+                    <label>FreeW!</label>
+                   
+                    <button id='cerrar' class="btn btn-dark my-2 my-sm-0"> Cerrar Sesion </button>
+            </header>
+     
       
         <input id="post" type="text" placeholder='Haz que el mundo te escuche escribe' >
         <button class='btn btn-info' id = 'botonpostea' onclick = 'guardar()'>Compartir</button>

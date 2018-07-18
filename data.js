@@ -3,6 +3,11 @@ register.addEventListener('click',()=>{
     document.getElementById('outForm').style.display='block';
     document.getElementById('inForm').style.display='none';
 })
+const ingreso = document.getElementById('ingreso');
+ingreso.addEventListener('click',()=>{
+    document.getElementById('inForm').style.display='block';
+    document.getElementById('outForm').style.display='none';
+})
 
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click( () => {
