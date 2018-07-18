@@ -41,7 +41,7 @@ float: left;
 #ingresa{
      font-family: 'Amatic SC', cursive;
     font-weight: bold;
-    font-size:17px;
+    font-size: 50%;
 }
 
 input[type="email"],
@@ -182,4 +182,8 @@ header label{
     width: 0%;
     height: 25%;
     margin: 15px; 
+}
+#cabeza{
+    width: 150%;
+    margin-left: -10%;
 }
