@@ -34,10 +34,21 @@ https://docs.google.com/forms/d/e/1FAIpQLSc0CZelFqq_H-9UH8oGG5wl5NcCAw0rl1tVbaXf
 ![grafico3](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico3.png)
 ![grafico4](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico4.png)
 
-##Sketch
+## Sketch
 
 >Para poder guiarnos con el prototipo decidimos primero realizar el Sketch, para añadir botonos y cajas de texto para el registro del usuario.
 
 **PANTALLLA 1**
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch1.png)
+
+## PROTOTIPO DE ALTA FIDELIDAD
+
+>Este prototipo se realizo con Figma.
+
+**PANTALLA 2**
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma1.png)
+
+a continuación el link del proyecto
+
