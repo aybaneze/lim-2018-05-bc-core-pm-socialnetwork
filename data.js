@@ -25,7 +25,7 @@ $('#facebook').click(() => {
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+            $('#data').show();
 
         });
 })
