@@ -171,3 +171,31 @@ header label{
     height: 25%;
     margin: 15px; 
 }
+
+#post{
+    width: 600px;
+    height:  100px;
+}
+
+section{
+     margin-top: 20px;
+     float: center;
+     margin-right: 100px;
+     
+    }
+
+#content{
+    height: 400px;
+    width: 700px;
+}
+
+aside{
+    width: 270px;
+    float: left;
+    padding: 0px;
+    margin-top: 20px;
+}
+#aside1{
+    float: right;
+    width: 350px;
+}

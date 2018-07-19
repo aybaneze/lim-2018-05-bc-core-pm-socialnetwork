@@ -36,8 +36,7 @@
   
     <div id="containerG">
         <div class="img">
-            <img class="img"src='https://i.pinimg.com/236x/b9/18/28/b918286049372dca314b63f50f880f32.jpg
-   
+            <img class="img"src='https://i.pinimg.com/236x/b9/18/28/b918286049372dca314b63f50f880f32.jpg'>
         </div>
        
         <div class="container1">
@@ -81,28 +80,110 @@
     <div id='data'>
 
             <header>
-                    <label>FreeW!</label>
-                    <button id='cerrar' class="btn btn-dark my-2 my-sm-0"> Cerrar Sesion </button>
-                    <p id="pa"></p>
+                    <div class="w3-top ">
+                             <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+                             <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
+                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
+                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+                             <div class="w3-dropdown-hover w3-hide-medium">
+                               <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">5</span></button>     
+                               <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                                 <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+                                 <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
+                                 <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+                               </div>
+                            </div>
+                           </div>
+                           
+                           <button id='cerrar' class="btn btn-dark my-2 my-sm-0"> Cerrar Sesion </button>
+                           <p id="pa"></p>
+                    
             </header>
      
-      <section>
-        <input id="post" type="text" placeholder='Que estas pensando'>
-        <button class='btn btn-info' id = 'botonpostea' onclick = 'guardar()'>Compartir</button>
+<aside>
+            <div class="w3-container w3-content" style="max-width:1400px;margin-top:5px">    
+                <!-- The Grid -->
+                <div class="w3-row">
+                  <!-- Left Column -->
+                  <div class="w3-col m17">
+                    <!-- Profile -->
+                    <div class="w3-card w3-round w3-white">
+                      <div class="w3-container">
+                       <h4 class="w3-center">My Profile</h4>
+                       <p class="w3-center"><img src="imagenes/sin_perfil.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                       <hr>
+
+                       <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+                       <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+                       <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+                      </div>
+                    </div>
+                    <br>
+                </aside>
+         <section>  
+
+                    <div class="w3-col m7">
+                            <div class="w3-row-padding">
+                              <div class="w3-col m15">
+                                <div class="w3-card w3-round w3-white">
+                                  <div class="w3-container w3-padding">
+                                    <h6 class="w3-opacity">Estado</h6>
+                                    <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
+                                    <button id ='botonpostea' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+                                     </div>
+                                </div>
+                              </div>
+                            </div>
+
     <div id= 'content'>
     </div>
 
-    <div id="fb-root"></div>
-    <!-- Your share button code -->
-    <div class="fb-share-button" 
-      data-layout="button_count">
+</section> 
+
+
+<div id="aside1">
+<div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Some text..</p>
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>Some other text..</p>
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+
     </div>
 
-    <div id="plusone-div"></div>
-    <div id="fb-root"></div>
-    <div class="fb-like"></div><br />
 
-</section>
     </div>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"> {parsetags : "onload"}

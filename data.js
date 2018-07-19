@@ -15,7 +15,7 @@ $('#google').click( () => {
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').show().append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'  />")
+            $('#data').show();//.append("<header><p>"+result.user.displayName+"</p></header>")
         });
 })
 const log = new firebase.auth.FacebookAuthProvider();
@@ -101,13 +101,21 @@ db.collection("users").onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(doc)
         content.innerHTML +=`
-        <div style="background:teal">
-        <p>´+ doc.user.displayName+ ´</p>
            <div id=${doc.id}></div>
+                
+                <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                <img src="imagenes/sin_perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <span class="w3-right w3-opacity">16 min</span>
+                <h4>Andrea Ybañez</h4><br>
                 <div>${doc.data().first}</div>
-                <button class = "btn btn-danger" onclick = "eliminar('${doc.id}')">Elimina</button>           
-                 <button class="btn btn-warning" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
-            </div><br>`
+                <hr class="w3-clear">
+                <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+                <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')">Elimina</button>           
+                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
+            
+                </div> 
+                </div><br>`
     });
 });
 
@@ -221,3 +229,29 @@ $('#ingresa1').click(()=>{
             }).catch(error => console.log(`Error ${error.code}:${error.message}`))
   })
 
+
+
+
+
+  function readFile(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var filePreview = document.createElement('img');
+            filePreview.id = 'file-preview';
+            //e.target.result contents the base64 data from the image uploaded
+            filePreview.src = e.target.result;
+            console.log(e.target.result);
+
+            var previewZone = document.getElementById('file-preview-zone');
+            previewZone.appendChild(filePreview);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+var fileUpload = document.getElementById('file-upload');
+fileUpload.onchange = function (e) {
+    readFile(e.srcElement);}  
