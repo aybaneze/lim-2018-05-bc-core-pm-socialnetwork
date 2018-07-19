@@ -4,11 +4,11 @@ body{
 
 .container1{
     float: left;
-    margin: 20px;
+    margin: 60px 20px;
     background: rgba(0,0,0,0.5);
     opacity:0.5; /* Opacidad 60% */
-    width:60%;
-    height:30%;
+    width:30%;
+    height:15%;
     border-radius: 10px;
 }
 
@@ -22,11 +22,12 @@ margin: 0px;
 }
 
 .img{
-width:300px; 
-height:500px;
+width:400px; 
+height:400px;
 margin: 40px 30px;
 float: left;
 }
+
 .free{
     border-radius: 50px;
     margin-top: 10px;
@@ -57,10 +58,7 @@ input[type="password"] {
   font-size: 15px;
   transition: 0.2s ease;
 }
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
-*:focus {
-  outline: none;
-}
+
 button.social-signup {
   margin-bottom: 20px;
   width: 230px;
@@ -73,16 +71,6 @@ button.social-signup {
   transition: 0.2s ease;
   cursor: pointer;
   padding: 10px;
-}
-button.social-signup:hover,
-button.social-signup:focus {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease;
-}
-
-button.social-signup:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: 0.2s ease;
 }
 
 button.social-signup.facebook {
@@ -104,9 +92,9 @@ button.social-signup.google {
 
 .imgLog{
     height: 130%;
-    width: 30%;
-   
+    width: 30%; 
 }
+
 
 .redes{
     text-align: center;
@@ -117,13 +105,13 @@ button.social-signup.google {
 }
 
 .buttons:hover{
-background-color:#97B4F7;
+background-color:#b1fdce;
 
 }
 .buttons{
     float: right; 
     margin: 10px;
-    background-color: rgb(118, 161, 152);
+    background-color: rgb(27, 189, 100);
     border-radius: 10px;
     width: 15%;
     height: 40%;
@@ -134,7 +122,7 @@ background-color:#97B4F7;
 }
 
 header{
-    background: #181717;
+    background: hsl(147, 79%, 59%);
     height: 100px;   
 }
 
@@ -145,22 +133,22 @@ header label{
 
 .form{
     display: none;
-    background: #8ad6b6;
-    height: 45%;
-    width: 40%;
+    background: #8affb79c;
+    height: 400px;
+    width: 300px;
     padding: 20px; 
-    margin: 20px;
+    margin: 60px 70px;
     border-radius: 15px;
     float: right;
     text-align: center;
 }
 #inForm{
     display: none; 
-    background: #8ad6b6;
-    height: 45%;
-    width: 40%;
+    background: #8affb79c;
+    height: 400px;
+    width: 300px;
     padding: 20px; 
-    margin: 20px;
+    margin: 60px 70px;
     border-radius: 15px;
     float: right;
     text-align: center;
@@ -172,7 +160,7 @@ header label{
     font-size: 25px;
     float: left;
     color: #FFF;
-    width: 45%;
+    width: 80%;
     margin: 80px 40px;
     
 
@@ -183,7 +171,31 @@ header label{
     height: 25%;
     margin: 15px; 
 }
-#cabeza{
-    width: 150%;
-    margin-left: -10%;
+
+#post{
+    width: 600px;
+    height:  100px;
+}
+
+section{
+     margin-top: 20px;
+     float: center;
+     margin-right: 100px;
+     
+    }
+
+#content{
+    height: 400px;
+    width: 700px;
+}
+
+aside{
+    width: 270px;
+    float: left;
+    padding: 0px;
+    margin-top: 20px;
+}
+#aside1{
+    float: right;
+    width: 350px;
 }

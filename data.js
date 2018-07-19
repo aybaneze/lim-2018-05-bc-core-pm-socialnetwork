@@ -15,8 +15,7 @@ $('#google').click( () => {
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
-           
+            $('#data').show();//.append("<header><p>"+result.user.displayName+"</p></header>")
         });
 })
 const log = new firebase.auth.FacebookAuthProvider();
@@ -26,7 +25,7 @@ $('#facebook').click(() => {
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+            $('#data').show();
 
         });
 })
@@ -43,10 +42,12 @@ $('#ingresa').click(()=>{
 })
 document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
-    const email = document.getElementById("email").value;
-    const contrasena = document.getElementById("contrasena").value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, contrasena)
+
+    const email1 = document.getElementById("email1").value;
+    const pass = document.getElementById("pass").value;
+
+    firebase.auth().createUserWithEmailAndPassword(email1, pass)
         .then(result => {
             const user = firebase.auth().currentUser;
             user.sendEmailVerification().then(function () {
@@ -95,14 +96,26 @@ function guardar() {
 // leer datos
 let content = document.getElementById('content');
 db.collection("users").onSnapshot((querySnapshot) => {
+    console.log(querySnapshot)
     content.innerHTML = '';
     querySnapshot.forEach((doc) => {
+        console.log(doc)
         content.innerHTML +=`
            <div id=${doc.id}></div>
+                
+                <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                <img src="imagenes/sin_perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <span class="w3-right w3-opacity">16 min</span>
+                <h4>Andrea Ybañez</h4><br>
                 <div>${doc.data().first}</div>
-                <button class = "btn btn-danger" onclick = "eliminar('${doc.id}')">Elimina</button>           
-                 <button class="btn btn-warning" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
-            `
+                <hr class="w3-clear">
+                <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+                <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')">Elimina</button>           
+                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
+            
+                </div> 
+                </div><br>`
     });
 });
 
@@ -172,53 +185,73 @@ function renderIlike() {
 
  //div donde se registra el usuario
 
-// var provider1 = new firebase.auth.GoogleAuthProvider();
-// $('#google1').click( () => {
-//     firebase.auth().signInWithPopup(provider1)
-//         .then(function (result) {
-//             console.log(result.user);
-//             $('#root').hide();
-//             $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+var provider1 = new firebase.auth.GoogleAuthProvider();
+$('#google1').click( () => {
+    firebase.auth().signInWithPopup(provider1)
+        .then(function (result) {
+            console.log(result.user);
+            $('#root').hide();
+            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
            
-//         });
-// })
-// const log1 = new firebase.auth.FacebookAuthProvider();
-// $('#facebook1').click(() => {
-//     log1.addScope('public_profile');
-//     firebase.auth().signInWithPopup(log1)
-//         .then(function (result) {
-//             console.log(result.user);
-//             $('#root').hide();
-//             $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+        });
+})
+const log1 = new firebase.auth.FacebookAuthProvider();
+$('#facebook1').click(() => {
+    log1.addScope('public_profile');
+    firebase.auth().signInWithPopup(log1)
+        .then(function (result) {
+            console.log(result.user);
+            $('#root').hide();
+            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
 
-//         });
-// })
+        });
+})
 
-// $('#ingresa1').click(()=>{
-//     const emailIngreso1 = document.getElementById("email1").value;
-//     const contrasenaIngreso1 = document.getElementById("pass").value;
-//     firebase.auth().signInWithEmailAndPassword(emailIngreso1, contrasenaIngreso1)
-//         .then(function (result) {
-//             console.log(result.user);
-//             $('#root').hide();
-//             $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
-// });
-// })
-// document.getElementById('registrar1').addEventListener("click", loginEmail1);
-// function loginEmail1() {
-//     const email1 = document.getElementById("email1").value;
-//     const pass = document.getElementById("pass").value;
+$('#ingresa1').click(()=>{
+    const emailIngreso1 = document.getElementById("email1").value;
+    const contrasenaIngreso1 = document.getElementById("pass").value;
+    firebase.auth().signInWithEmailAndPassword(emailIngreso1, contrasenaIngreso1)
+        .then(function (result) {
+            console.log(result.user);
+            $('#root').hide();
+            $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
+});
+})
 
-//     firebase.auth().createUserWithEmailAndPassword(email1, pass)
-//         .then(result => {
-//             const user = firebase.auth().currentUser;
-//             user.sendEmailVerification().then(function () {
-//                 // enviando Email
-//                 console.log('enviando correo---')
-//             }).catch(function (error) {
-//                 console.log(error)
-//             });
-//         })
-//         .catch(error => console.log(`Error ${error.code}:${error.message}`))
-// }
+    firebase.auth().createUserWithEmailAndPassword(email1, pass)
+        .then(result => {
+            const user = firebase.auth().currentUser;
+            user.sendEmailVerification().then(function () {
+                // enviando Email
+                console.log('enviando correo---')
+            }).catch(function (error) {
+                console.log(error)
+            }).catch(error => console.log(`Error ${error.code}:${error.message}`))
+  })
 
+
+
+
+
+  function readFile(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var filePreview = document.createElement('img');
+            filePreview.id = 'file-preview';
+            //e.target.result contents the base64 data from the image uploaded
+            filePreview.src = e.target.result;
+            console.log(e.target.result);
+
+            var previewZone = document.getElementById('file-preview-zone');
+            previewZone.appendChild(filePreview);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+var fileUpload = document.getElementById('file-upload');
+fileUpload.onchange = function (e) {
+    readFile(e.srcElement);}  

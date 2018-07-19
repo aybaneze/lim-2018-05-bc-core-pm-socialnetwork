@@ -15,15 +15,18 @@
     <meta property="og:title"         content="Your Website Title" />
     <meta property="og:description"   content="Your description" />
     <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>FreeW</title>
 </head>
 
-<body>
+<body class="w3-theme-l5">
+    
   <div id="root">
     <header>
             <label>FreeW!</label>
@@ -33,10 +36,16 @@
   
     <div id="containerG">
         <div class="img">
-            <img  id= 'cabeza' src='https://i.pinimg.com/236x/b9/18/28/b918286049372dca314b63f50f880f32.jpg'>
+            <img class="img"src='https://i.pinimg.com/236x/b9/18/28/b918286049372dca314b63f50f880f32.jpg'>
         </div>
        
         <div class="container1">
+             <div class="text">
+                    <p>"No pienses en conseguir que la mujer se adapte al mundo,
+                         piensa en lograr que el mundo se adapte a las mujeres. 
+                         Si el zapato no encaja, ¿tienes que cambiar el pie?". </p>
+                </div>
+            </div>
             <div id='inForm'>
                 <input id="email" type="email" class="textBox" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 <br>
@@ -46,56 +55,133 @@
                 <center><p>Ingresa con:</p></center>
                 <div class='redes'>
                     <br>
-                    <button id="google" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 "><img src="imagenes/gmail.png" class="imgLog">Google </button>
-                     <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog">Facebook </button>
+                    <button id="google" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 "><img src="imagenes/gmail.png" class="imgLog"> </button>
+                     <button id="facebook" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog"></button>
                 </div>
             </div>
-            <div class="text">
-                    <p>"No pienses en conseguir que la mujer se adapte al mundo,
-                         piensa en lograr que el mundo se adapte a las mujeres. 
-                         Si el zapato no encaja, ¿tienes que cambiar el pie?". </p>
-                </div>
+          
 
                  <div id="outForm" class="form">
                     <input id="email1" type="email" class="textBox" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                     <br>
                     <input id="pass" type="password" placeholder=" password" class="textBox"></input>
                     <br>
-                    <button id="registrar" class="buttons">Registrarse</button>
-                    <button id='ingresa1' class="buttons">Ingresa</button><br>
+                    <button id="registrar" class="btn btn-success btn-sm my-2 my-sm-0">Registrarse</button>
+                    <button id='ingresa1' class="btn btn-success btn-sm my-2 my-sm-0">Ingresa</button><br>
                     <br><center><p>Ingresa con:</p></center>
                     <div class='redes'>
                         <br>
-                        <button id="google1" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 "><img src="imagenes/gmail.png" class="imgLog">Google </button>
-                        <button id="facebook1" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog">Facebook </button>
+                        <button id="google1" class=" social-signup google  btn btn-danger btn-md  my-2 my-sm-0 "><img src="imagenes/gmail.png" class="imgLog"></button>
+                        <button id="facebook1" class="btn btn-primary btn-md my-2 my-sm-0 social-signup facebook"><img src="imagenes/face.png" class="imgLog"></button>
                      </div>
                  </div>
-            </div>
-    </div>
+                </div>
 </div>
     <div id='data'>
 
             <header>
-                    <label>FreeW!</label>
-                   
-                    <button id='cerrar' class="btn btn-dark my-2 my-sm-0"> Cerrar Sesion </button>
+                    <div class="w3-top ">
+                             <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+                             <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
+                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
+                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+                             <div class="w3-dropdown-hover w3-hide-medium">
+                               <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">5</span></button>     
+                               <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+                                 <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+                                 <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
+                                 <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+                               </div>
+                            </div>
+                           </div>
+                           
+                           <button id='cerrar' class="btn btn-dark my-2 my-sm-0"> Cerrar Sesion </button>
+                           <p id="pa"></p>
+                    
             </header>
      
-      
-        <input id="post" type="text" placeholder='Haz que el mundo te escuche escribe' >
-        <button class='btn btn-info' id = 'botonpostea' onclick = 'guardar()'>Compartir</button>
-   <div id= 'content'>
-       </div>
+<aside>
+            <div class="w3-container w3-content" style="max-width:1400px;margin-top:5px">    
+                <!-- The Grid -->
+                <div class="w3-row">
+                  <!-- Left Column -->
+                  <div class="w3-col m17">
+                    <!-- Profile -->
+                    <div class="w3-card w3-round w3-white">
+                      <div class="w3-container">
+                       <h4 class="w3-center">My Profile</h4>
+                       <p class="w3-center"><img src="imagenes/sin_perfil.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                       <hr>
 
-    <div id="fb-root"></div>
-    <!-- Your share button code -->
-    <div class="fb-share-button" 
-      data-layout="button_count">
+                       <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+                       <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+                       <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+                      </div>
+                    </div>
+                    <br>
+                </aside>
+         <section>  
+
+                    <div class="w3-col m7">
+                            <div class="w3-row-padding">
+                              <div class="w3-col m15">
+                                <div class="w3-card w3-round w3-white">
+                                  <div class="w3-container w3-padding">
+                                    <h6 class="w3-opacity">Estado</h6>
+                                    <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
+                                    <button id ='botonpostea' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+                                     </div>
+                                </div>
+                              </div>
+                            </div>
+
+    <div id= 'content'>
     </div>
 
-    <div id="plusone-div"></div>
-    <div id="fb-root"></div>
-    <div class="fb-like"></div><br />
+</section> 
+
+
+<div id="aside1">
+<div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Some text..</p>
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>Some other text..</p>
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+
+    </div>
 
 
     </div>
