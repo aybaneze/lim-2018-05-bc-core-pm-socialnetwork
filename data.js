@@ -15,8 +15,7 @@ $('#google').click( () => {
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'  />").show();
-           
+            $('#data').show().append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'  />")
         });
 })
 const log = new firebase.auth.FacebookAuthProvider();
@@ -102,13 +101,13 @@ db.collection("users").onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(doc)
         content.innerHTML +=`
-        <div style="background:black">
+        <div style="background:teal">
         <p>´+ doc.user.displayName+ ´</p>
            <div id=${doc.id}></div>
                 <div>${doc.data().first}</div>
                 <button class = "btn btn-danger" onclick = "eliminar('${doc.id}')">Elimina</button>           
                  <button class="btn btn-warning" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
-            </div>`
+            </div><br>`
     });
 });
 
