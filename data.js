@@ -15,7 +15,7 @@ $('#google').click( () => {
         .then(function (result) {
             console.log(result.user);
             $('#root').hide();
-            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'  />").show();
            
         });
 })
@@ -43,6 +43,8 @@ $('#ingresa').click(()=>{
 })
 document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
+
+
     const email1 = document.getElementById("email1").value;
     const pass = document.getElementById("pass").value;
 
@@ -95,14 +97,18 @@ function guardar() {
 // leer datos
 let content = document.getElementById('content');
 db.collection("users").onSnapshot((querySnapshot) => {
+    console.log(querySnapshot)
     content.innerHTML = '';
     querySnapshot.forEach((doc) => {
+        console.log(doc)
         content.innerHTML +=`
+        <div style="background:black">
+        <p>´+ doc.user.displayName+ ´</p>
            <div id=${doc.id}></div>
                 <div>${doc.data().first}</div>
                 <button class = "btn btn-danger" onclick = "eliminar('${doc.id}')">Elimina</button>           
                  <button class="btn btn-warning" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
-            `
+            </div>`
     });
 });
 
