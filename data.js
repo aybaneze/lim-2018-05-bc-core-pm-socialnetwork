@@ -42,8 +42,6 @@ $('#ingresa').click(()=>{
 })
 document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
-
-
     const email1 = document.getElementById("email1").value;
     const pass = document.getElementById("pass").value;
 
@@ -59,6 +57,7 @@ function loginEmail() {
         })
         .catch(error => console.log(`Error ${error.code}:${error.message}`))
 }
+
 document.getElementById('cerrar').addEventListener("click", cerrar);
 function cerrar(){
     firebase.auth().signOut()
@@ -217,21 +216,6 @@ $('#ingresa1').click(()=>{
             $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
 });
 })
-
-    firebase.auth().createUserWithEmailAndPassword(email1, pass)
-        .then(result => {
-            const user = firebase.auth().currentUser;
-            user.sendEmailVerification().then(function () {
-                // enviando Email
-                console.log('enviando correo---')
-            }).catch(function (error) {
-                console.log(error)
-            }).catch(error => console.log(`Error ${error.code}:${error.message}`))
-  })
-
-
-
-
 
   function readFile(input) {
     if (input.files && input.files[0]) {
