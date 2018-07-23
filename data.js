@@ -16,6 +16,7 @@ function guardaDatos(user) {
         email: user.email,
         foto: user.photoURL
     }
+    
     firebase.database().ref('freww/' + user.uid)
         .set(usuario)
 }

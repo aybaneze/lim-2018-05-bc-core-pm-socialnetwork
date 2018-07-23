@@ -5,23 +5,18 @@ padding: 0px;
     margin: 0px;
 }
 
- .container1{
-   
-    margin: 100px 50px;
-    max-width: 200px;
-    height:300px;
-    background-color: rgb(255, 255, 255);
-} 
 
 .frase{
     margin-top: 100px;
     margin-left: 40px;
+    width: 500px;
 }
 
 #containerG {
 margin:0px;
 background-color:#FEFEFE;
 }
+
 #root{
     background-color: #FEFEFE;
 }
