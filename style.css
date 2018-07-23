@@ -1,37 +1,35 @@
 body{ 
+    background: rgb(255, 255, 255);
  font-family: 'Amatic SC'; 
+padding: 0px;
+    margin: 0px;
 }
 
-.container1{
-    float: left;
-    margin: 60px 20px;
-    background: rgba(0,0,0,0.5);
-    opacity:0.5; /* Opacidad 60% */
-    width:30%;
-    height:15%;
-    border-radius: 10px;
+ .container1{
+   
+    margin: 100px 50px;
+    max-width: 200px;
+    height:300px;
+    background-color: rgb(255, 255, 255);
+} 
+
+.frase{
+    margin-top: 100px;
+    margin-left: 40px;
 }
 
 #containerG {
-margin: 0px;
-
+margin:0px;
+background-color:#FEFEFE;
+}
+#root{
+    background-color: #FEFEFE;
 }
 
 #data{
     display: none;
 }
 
-.img{
-width:400px; 
-height:400px;
-margin: 40px 30px;
-float: left;
-}
-
-.free{
-    border-radius: 50px;
-    margin-top: 10px;
-}
 
 #registrar{
     margin-left: 45px;
@@ -39,69 +37,55 @@ float: left;
     font-weight: bold;
     font-size:17px;
 }
-#ingresa{
-     font-family: 'Amatic SC', cursive;
-    font-weight: bold;
-    font-size: 50%;
+.btnSocialFacebook {
+
+        font-weight: 500;
+        border: none;
+         
+        text-decoration:none;
+        padding:15px;
+        background:#4A6EA8;
+        font-size:20px;
+        float: right;
+       
+        text-align:center;
+        cursor:pointer;
+        transition:.5s ease;
+        margin-right: 30px;
+        margin-top: 5px;
+        max-width:200px;
+        width: 150px;
+        margin-top: 5px;
+        height: 50px;
+       
+}
+.btnSocialFacebook:hover{
+    background:#003a97;
 }
 
-input[type="email"],
-input[type="password"] {
-  display: block;
-  box-sizing: border-box;
-  width: 80%;
-  height: 30px;
-  border: none;
-  border-bottom: 1px solid #AAA;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  transition: 0.2s ease;
+.btnSocialGoogle{
+    font-weight: 500;
+    border: none;
+ padding:15px;
+ background:#DF4B38;
+ font-size:20px;
+ float:left;
+ max-width:200px;
+ width: 150px;
+ text-align:center;
+ cursor:pointer;
+ transition:.5s ease;
+ margin-left: 30px;
+ margin-top: 5px;
+ height: 50px;
 }
-
-button.social-signup {
-  margin-bottom: 20px;
-  width: 230px;
-  height: 36px;
-  border: none;
-  border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  transition: 0.2s ease;
-  cursor: pointer;
-  padding: 10px;
-}
-
-button.social-signup.facebook {
-  background: #4A6EA8;
-  border: radius 20px; 
-  width: 30%;
- border-radius: 15px;
- font-size: 12px;
- 
-}
-
-button.social-signup.google {
-  background: #DF4B38; 
-  border: radius 20px; 
-  width: 30%;
- border-radius: 15px;
- font-size: 12px;
+.btnSocialGoogle:hover{
+    background:#ee1c00;
 }
 
 .imgLog{
-    height: 130%;
-    width: 30%; 
-}
-
-
-.redes{
-    text-align: center;
-}
-
-.container1 label{
-    font-size: 72px;
+    height: 30px;
+    width: 30px;       
 }
 
 .buttons:hover{
@@ -122,37 +106,32 @@ background-color:#b1fdce;
 }
 
 header{
-    background: hsl(147, 79%, 59%);
-    height: 100px;   
-}
-
-header label{
-  font-size: 72px; 
+    background: #71A900;
+    width: 1500px; 
+    height: 100px; 
+    position: fixed; 
+    font-size: 72px; 
   color: aliceblue;
 }
 
+
 .form{
     display: none;
-    background: #8affb79c;
-    height: 400px;
-    width: 300px;
-    padding: 20px; 
-    margin: 60px 70px;
-    border-radius: 15px;
-    float: right;
-    text-align: center;
 }
-#inForm{
-    display: none; 
-    background: #8affb79c;
-    height: 400px;
-    width: 300px;
-    padding: 20px; 
-    margin: 60px 70px;
+
+#prueba{
+        
+    height: 500px;
+    max-width: 400px;
+    padding: 10px; 
+    margin: 140px 60px;
     border-radius: 15px;
     float: right;
     text-align: center;
     color: #181717;
+    background:#ffffff;
+    border-radius:4px;
+    box-shadow: 0 4px 10px 4px;
 }
 
 .text{
@@ -162,14 +141,6 @@ header label{
     color: #FFF;
     width: 80%;
     margin: 80px 40px;
-    
-
-}
-
-.textBox{
-    width: 0%;
-    height: 25%;
-    margin: 15px; 
 }
 
 #post{
@@ -180,8 +151,7 @@ header label{
 section{
      margin-top: 20px;
      float: center;
-     margin-right: 100px;
-     
+     margin-right: 100px;     
     }
 
 #content{
@@ -199,3 +169,103 @@ aside{
     float: right;
     width: 350px;
 }
+
+
+
+.tab-group {
+    list-style:none;
+    padding:10px;
+    margin:0 0 20px 5px;
+}
+
+tab-group:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+li a {
+        display:block;
+        text-decoration:none;
+        padding:15px;
+        background:rgba(#a0b3b0,.25);
+        color:#a0b3b0;
+        font-size:20px;
+        float:left;
+        width:50%;
+        text-align:center;
+        cursor:pointer;
+        transition:.5s ease;
+}
+li a:hover {
+          background:#D4FA88;
+          color:#fffFff;
+        
+      }
+.active a {
+        background:#A0F100;
+        color:#fffFff;
+}
+
+.tab a{
+    background:#D4FA88;
+}
+
+/* .tab-content {
+    display:none;
+  } */
+
+
+
+    .correo {
+        color:#504f4f;
+        font-size: 18px;
+        border:1px solid #000000;
+        background-color: #fffFff;
+        margin: 0px 10px;
+        width: 350px;
+      
+    }
+
+    .password{
+        color:#504f4f;
+        font-size: 18px;
+        border:1px solid #000000;
+        background-color: #fffFff;
+        width: 350px;
+        margin: 10px 20px;
+    }
+
+    .login{
+            border:0;
+            outline:none;
+            border-radius:0;
+            padding:15px 0;
+            font-size:20px;
+            background:#B9F441;
+            color: #ffffff;
+            width: 50%;
+            margin: 15px;
+            height: 55px;
+    }
+    
+    .login:hover{
+            background:#13232f;
+    }
+    
+    h1{
+            text-align:center;
+            color: #000000;;
+            font-weight:300;
+            margin:0 0 10px;
+    }
+
+    p{
+        text-align:center;
+        color:#000000;
+        font-weight:400;
+        margin:10px 0 0px;
+        font-size: 20px;
+        font-family: 'Titillium Web';
+        
+    }
