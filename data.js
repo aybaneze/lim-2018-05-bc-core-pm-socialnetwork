@@ -9,11 +9,23 @@ ingreso.addEventListener('click',()=>{
     document.getElementById('outForm').style.display='none';
 })
 
+function guardaDatos(user) {
+    var usuario = {
+        uid: user.uid,
+        nombre: user.displayName,
+        email: user.email,
+        foto: user.photoURL
+    }
+    firebase.database().ref('freww/' + user.uid)
+        .set(usuario)
+}
+
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click( () => {
     firebase.auth().signInWithPopup(provider)
         .then(function (result) {
             console.log(result.user);
+            guardaDatos(result.user);
             $('#root').hide();
             $('#data').show();//.append("<header><p>"+result.user.displayName+"</p></header>")
         });
@@ -24,6 +36,7 @@ $('#facebook').click(() => {
     firebase.auth().signInWithPopup(log)
         .then(function (result) {
             console.log(result.user);
+            guardaDatos(result.user);
             $('#root').hide();
             $('#data').show();
 
@@ -36,6 +49,7 @@ $('#ingresa').click(()=>{
     firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
         .then(function (result) {
             console.log(result.user);
+            guardaDatos(result.user);
             $('#root').hide();
             $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
 });
@@ -68,9 +82,9 @@ function cerrar(){
         });
         } 
 firebase.initializeApp({
-    apiKey: "AIzaSyCK3gtzmgVwu0Z3RgTKLnCDGyqPZp56UI4",
-    authDomain: "freew-b52fa.firebaseapp.com",
-    projectId: "freew-b52fa"
+    apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
+    authDomain: "nuestra-red-social.firebaseapp.com",
+    projectId: "nuestra-red-social"
 });
 
 // Initialize Cloud Firestore through Firebase
