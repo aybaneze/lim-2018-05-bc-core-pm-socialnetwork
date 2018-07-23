@@ -117,8 +117,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(doc)
         content.innerHTML +=`
-           <div id=${doc.id}></div>
-                
+           <div id=${doc.id}></div>  
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                 <img src="imagenes/sin_perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
                 <span class="w3-right w3-opacity">16 min</span>
@@ -129,7 +128,6 @@ db.collection("users").onSnapshot((querySnapshot) => {
                 <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')">Elimina</button>           
                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
-            
                 </div> 
                 </div><br>`
     });
