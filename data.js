@@ -9,24 +9,26 @@ ingreso.addEventListener('click',()=>{
     document.getElementById('outForm').style.display='none';
 })
 
+
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click( () => {
     firebase.auth().signInWithPopup(provider)
         .then(function (result) {
-            console.log(result.user);
-            $('#root').hide();
-            $('#data').show();//.append("<header><p>"+result.user.displayName+"</p></header>")
-        });
+         $('#root').hide();
+        $('#data').show();   
+       
+       
+    });
 })
+
+
 const log = new firebase.auth.FacebookAuthProvider();
 $('#facebook').click(() => {
     log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
         .then(function (result) {
-            console.log(result.user);
             $('#root').hide();
-            $('#data').show();
-
+            $('#data').show(); 
         });
 })
 
@@ -73,7 +75,9 @@ firebase.initializeApp({
     projectId: "freew-b52fa"
 });
 
-// Initialize Cloud Firestore through Firebase
+//Initialize Cloud Firestore through Firebase
+
+
 var db = firebase.firestore();
 
 function guardar() {
@@ -188,7 +192,8 @@ var provider1 = new firebase.auth.GoogleAuthProvider();
 $('#google1').click( () => {
     firebase.auth().signInWithPopup(provider1)
         .then(function (result) {
-            console.log(result.user);
+            var user=result.user;
+            writeUserData(user.userId, user.displayName, user.email, user.photoURL)
             $('#root').hide();
             $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
            
@@ -217,25 +222,40 @@ $('#ingresa1').click(()=>{
 });
 })
 
-  function readFile(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
 
-        reader.onload = function (e) {
-            var filePreview = document.createElement('img');
-            filePreview.id = 'file-preview';
-            //e.target.result contents the base64 data from the image uploaded
-            filePreview.src = e.target.result;
-            console.log(e.target.result);
 
-            var previewZone = document.getElementById('file-preview-zone');
-            previewZone.appendChild(filePreview);
-        }
 
-        reader.readAsDataURL(input.files[0]);
-    }
+
+
+
+var imagenes=new Array(
+    ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
+    ['imagenes/frase2.png','http://www.lawebdelprogramador.com/foros/'],
+    ['imagenes/frase3.png','http://www.lawebdelprogramador.com/pdf/'],
+    ['imagenes/frase4.png','http://www.lawebdelprogramador.com/pdf/'],
+);
+
+
+//  Funcion para cambiar la imagen y link 
+function rotarImagenes()
+{   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
+    var index=Math.floor((Math.random()*imagenes.length));
+    // cambiamos la imagen y la url
+    document.getElementById("imagen").src=imagenes[index][0];
+    document.getElementById("link").href=imagenes[index][1];
+}
+// Función que se ejecuta una vez cargada la página
+onload=function()
+{
+    // Cargamos una imagen aleatoria
+    rotarImagenes();
+
+    // Indicamos que cada 5 segundos cambie la imagen
+    setInterval(rotarImagenes,4000);
 }
 
-var fileUpload = document.getElementById('file-upload');
-fileUpload.onchange = function (e) {
-    readFile(e.srcElement);}  
+
+
+
+
+
