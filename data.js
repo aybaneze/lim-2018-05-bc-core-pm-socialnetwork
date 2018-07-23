@@ -9,16 +9,26 @@ ingreso.addEventListener('click',()=>{
     document.getElementById('outForm').style.display='none';
 })
 
+function guardaDatos(user) {
+    var usuario = {
+        uid: user.uid,
+        nombre: user.displayName,
+        email: user.email,
+        foto: user.photoURL
+    }
+    firebase.database().ref('freww/' + user.uid)
+        .set(usuario)
+}
 
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click( () => {
     firebase.auth().signInWithPopup(provider)
         .then(function (result) {
-         $('#root').hide();
-        $('#data').show();   
-       
-       
-    });
+            console.log(result.user);
+            guardaDatos(result.user);
+            $('#root').hide();
+            $('#data').show();//.append("<header><p>"+result.user.displayName+"</p></header>")
+        });
 })
 
 
@@ -27,6 +37,8 @@ $('#facebook').click(() => {
     log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
         .then(function (result) {
+            console.log(result.user);
+            guardaDatos(result.user);
             $('#root').hide();
             $('#data').show(); 
         });
@@ -250,6 +262,7 @@ onload=function()
 {
     // Cargamos una imagen aleatoria
     rotarImagenes();
+
     // Indicamos que cada 5 segundos cambie la imagen
     setInterval(rotarImagenes,4000);
 }
