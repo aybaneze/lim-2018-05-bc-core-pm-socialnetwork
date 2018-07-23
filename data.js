@@ -38,6 +38,7 @@ $('#ingresa').click(()=>{
     firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
         .then(function (result) {
             console.log(result.user);
+            guardaDatos(result.user);
             $('#root').hide();
             $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
 });
@@ -70,9 +71,9 @@ function cerrar(){
         });
         } 
 firebase.initializeApp({
-    apiKey: "AIzaSyCK3gtzmgVwu0Z3RgTKLnCDGyqPZp56UI4",
-    authDomain: "freew-b52fa.firebaseapp.com",
-    projectId: "freew-b52fa"
+    apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
+    authDomain: "nuestra-red-social.firebaseapp.com",
+    projectId: "nuestra-red-social"
 });
 
 //Initialize Cloud Firestore through Firebase
@@ -249,7 +250,6 @@ onload=function()
 {
     // Cargamos una imagen aleatoria
     rotarImagenes();
-
     // Indicamos que cada 5 segundos cambie la imagen
     setInterval(rotarImagenes,4000);
 }
