@@ -21,6 +21,8 @@ function guardaDatos(user) {
         .set(usuario)
 }
 
+
+
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click( () => {
     firebase.auth().signInWithPopup(provider)
@@ -28,9 +30,13 @@ $('#google').click( () => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').show();//.append("<header><p>"+result.user.displayName+"</p></header>")
+            $('#data').show()
+            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
+            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
         });
 })
+
+
 
 
 const log = new firebase.auth.FacebookAuthProvider();
@@ -42,6 +48,8 @@ $('#facebook').click(() => {
             guardaDatos(result.user);
             $('#root').hide();
             $('#data').show(); 
+            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
+            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
         });
 })
 
@@ -168,35 +176,8 @@ function editar(id,post){
                 // The document probably doesn't exist.
                 console.error("Error updating document: ", error);
             });
-
-
-
     }
 }
-function renderIlike() {
-    var element = document.createElement('script'); 
-    element.type = "text/javascript"; 
-    element.id = "facebook-jssdk"
-    element.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
-    var s = document.getElementsByTagName('script')[0]; 
-    s.parentNode.insertBefore(element, s);
-    };
-    window.onload=function(){
-    renderIlike();}
-
-    function renderPlusone() {
-        gapi.plusone.render("plusone-div");}
-        function renderIlike() {
-        var element = document.createElement('script'); 
-        element.type = "text/javascript"; 
-        element.id = "facebook-jssdk"
-        element.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
-        var s = document.getElementsByTagName('script')[0]; 
-        s.parentNode.insertBefore(element, s);};
-        window.onload=function(){
-        renderPlusone();
-        renderIlike();}
-        
 
  //div donde se registra el usuario
 
@@ -208,6 +189,7 @@ $('#google1').click( () => {
             writeUserData(user.userId, user.displayName, user.email, user.photoURL)
             $('#root').hide();
             $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+         
            
         });
 })
@@ -219,6 +201,8 @@ $('#facebook1').click(() => {
             console.log(result.user);
             $('#root').hide();
             $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
+            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
+            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
 
         });
 })
@@ -246,8 +230,6 @@ var imagenes=new Array(
     ['imagenes/frase3.png','http://www.lawebdelprogramador.com/pdf/'],
     ['imagenes/frase4.png','http://www.lawebdelprogramador.com/pdf/'],
 );
-
-
 //  Funcion para cambiar la imagen y link 
 function rotarImagenes()
 {   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
@@ -257,11 +239,10 @@ function rotarImagenes()
     document.getElementById("link").href=imagenes[index][1];
 }
 // Función que se ejecuta una vez cargada la página
-onload=function()
+onload= function()
 {
     // Cargamos una imagen aleatoria
     rotarImagenes();
-
     // Indicamos que cada 5 segundos cambie la imagen
     setInterval(rotarImagenes,4000);
 }
