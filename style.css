@@ -12,9 +12,10 @@ padding: 0px;
     width: 500px;
 }
 
-#containerG {
+.containerG {
 margin:0px;
 background-color:#FEFEFE;
+width: 100%;
 }
 
 #root{
@@ -23,6 +24,7 @@ background-color:#FEFEFE;
 
 #data{
     display: none;
+    margin: 0px;
 }
 
 
@@ -100,15 +102,6 @@ background-color:#b1fdce;
     font-family: 'Courier New', Courier, monospace;
 }
 
-header{
-    background: #71A900;
-    width: 1500px; 
-    height: 100px; 
-    position: fixed; 
-    font-size: 72px; 
-  color: aliceblue;
-}
-
 
 .form{
     display: none;
@@ -119,7 +112,7 @@ header{
     height: 500px;
     max-width: 400px;
     padding: 10px; 
-    margin: 140px 60px;
+    margin: 30px 100px;
     border-radius: 15px;
     float: right;
     text-align: center;
@@ -139,12 +132,14 @@ header{
 }
 
 #post{
+    margin-top: 100px;
     width: 600px;
     height:  100px;
 }
 
+
 section{
-     margin-top: 20px;
+     
      float: center;
      margin-right: 100px;     
     }
@@ -158,11 +153,12 @@ aside{
     width: 270px;
     float: left;
     padding: 0px;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 #aside1{
     float: right;
     width: 350px;
+    margin-top: 100px;
 }
 
 
