@@ -22,7 +22,6 @@ function guardaDatos(user) {
 }
 
 
-
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click( () => {
     firebase.auth().signInWithPopup(provider)
@@ -61,7 +60,8 @@ $('#ingresa').click(()=>{
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
+            $('#data').show();
+            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='imagenes/sin_perfil.png'/>");
 });
 })
 document.getElementById('registrar').addEventListener("click", loginEmail);
@@ -179,50 +179,15 @@ function editar(id,post){
     }
 }
 
- //div donde se registra el usuario
-
-var provider1 = new firebase.auth.GoogleAuthProvider();
-$('#google1').click( () => {
-    firebase.auth().signInWithPopup(provider1)
-        .then(function (result) {
-            var user=result.user;
-            writeUserData(user.userId, user.displayName, user.email, user.photoURL)
-            $('#root').hide();
-            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
-         
-           
-        });
-})
-const log1 = new firebase.auth.FacebookAuthProvider();
-$('#facebook1').click(() => {
-    log1.addScope('public_profile');
-    firebase.auth().signInWithPopup(log1)
-        .then(function (result) {
-            console.log(result.user);
-            $('#root').hide();
-            $('#data').append("<p>"+result.user.displayName+"</p>"+"<img src = '" + result.user.photoURL + "'/>").show();
-            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
-            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
-
-        });
-})
-
-$('#ingresa1').click(()=>{
-    const emailIngreso1 = document.getElementById("email1").value;
-    const contrasenaIngreso1 = document.getElementById("pass").value;
-    firebase.auth().signInWithEmailAndPassword(emailIngreso1, contrasenaIngreso1)
-        .then(function (result) {
-            console.log(result.user);
-            $('#root').hide();
-            $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
-});
-})
+var fichero
+function camara(){
+    fichero= document.getElementById('camera');
+    fichero.addEventListener('change', subirImagenFirebase, false)
+}
 
 
-
-
-
-
+//  Funcion para cambiar la imagen y link 
+function rotarImagenes(){
 
 var imagenes=new Array(
     ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
@@ -230,9 +195,8 @@ var imagenes=new Array(
     ['imagenes/frase3.png','http://www.lawebdelprogramador.com/pdf/'],
     ['imagenes/frase4.png','http://www.lawebdelprogramador.com/pdf/'],
 );
-//  Funcion para cambiar la imagen y link 
-function rotarImagenes()
-{   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
+
+   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
     var index=Math.floor((Math.random()*imagenes.length));
     // cambiamos la imagen y la url
     document.getElementById("imagen").src=imagenes[index][0];
