@@ -28,9 +28,7 @@
       <div class="w3-container w3-teal">
         <label style="font-size: 45px">FreeW!</label>   
       </div>
-      <aside>
-        <a href="" id="link"><img class="frase" src="" id="imagen"></a>            
-      </aside>
+        <a href="" id="link"><img src="" id="imagen"></a>            
       <div id="prueba">
           <ul class="tab-group"> 
               <li class="active" id="ingreso"><a href="#signup">Sign Up</a></li>
@@ -80,7 +78,8 @@
                     <div class="w3-card w3-round w3-white">
                       <div class="w3-container">
                        <h4 class="w3-center">My Profile</h4>
-                       <p class="w3-center"><img  src="imagenes/sin_perfil.png"onclick="document.getElementById('modal01').style.display='block'" class="w3-hover-opacity" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                       <h4><span id="UserCount"></span></h4>
+                       <p class="w3-center"><div id="Profile" onclick="document.getElementById('modal01').style.display='block'" alt="Avatar"></div>
                         <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
                           <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/sin_perfil.png">
                       </div>
@@ -94,9 +93,8 @@
       </aside>
       <section>  
 
-                    <div class="w3-col m7">
+                    <div class="postea" class="w3-col m7">
                             <div class="w3-row-padding">
-                              <div class="w3-col m15">
                                 <div class="w3-card w3-round w3-white">
                                   <div class="w3-container w3-padding">
                                     <h6 class="w3-opacity">Estado</h6>
@@ -105,7 +103,6 @@
                                     <button class="w3-button w3-theme"><i class="fa fa-camera"></i>  Photo</button> 
                                      </div>
                                 </div>
-                              </div>
                             </div>
 
       <div id= 'content'>
