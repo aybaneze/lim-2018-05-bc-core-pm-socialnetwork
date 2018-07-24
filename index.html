@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
@@ -24,98 +22,77 @@
   <link rel="stylesheet" href="style.css">
   <title>FreeW</title>
 </head>
-
 <body class="w3-theme-l5">    
   <div id="root">
-    
-  
-    <div id="containerG">
-      <header>
-            <label>FreeW!</label>   
-    </header>
-      
-       <aside>
-              <a href="" id="link"><img class="frase" src="" id="imagen"></a>            
-        </aside>
-
-        <div id="prueba">
-            <ul class="tab-group"> 
-                    <li class="active" id="ingreso"><a href="#signup">Sign Up</a></li>
-                    <li class="tab"  id="register"><a href="#login">Log In</a></li>
-                  </ul><br>
-                  
-            <div id="signup"></div>
-        
-            <div id='inForm'>              
-                        <h1>Sign Up for FreeW!</h1>
-                            <input id="email" type="email" class="correo" placeholder="Username" ><br><br>
-                            <input id="contrasena" type="password" placeholder=" password" class="password"><br>
-                            <button id='ingresa' class="login">Get Started</button><br>
-                <p>Sign Up with</p>
- 
-                    <br>
-                    <button id="google" class="btnSocialGoogle"><img src="imagenes/gmail.png" class="imgLog"> </button> 
-                    <button id="facebook" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
+    <div class="containerG">
+      <div class="w3-container w3-teal">
+        <label style="font-size: 45px">FreeW!</label>   
+      </div>
+      <aside>
+        <a href="" id="link"><img class="frase" src="" id="imagen"></a>            
+      </aside>
+      <div id="prueba">
+          <ul class="tab-group"> 
+              <li class="active" id="ingreso"><a href="#signup">Sign Up</a></li>
+              <li class="tab"  id="register"><a href="#login">Log In</a></li>
+          </ul><br>                  
+             <div id='inForm'>              
+                  <h1>Sign Up for FreeW!</h1>
+                  <input id="email" type="email" class="correo" placeholder="Username" ><br><br>
+                  <input id="contrasena" type="password" placeholder=" password" class="password"><br>
+                  <button id='ingresa' class="login">Get Started</button><br>
+                  <p>Sign Up with</p><br>
+                  <button id="google" class="btnSocialGoogle"><img src="imagenes/gmail.png" class="imgLog"> </button> 
+                  <button id="facebook" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
             </div> 
             <div id="outForm" class="form">
-                    <h1>Log in for FreeW!</h1>
-                    <input id="email1" type="email" class="correo" placeholder="Username" >
-                    <br><br>
-                    <input id="pass" type="password" placeholder="password" class="password"></input>
-                    <br>
-                    <button id="registrar" class="login">Registrarse</button><br>
-                    <p>LOG IN WITH</p>
-                        <br>
-                        <button id="google1" class="btnSocialGoogle" ><img src="imagenes/gmail.png" class="imgLog"></button>
-                        <button id="facebook1" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
+                  <h1>Log in for FreeW!</h1>
+                  <input id="email1" type="email" class="correo" placeholder="Username" ><br><br>
+                  <input id="pass" type="password" placeholder="password" class="password"></input><br>
+                  <button id="registrar" class="login">Registrarse</button><br>
+                  <p>LOG IN WITH</p><br>
+                  <button id="google1" class="btnSocialGoogle" ><img src="imagenes/gmail.png" class="imgLog"></button>
+                  <button id="facebook1" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
             </div>  
-        </div>
-                
+      </div>           
     </div>
   </div>  
               
-              
-
-
-    <div id='data'>
-
-            <header>
-                    <div class="w3-top ">
-                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
-                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-                             <a href="#" class="w3-bar-item w3-button w3-hide-medium w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
-                             <div class="w3-dropdown-hover w3-hide-medium">
-                               <button   class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">5</span></button>     
-                               <button  id="cerrar" class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-close"></i></button> 
-                               <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-                                 <a href="#" class="w3-bar-item w3-button">One new friend request</a>
-                                 <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
-                                 <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+     <div id='data'>
+                    <div class="w3-container w3-teal w3-top" style="float:right">
+                             <a href="#" class="w3-bar-item w3-button w3-hover-white" title="friends"><i class="fa fa-group" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">1</span></a>
+                             <a href="#" class="w3-bar-item w3-button w3-hover-white" title="Messages"><i class="fa fa-comments" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">10</span></a>
+                             <button   class="w3-button" title="Notifications"><i class="fa fa-bell" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">3</span></button>
+                             <div class="w3-dropdown-hover">                                   
+                               <button   class="w3-button w3-padding-large"  title="Notifications"><i class="fa fa-th-list" style="font-size:36px;"></i></button>
+                               <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
+                                 <a href="#" class="w3-bar-item w3-button">Profile</a>
+                                 <a href="#" class="w3-bar-item w3-button">Settings</a>
+                                 <a href="#" class="w3-bar-item w3-button">Help me!</a>
+                                 <button  id="cerrar" class="w3-button w3-padding-large w3-hide-small" title="Cerrar Sesión" class="w3-bar-item w3-button"><i class="fa fa-close"></i>Salir</button> 
                                </div>
                             </div>
                            </div>              
-            </header>
-     
-<aside>
-            <div class="w3-container w3-content" style="max-width:1400px;margin-top:5px">    
-                <!-- The Grid -->
-                <div class="w3-row">
-                  <!-- Left Column -->
-                  <div class="w3-col m17">
+        <div class="container2">
+         <aside>
+          <div class="w3-container w3-content" style="max-width:1400px;margin-top:5px">    
                     <!-- Profile -->
                     <div class="w3-card w3-round w3-white">
                       <div class="w3-container">
                        <h4 class="w3-center">My Profile</h4>
-                       <p class="w3-center"><img src="imagenes/sin_perfil.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                       <p class="w3-center"><img  src="imagenes/sin_perfil.png"onclick="document.getElementById('modal01').style.display='block'" class="w3-hover-opacity" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                        <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+                          <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/sin_perfil.png">
+                      </div>
                        <hr>
                        <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
                        <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
                        <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
-                      </div>
                     </div>
-                    <br>
-                </aside>
-         <section>  
+                  </div>
+                  <br>
+      </aside>
+      <section>  
 
                     <div class="w3-col m7">
                             <div class="w3-row-padding">
@@ -125,6 +102,7 @@
                                     <h6 class="w3-opacity">Estado</h6>
                                     <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
                                     <button id ='botonpostea' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+                                    <button class="w3-button w3-theme"><i class="fa fa-camera"></i>  Photo</button> 
                                      </div>
                                 </div>
                               </div>
@@ -179,10 +157,10 @@
       </div>
       <br>
 
+    
+
     </div>
-
-
- 
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
