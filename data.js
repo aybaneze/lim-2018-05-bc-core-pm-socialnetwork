@@ -64,6 +64,7 @@ $('#ingresa').click(()=>{
             $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='imagenes/sin_perfil.png'/>");
 });
 })
+
 document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
     const email1 = document.getElementById("email1").value;
@@ -179,11 +180,6 @@ function editar(id,post){
     }
 }
 
-var fichero
-function camara(){
-    fichero= document.getElementById('camera');
-    fichero.addEventListener('change', subirImagenFirebase, false)
-}
 
 
 //  Funcion para cambiar la imagen y link 
