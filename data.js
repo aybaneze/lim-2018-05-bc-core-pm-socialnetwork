@@ -91,32 +91,32 @@ function cerrar(){
             $('#root').show();
         });
         } 
-firebase.initializeApp({
-    apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
-    authDomain: "nuestra-red-social.firebaseapp.com",
-    projectId: "nuestra-red-social"
-});
+// firebase.initializeApp({
+//     apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
+//     authDomain: "nuestra-red-social.firebaseapp.com",
+//     projectId: "nuestra-red-social"
+// });
 
 //Initialize Cloud Firestore through Firebase
 
 
-var db = firebase.firestore();
+// var db = firebase.firestore();
 
-function guardar() {
+// function guardar() {
 
-    let post = document.getElementById('post').value;
-    db.collection("users").add({
-        first: post
-    })
-        .then(function (docRef) {
-            console.log("Document written with ID: ", docRef.id);
-            document.getElementById("post").value = '';
-        })
-        .catch(function (error) {
-            console.error("Error adding document: ", error);
-        });
+//     let post = document.getElementById('post').value;
+//     db.collection("users").add({
+//         first: post
+//     })
+//         .then(function (docRef) {
+//             console.log("Document written with ID: ", docRef.id);
+//             document.getElementById("post").value = '';
+//         })
+//         .catch(function (error) {
+//             console.error("Error adding document: ", error);
+//         });
 
-}   
+// }   
 
 // // leer datos
 // let content = document.getElementById('content');
@@ -144,42 +144,42 @@ function guardar() {
 
 //borrar datos
 
-function eliminar(id){
-    db.collection("users").doc(id).delete().then(function () {
-        console.log("Document successfully deleted!");
-    }).catch(function (error) {
-        console.error("Error removing document: ", error);
-    });
-}
+// function eliminar(id){
+//     db.collection("users").doc(id).delete().then(function () {
+//         console.log("Document successfully deleted!");
+//     }).catch(function (error) {
+//         console.error("Error removing document: ", error);
+//     });
+// }
 
 
-//editar
-function editar(id,post){
-    document.getElementById('post').value = post;
+// //editar
+// function editar(id,post){
+//     document.getElementById('post').value = post;
 
-    let boton = document.getElementById('botonpostea');
-    boton.innerHTML = 'Editar';
+//     let boton = document.getElementById('botonpostea');
+//     boton.innerHTML = 'Editar';
 
-    boton.onclick = function () {
-        var Ref = db.collection("users").doc(id);
+//     boton.onclick = function () {
+//         var Ref = db.collection("users").doc(id);
 
-        let post = document.getElementById('post').value;
+//         let post = document.getElementById('post').value;
 
-        return Ref.update({
-            first: post
-        })
-            .then(function () {
-                console.log("ya subio");
-                boton.innerHTML = 'Comparte';
-            })
-            .catch(function (error) {
-                // The document probably doesn't exist.
-                console.error("Error updating document: ", error);
-            });
-    }
-}
+//         return Ref.update({
+//             first: post
+//         })
+//             .then(function () {
+//                 console.log("ya subio");
+//                 boton.innerHTML = 'Comparte';
+//             })
+//             .catch(function (error) {
+//                 // The document probably doesn't exist.
+//                 console.error("Error updating document: ", error);
+//             });
+//     }
+// }
 
- //div donde se registra el usuario
+//  //div donde se registra el usuario
 
 
 

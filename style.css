@@ -1,5 +1,7 @@
 body{ 
-    background-image: url(imagenes/captura.jpg);
+    background: url(imagenes/captura.jpg);
+    background-size: cover;
+    
  font-family: 'Amatic SC'; 
 padding: 0px;
     margin: 0px;
@@ -14,13 +16,9 @@ padding: 0px;
 
 .containerG {
 margin:0px;
-background-color:#FEFEFE;
 width: 100%;
 }
 
-#root{
-    background-color: #FEFEFE;
-}
 
 #data{
     display: none;
