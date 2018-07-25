@@ -4,25 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-  <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Your Website Title" />
-  <meta property="og:description" content="Your description" />
-  <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
-
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" href="style.css">
   <title>FreeW</title>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 </head>
-<body class="w3-theme-l5">    
+<body class="w3-theme-l5">
+    
   <div id="root">
     <div class="containerG">
       <div class="w3-container w3-teal">
@@ -48,9 +40,7 @@
                   <input id="email1" type="email" class="correo" placeholder="Username" ><br><br>
                   <input id="pass" type="password" placeholder="password" class="password"></input><br>
                   <button id="registrar" class="login">Registrarse</button><br>
-                  <p>LOG IN WITH</p><br>
-                  <button id="google1" class="btnSocialGoogle" ><img src="imagenes/gmail.png" class="imgLog"></button>
-                  <button id="facebook1" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
+
             </div>  
       </div>           
     </div>
@@ -99,7 +89,7 @@
                                   <div class="w3-container w3-padding">
                                     <h6 class="w3-opacity">Estado</h6>
                                     <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
-                                    <button id ='botonpostea' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+                                    <button id ='botonPostea' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
                                     <button class="w3-button w3-theme"><i class="fa fa-camera"></i>  Photo</button> 
                                      </div>
                                 </div>
@@ -161,8 +151,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-
-
+   
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -177,6 +166,7 @@
       firebase.initializeApp(config);
     </script>
     <script src='data.js'></script>
+
 </body>
 
 </html>
