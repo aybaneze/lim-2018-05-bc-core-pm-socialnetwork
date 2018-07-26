@@ -13,6 +13,18 @@ firebase.initializeApp({
     projectId: "nuestra-red-social"
 });
 
+var provider = new firebase.auth.GoogleAuthProvider();
+$('#google').click( () => {
+    firebase.auth().signInWithPopup(provider)
+        .then(function (result) {
+            console.log(result.user);
+            guardaDatos(result.user);
+            $('#root').hide();
+            window.location.href = 'indexMuro.html'
+            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
+            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
+        });
+})
 
 
 

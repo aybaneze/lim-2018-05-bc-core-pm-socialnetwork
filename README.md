@@ -67,7 +67,9 @@ El 25% Solo usa para chat.
 
 **PANTALLLA 1**
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch1.png)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch1.jpg)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch2.png)
+
 
 ## PROTOTIPO DE ALTA FIDELIDAD
 
@@ -76,6 +78,8 @@ El 25% Solo usa para chat.
 **PANTALLA 2**
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma1.png)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma2.png)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma3.png)
 
 a continuación el link del proyecto
 
