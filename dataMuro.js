@@ -4,6 +4,10 @@ firebase.initializeApp({
     projectId: "nuestra-red-social"
 });
 
+
+
+
+
 // Initialize Cloud Firestore through Firebase
 var db = firebase.firestore();
 
