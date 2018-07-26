@@ -30,7 +30,7 @@ $('#google').click( () => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').show()
+            window.location.href = 'indexMuro.html'
             $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
             $('#UserCount').append("<p>"+result.user.displayName+"</p>");
         });
@@ -47,7 +47,7 @@ $('#facebook').click(() => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').show(); 
+            window.location.href= 'indexMuro.html'
             $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
             $('#UserCount').append("<p>"+result.user.displayName+"</p>");
         });
@@ -61,7 +61,7 @@ $('#ingresa').click(()=>{
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
+            window.location.href = 'indexMuro.html'
 });
 })
 document.getElementById('registrar').addEventListener("click", loginEmail);
@@ -82,15 +82,7 @@ function loginEmail() {
         .catch(error => console.log(`Error ${error.code}:${error.message}`))
 }
 
-document.getElementById('cerrar').addEventListener("click", cerrar);
-function cerrar(){
-    firebase.auth().signOut()
-        .then(function result(){
-            console.log('saliendo...')
-            $('#data').hide();
-            $('#root').show();
-        });
-        } 
+
 
 var imagenes=new Array(
     ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
