@@ -1,3 +1,6 @@
+#cerrar{
+    display: none;
+}
 body{ 
     background: url(imagenes/captura.jpg);
     background-size: cover;
