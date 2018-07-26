@@ -1,3 +1,12 @@
+document.getElementById('botoncerrar').addEventListener("click", cerrar);
+function cerrar() {
+    firebase.auth().signOut()
+        .then(function result() {
+            console.log('saliendo...')
+            window.location.href = 'index.html'
+            $('#root').show();
+        });
+} 
 firebase.initializeApp({
     apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
     authDomain: "nuestra-red-social.firebaseapp.com",

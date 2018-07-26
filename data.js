@@ -28,9 +28,9 @@ $('#google').click( () => {
         .then(function (result) {
             console.log(result.user);
             guardaDatos(result.user);
-            $('#root').hide();        
-            window.location.href ="indexMuro.html"
-              $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
+            $('#root').hide();
+            window.location.href = 'indexMuro.html'
+            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
             $('#UserCount').append("<p>"+result.user.displayName+"</p>");
         });
 })
@@ -46,7 +46,7 @@ $('#facebook').click(() => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').show(); 
+            window.location.href= 'indexMuro.html'
             $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
             $('#UserCount').append("<p>"+result.user.displayName+"</p>");
         });
@@ -60,8 +60,7 @@ $('#ingresa').click(()=>{
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').show();
-            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='imagenes/sin_perfil.png'/>");
+            window.location.href = 'indexMuro.html'
 });
 })
 
@@ -83,15 +82,6 @@ function loginEmail() {
         .catch(error => console.log(`Error ${error.code}:${error.message}`))
 }
 
-document.getElementById('cerrar').addEventListener("click", cerrar);
-function cerrar(){
-    firebase.auth().signOut()
-        .then(function result(){
-            console.log('saliendo...')
-            $('#data').hide();
-            window.location.href ="index.html"
-        });
-        } 
 
 var imagenes=new Array(
     ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
