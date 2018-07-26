@@ -92,6 +92,7 @@ function cerrar(){
             $('#root').show();
         });
         } 
+<<<<<<< HEAD
 firebase.initializeApp({
     apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
     authDomain: "nuestra-red-social.firebaseapp.com",
@@ -184,6 +185,8 @@ function editar(id,post){
 
 //  Funcion para cambiar la imagen y link 
 function rotarImagenes(){
+=======
+>>>>>>> bca2d9780c8fadb3bbaa026d312660ef921208aa
 
 var imagenes=new Array(
     ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
