@@ -29,6 +29,32 @@ https://docs.google.com/forms/d/e/1FAIpQLSc0CZelFqq_H-9UH8oGG5wl5NcCAw0rl1tVbaXf
 
 #### Los Resultados Fueron los sgtes:
 
+ALgunas de las preguntas iniciales fueron:
+
+> ¿Cual es la red social que más usas?¿Porqué?
+
+![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/RedesSociales.png)
+
+> ¿Con que frecuencia usas las redes sociales?
+
+El 70% usan de manera Diaria las redes Sociales
+
+El 20% usa de manera interdiaria las redes Sociales
+
+El 10% usa solo los fines de semana las redes sociales
+
+> ¿Que es lo que haces mayormente al conectarte en una red social?
+
+El 30% solo comparte la información que ve de otros usuarios.
+
+El 45% realiza sus propios post.
+
+El 25% Solo usa para chat.
+ 
+> ¿sueles unirte a comunidades en Redes sociales?¿Por que motivo?
+
+> ¿Haz escuchado sobre ni Una Menos?¿Que piensas sobre ello?
+
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico1.png)
 ![grafico2](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico2.png)
 ![grafico3](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico3.png)
@@ -36,7 +62,8 @@ https://docs.google.com/forms/d/e/1FAIpQLSc0CZelFqq_H-9UH8oGG5wl5NcCAw0rl1tVbaXf
 
 ## Sketch
 
->Para poder guiarnos con el prototipo decidimos primero realizar el Sketch, para añadir botonos y cajas de texto para el registro del usuario.
+> Para poder guiarnos con el prototipo decidimos primero realizar el Sketch, para añadir botonos y cajas de texto para el registro del usuario.
+
 
 **PANTALLLA 1**
 
