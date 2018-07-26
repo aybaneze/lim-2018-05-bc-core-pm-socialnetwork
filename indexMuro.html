@@ -10,38 +10,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
   <title>FreeW</title>
-
+  <!-- firestore -->
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 </head>
 <body class="w3-theme-l5">
-    
-  <div id="root">
-    <div class="containerG">
-
-        <a href="" id="link"><img src="" id="imagen"></a>            
-      <div id="prueba">
-          <ul class="tab-group"> 
-              <li class="active" id="ingreso"><a href="#signup">Sign Up</a></li>
-              <li class="tab"  id="register"><a href="#login">Log In</a></li>
-          </ul><br>                  
-             <div id='inForm'>              
-                  <h1>Sign Up for FreeW!</h1>
-                  <input id="email" type="email" class="correo" placeholder="Username" ><br><br>
-                  <input id="contrasena" type="password" placeholder=" password" class="password"><br>
-                  <button id='ingresa' class="login">Get Started</button><br>
-                  <p>Sign Up with</p><br>
-                  <button id="google" class="btnSocialGoogle"><img src="imagenes/gmail.png" class="imgLog"> </button> 
-                  <button id="facebook" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
-            </div> 
-            <div id="outForm" class="form">
-                  <h1>Log in for FreeW!</h1>
-                  <input id="email1" type="email" class="correo" placeholder="Username" ><br><br>
-                  <input id="pass" type="password" placeholder="password" class="password"></input><br>
-                  <button id="registrar" class="login">Registrarse</button><br>
-
-            </div>  
-      </div>           
-    </div>
-  </div>  
               
      <div id='data'>
                     <div class="w3-container w3-teal w3-top" style="float:right">
@@ -86,7 +59,7 @@
                                   <div class="w3-container w3-padding">
                                     <h6 class="w3-opacity">Estado</h6>
                                     <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
-                                    <button id ='botonPostea' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+                                    <button id ='boton' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
                                     <button class="w3-button w3-theme"><i class="fa fa-camera"></i>  Photo</button> 
                                      </div>
                                 </div>
@@ -149,20 +122,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
    
-    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
-        authDomain: "nuestra-red-social.firebaseapp.com",
-        databaseURL: "https://nuestra-red-social.firebaseio.com",
-        projectId: "nuestra-red-social",
-        storageBucket: "nuestra-red-social.appspot.com",
-        messagingSenderId: "202930589167"
-      };
-      firebase.initializeApp(config);
-    </script>
-    <script src='data.js'></script>
+    <script src='dataMuro.js'></script>
 
 </body>
 
