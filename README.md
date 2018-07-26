@@ -64,21 +64,29 @@ El 25% Solo usa para chat.
 
 > Para poder guiarnos con el prototipo decidimos primero realizar el Sketch, para añadir botonos y cajas de texto para el registro del usuario.
 
-
-**PANTALLLA 1**
+**PANTALLA 1 / MÓVIL** 
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch1.jpg)
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch2.png)
+
+**PANTALLA 1 / MONITOR** 
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch2.jpg)
+
 
 
 ## PROTOTIPO DE ALTA FIDELIDAD
 
 >Este prototipo se realizo con Figma.
 
-**PANTALLA 2**
+**PANTALLA 1 / MÓVIL** 
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma1.png)
+
+**PANTALLA 1 / MONITOR** 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma2.png)
+
+**PANTALLA 2 / MONITOR** 
+
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma3.png)
 
 a continuación el link del proyecto
