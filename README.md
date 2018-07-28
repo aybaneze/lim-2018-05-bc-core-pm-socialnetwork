@@ -70,7 +70,7 @@ El 25% Solo usa para chat.
 
 **PANTALLA 1 / MONITOR** 
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch2.jpg)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch2.jpeg)
 
 
 

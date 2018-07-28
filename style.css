@@ -1,3 +1,6 @@
+#titulo{
+    width: 20%;
+}
 #cerrar{
     display: none;
 }
@@ -106,9 +109,8 @@ background-color:#b1fdce;
 #prueba{
         
     height: 500px;
-    max-width: 400px;
-    padding: 10px; 
-    margin: 30px 100px;
+    max-width: 400%;
+    margin:  100px;
     border-radius: 15px;
     float: right;
     text-align: center;
@@ -145,7 +147,7 @@ section{
 
 #content{
     height: 400px;
-    width: 700px;
+    max-width: 600px;
 }
 
 aside{

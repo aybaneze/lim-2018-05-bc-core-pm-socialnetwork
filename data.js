@@ -65,18 +65,22 @@ document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
     const email1 = document.getElementById("email1").value;
     const pass = document.getElementById("pass").value;
-
+if(/^[a-z-0-9]+@+[a-z]+.+[a-z]/.test(email1)){
     firebase.auth().createUserWithEmailAndPassword(email1, pass)
         .then(result => {
             const user = firebase.auth().currentUser;
             user.sendEmailVerification().then(function () {
                 // enviando Email
                 console.log('enviando correo---')
+                alert("Ya estas registradx!");
             }).catch(function (error) {
                 console.log(error)
             });
         })
         .catch(error => console.log(`Error ${error.code}:${error.message}`))
+    }else{
+        alert("correo electronico incorrecto");
+    }
 }
 
 
