@@ -44,28 +44,35 @@ $('#facebook').click(() => {
             guardaDatos(result.user);
             $('#root').hide();
             window.location.href= 'indexMuro.html'
-            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
-            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
+           
         });
 })
 
 $('#ingresa').click(()=>{
     const emailIngreso = document.getElementById("email").value;
     const contrasenaIngreso = document.getElementById("contrasena").value;
+    if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(emailIngreso)){
     firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
         .then(function (result) {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            window.location.href = 'indexMuro.html'
-});
-})
+            window.location.href = 'indexMuro.html';
+
+        
+}).catch(function (error) {
+    alert("contraseña incorrecta");
+});}
+else{
+    alert("correo electronico incorrecto");
+}
+        })
 
 document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
     const email1 = document.getElementById("email1").value;
     const pass = document.getElementById("pass").value;
-if(/^[a-z-0-9]+@+[a-z]+.+[a-z]/.test(email1)){
+if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email1)){
     firebase.auth().createUserWithEmailAndPassword(email1, pass)
         .then(result => {
             const user = firebase.auth().currentUser;

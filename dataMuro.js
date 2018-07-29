@@ -38,7 +38,6 @@ db.collection("users").onSnapshot((querySnapshot) => {
     console.log(querySnapshot)
     content.innerHTML = '';
     querySnapshot.forEach((doc) => {
-        console.log(doc)
         content.innerHTML +=`
            <div id=${doc.id}></div>  
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
