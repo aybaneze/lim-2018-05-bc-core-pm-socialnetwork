@@ -92,10 +92,10 @@ if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email1)){
 
 
 var imagenes=new Array(
-    ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
-    ['imagenes/frase2.png','http://www.lawebdelprogramador.com/foros/'],
-    ['imagenes/frase3.png','http://www.lawebdelprogramador.com/pdf/'],
-    ['imagenes/frase4.png','http://www.lawebdelprogramador.com/pdf/'],
+    ['imagenes/frase1.png','https://es.wikipedia.org/wiki/Ni_una_menos'],
+    ['imagenes/frase2.png','https://es.wikipedia.org/wiki/Ni_una_menos'],
+    ['imagenes/frase3.png','https://es.wikipedia.org/wiki/Ni_una_menos'],
+    ['imagenes/frase4.png','https://es.wikipedia.org/wiki/Ni_una_menos'],
 );
 
    // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
