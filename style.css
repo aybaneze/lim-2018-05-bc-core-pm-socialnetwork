@@ -1,6 +1,6 @@
 
 #perfil{
-     margin-right:20px;
+     margin:25px;
 }
 #titulo{
     width: 20%;
@@ -21,9 +21,11 @@ color:white;
 }
 #fecha{
     color: white;
+    margin-bottom: 20px;
 }
 #ciudad{
     color:white;
+  
 }
 
 .frase{
@@ -62,7 +64,7 @@ width: 100%;
         margin-right: 30px;
         margin-top: 5px;
         max-width:200px;
-        width: 1;
+        width: 150px;
         margin-top: 5px;
         height: 50px;
        
@@ -147,27 +149,27 @@ margin-top: 50px;
 
 section{    
      float: left;
-     width: 50%;
-     margin-top: 60px;
+     width: 60%;
+     margin-top: 30px;
     
     }
 
 #content{
     height: 400px;
-    max-width: 600px;
+    width: 100%;
 }
 
 aside{
     width: 270px;
     float: left;
     padding: 0px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 #aside1{
     float: left;
     width: 250px;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 10px;
 
 }
