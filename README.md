@@ -102,3 +102,4 @@ El 25% Solo usa para chat.
 
 a continuación el link del proyecto
 
+https://aybaneze.github.io/lim-2018-05-bc-core-pm-socialnetwork/
