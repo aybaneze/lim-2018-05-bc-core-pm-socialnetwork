@@ -20,7 +20,9 @@ function guardar() {
 
     let post = document.getElementById('post').value;
     db.collection("users").add({
-        first: post
+        first: post,
+        
+    
     })
         .then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);
