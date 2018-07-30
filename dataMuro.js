@@ -38,11 +38,10 @@ db.collection("users").onSnapshot((querySnapshot) => {
     console.log(querySnapshot)
     content.innerHTML = '';
     querySnapshot.forEach((doc) => {
-        console.log(doc)
         content.innerHTML +=`
            <div id=${doc.id}></div>  
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                <img src="imagenes/sin_perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <img src="imagenes/perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
                 <span class="w3-right w3-opacity">16 min</span>
                 <h4>Andrea Ybañez</h4><br>
                 <div>${doc.data().first}</div>

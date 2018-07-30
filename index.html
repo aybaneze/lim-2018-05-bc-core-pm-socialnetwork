@@ -17,7 +17,6 @@
     
   <div id="root">
     <div class="containerG">
-        <img src="/imagenes/titulo.png" id='titulo'>
         <a href="" id="link"><img src="" id="imagen"></a>    
         
       <div id="prueba">
@@ -30,8 +29,8 @@
              <div id='inForm'>       
 
                   <h1>Sign Up for FreeW!</h1>
-                  <input id="email" type="email" class="correo" placeholder="Username" ><br><br>
-                  <input id="contrasena" type="password" placeholder=" password" class="password"><br>
+                  <input id="email" type="email" class="correo" placeholder="Username" required ><br><br>
+                  <input id="contrasena" type="password" placeholder=" password" class="password" required><br>
                   <button id='ingresa' class="login">Get Started</button><br>
                   <p>Sign Up with</p><br>
                   <button id="google" class="btnSocialGoogle"> <a href="indexMuro.html"><img src="imagenes/gmail.png" class="imgLog"> </button></a>
@@ -42,7 +41,6 @@
                   <input id="email1" type="email" class="correo" placeholder="Username" ><br><br>
                   <input id="pass" type="password" placeholder="password" class="password"></input><br>
                   <button id="registrar" class="login">Registrarse</button><br>
-
             </div>  
             
       </div>    
@@ -71,6 +69,7 @@
       firebase.initializeApp(config);
     </script>
     <script src='data.js'></script>
+    <script src='dataMuro.js'></script>
 
 </body>
 
