@@ -100,6 +100,11 @@ El 25% Solo usa para chat.
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma3.png)
 
+**PANTALLA 2 / MONITOR** 
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma4.png)
+
+
 a continuación el link del proyecto
 
 https://aybaneze.github.io/lim-2018-05-bc-core-pm-socialnetwork/
