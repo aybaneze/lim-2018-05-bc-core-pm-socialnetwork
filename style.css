@@ -1,12 +1,4 @@
-#pencil{
-color:white;
-}
-#fecha{
-    color: white;
-}
-#ciudad{
-    color:white;
-}
+
 #perfil{
      margin-right:20px;
 }
@@ -24,7 +16,15 @@ body{
 padding: 0px;
     margin: 0px;
 }
-
+#pencil{
+color:white;
+}
+#fecha{
+    color: white;
+}
+#ciudad{
+    color:white;
+}
 
 .frase{
     margin-top: 100px;
