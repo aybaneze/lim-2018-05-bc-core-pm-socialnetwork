@@ -59,10 +59,6 @@ El 25% Solo usa para chat.
  
 > ¿sueles unirte a comunidades en Redes sociales?¿Por que motivo?
 
-
-
-> ¿Haz escuchado sobre ni Una Menos?¿Que piensas sobre ello?
-
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico1.png)
 ![grafico2](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico2.png)
 ![grafico3](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico3.png)
@@ -91,7 +87,7 @@ El 25% Solo usa para chat.
 
 **PANTALLA 1 / MÓVIL** 
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma1.png)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/figma1.png)
 
 **PANTALLA 1 / MONITOR** 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma2.png)
@@ -102,7 +98,7 @@ El 25% Solo usa para chat.
 
 **PANTALLA 2 / MONITOR** 
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma4.png)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/figma4.png)
 
 
 a continuación el link del proyecto

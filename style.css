@@ -189,17 +189,17 @@ li a {
         transition:.5s ease;
 }
 li a:hover {
-          background:#D4FA88;
+          background:#19ff66;
           color:#fffFff;
         
       }
 .active a {
-        background:#A0F100;
+        background:rgb(96, 240, 168);
         color:#fffFff;
 }
 
 .tab a{
-    background:#D4FA88;
+    background:#19ff66;
 }
     .correo {
         color:#504f4f;
@@ -226,7 +226,7 @@ li a:hover {
             border-radius:0;
             padding:15px 0;
             font-size:20px;
-            background:#B9F441;
+            background:#19ff66;
             color: #ffffff;
             width: 50%;
             margin: 15px;
