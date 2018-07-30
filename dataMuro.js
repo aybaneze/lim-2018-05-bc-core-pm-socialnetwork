@@ -41,7 +41,10 @@ db.collection("users").onSnapshot((querySnapshot) => {
         content.innerHTML +=`
            <div id=${doc.id}></div>  
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                <img src="imagenes/perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <img src="imagenes/perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px" onclick="document.getElementById('modal01').style.display='block'">
+                <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+                          <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/perfil.png">
+                      </div>
                 <span class="w3-right w3-opacity">16 min</span>
                 <h4>Andrea Ybañez</h4><br>
                 <div>${doc.data().first}</div>
