@@ -51,10 +51,10 @@ db.collection("users").onSnapshot((querySnapshot) => {
                 <h4>Andrea Ybañez</h4><br>
                 <div>${doc.data().first}</div>
                 <hr class="w3-clear">
-                <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-                <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')">Elimina</button>           
-                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
+                <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Me Gusta</button> 
+                <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> Comentar</button> 
+                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')"><i class="fa fa-close"></i> Elimina</button>           
+                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')"><i class="fa fa-pencil"></i> Editar</button>
                 </div> 
                 </div><br>`
     });
