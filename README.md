@@ -60,7 +60,7 @@ El 25% Solo usa para chat.
 > ¿sueles unirte a comunidades en Redes sociales?¿Por que motivo?
 
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico1.png)
-![grafico2](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico2.png)
+![grafico2](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Fotos_Encuesta/grafico2.png)
 ![grafico3](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico3.png)
 ![grafico4](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico4.png)
 
