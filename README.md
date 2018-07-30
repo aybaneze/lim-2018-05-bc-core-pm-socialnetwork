@@ -1,4 +1,4 @@
-# FREEW!
+# RED SOCIAL - FREEW!
 
 ## Preámbulo
 Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes sociales han invadido nuestras vidas. Las amamos u odiamos, y muchxs no podemos vivir sin ellas.
@@ -14,7 +14,12 @@ Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle 
 >- Salud
 >- Energías Renovables
 
-El tema que hemos elegido para el proyecto es el **Feminismo**, como bien sabemos es un tema que genera un fuerte impacto en la sociedad actualmente, sin embargo las más interesadas en este movimiento por la igualdad de derechos son las mujeres, Ellas son las principales usuarias en la cual nos enfocaremos.
+
+Para definir el tema, se realizo una encuesta y a medida que los usuarios iban respondiendola, se llego a definir el tema más relevantes. A continuación un gráfico de los resultados.
+
+![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/temas.png)
+
+El tema más votado fue **Feminismo**, como bien sabemos es un tema que genera un fuerte impacto en la sociedad actualmente, sin embargo las más interesadas en este movimiento por la igualdad de derechos son las mujeres, Ellas son las principales usuarias en la cual nos enfocaremos.
 
 ### Feminismo
 El feminismo lucha contra el heteropatriarcado, una corriente social en la que todos participamos con pequeños actos que nos han enseñado a lo largo de los años y que sitúan a los hombres con más derechos, oportunidades o seguridad que las mujeres. De ahí que aún haya gente que no vea mal acosar o maltratar a las mujeres. No hay más que ver los casos de violencia doméstica en los que hay muertes o la cantidad de mujeres violadas a lo largo y ancho del mundo.
@@ -22,6 +27,7 @@ El feminismo lucha contra el heteropatriarcado, una corriente social en la que t
 ![](http://sv.emedemujer.com/wp-content/uploads/sites/14/2017/03/FEMINISMO.jpg)
 
 ## Entrevista A Usuarios
+
 Para poder tener más información de acuerdo a lo que nos vamos a enfocar, hemos realizado entrevistas a diversos usuarios y asi recolectar la información necesaria para poder realizar las primeras tareas, usamos **Google Form** para asi compartirlo por otras redes sociales, grupos entre otros.
 
 > A continuación el link de nuestro formulario:
@@ -29,26 +35,70 @@ https://docs.google.com/forms/d/e/1FAIpQLSc0CZelFqq_H-9UH8oGG5wl5NcCAw0rl1tVbaXf
 
 #### Los Resultados Fueron los sgtes:
 
+ALgunas de las preguntas iniciales fueron:
+
+> ¿Cual es la red social que más usas?¿Porqué?
+
+![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/RedesSociales.png)
+
+> ¿Con que frecuencia usas las redes sociales?
+
+El 70% usan de manera Diaria las redes Sociales
+
+El 20% usa de manera interdiaria las redes Sociales
+
+El 10% usa solo los fines de semana las redes sociales
+
+> ¿Que es lo que haces mayormente al conectarte en una red social?
+
+El 30% solo comparte la información que ve de otros usuarios.
+
+El 45% realiza sus propios post.
+
+El 25% Solo usa para chat.
+ 
+> ¿sueles unirte a comunidades en Redes sociales?¿Por que motivo?
+
+
+
+> ¿Haz escuchado sobre ni Una Menos?¿Que piensas sobre ello?
+
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico1.png)
 ![grafico2](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico2.png)
 ![grafico3](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico3.png)
 ![grafico4](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico4.png)
 
+
+
+
 ## Sketch
 
->Para poder guiarnos con el prototipo decidimos primero realizar el Sketch, para añadir botonos y cajas de texto para el registro del usuario.
+> Para poder guiarnos con el prototipo decidimos primero realizar el Sketch, para añadir botonos y cajas de texto para el registro del usuario.
 
-**PANTALLLA 1**
+**PANTALLA 1 / MÓVIL** 
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch1.png)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch1.jpg)
+
+**PANTALLA 1 / MONITOR** 
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/sketch2.jpeg)
+
+
 
 ## PROTOTIPO DE ALTA FIDELIDAD
 
 >Este prototipo se realizo con Figma.
 
-**PANTALLA 2**
+**PANTALLA 1 / MÓVIL** 
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma1.png)
+
+**PANTALLA 1 / MONITOR** 
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma2.png)
+
+**PANTALLA 2 / MONITOR** 
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Sketch/figma3.png)
 
 a continuación el link del proyecto
 
