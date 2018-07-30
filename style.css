@@ -1,3 +1,7 @@
+
+#perfil{
+     margin-right:20px;
+}
 #titulo{
     width: 20%;
 }
@@ -5,14 +9,22 @@
     display: none;
 }
 body{ 
-    background: url(imagenes/captura.jpg);
+    background: url(imagenes/Captura.jpg);
     background-size: cover;
     
  font-family: 'Amatic SC'; 
 padding: 0px;
     margin: 0px;
 }
-
+#pencil{
+color:white;
+}
+#fecha{
+    color: white;
+}
+#ciudad{
+    color:white;
+}
 
 .frase{
     margin-top: 100px;
@@ -50,7 +62,7 @@ width: 100%;
         margin-right: 30px;
         margin-top: 5px;
         max-width:200px;
-        width: 150px;
+        width: 1;
         margin-top: 5px;
         height: 50px;
        
