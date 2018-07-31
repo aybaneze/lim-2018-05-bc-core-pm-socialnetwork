@@ -115,11 +115,12 @@ El 25% Solo usa para chat.
 
 **PANTALLA DE REGISTRO**
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/imagenes/userTesting.png)
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting.png)
 
 **PANTALLA DE iNICIO DE SESIÓN**
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/imagenes/userTesting1.png) 
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting1.png) 
+
 
 
 
