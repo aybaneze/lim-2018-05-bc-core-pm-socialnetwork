@@ -1,12 +1,11 @@
 # RED SOCIAL - FREEW!
 
 ## Preámbulo
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes sociales han invadido nuestras vidas. Las amamos u odiamos, y muchxs no podemos vivir sin ellas.
+En la actualidad existen muchas maneras de comunicarse, ya sea por llamadas, mensajes de texto, video llamadas, y algo que abarca a todo lo mencionado son las "Redes Sociales", a medida que van pasando los años se puede realizar más acciones en ellas. tal es el ejemplo de facebook, Instagram, Telegram, Twitter entre otras. Estás implementan más funcionalidades que el usuario requiere.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo, en una ronda de financiamiento con inversionistas, se presentó una red social para químicos en la que los usuarios podían publicar artículos sobre sus investigaciones, comentar en los artículos de sus colegas, y filtrar artículos de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo más comentado.
 
 ## Introducción
-Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle sobre qué tipo de red social quiere, sólo nos dice que creemos la mejor que podamos, y que luego la convenzamos de lanzarla al mercado. Nos da ciertos temas en los que le gustaría invertir:
+En el presente proyecto se tomo el caso de una emprendedora por la cual nos ha encargado crear una red social. No nos da mucho detalle sobre qué tipo de red social quiere, sólo nos dice que creemos la mejor que podamos, y que luego la convenzamos de lanzarla al mercado. Nos da ciertos temas en los que le gustaría invertir:
 
 >- Alimentación
 >- Feminismo
@@ -14,24 +13,44 @@ Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle 
 >- Salud
 >- Energías Renovables
 
-
-Para definir el tema, se realizo una encuesta y a medida que los usuarios iban respondiendola, se llego a definir el tema más relevantes. A continuación un gráfico de los resultados.
+Considerando de que nuestra cliente no tenia un tema definido y tomando como punto de partida las opiniones de nuestros usuarios, decidimos hacer una encuesta que nos permita definir el tema a tocar en la red social. Posterior a ello se llego a definir el tema más relevantes. A continuación un gráfico de los resultados.
 
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/temas.png)
 
-El tema más votado fue **Feminismo**, como bien sabemos es un tema que genera un fuerte impacto en la sociedad actualmente, sin embargo las más interesadas en este movimiento por la igualdad de derechos son las mujeres, Ellas son las principales usuarias en la cual nos enfocaremos.
+El tema más votado fue **Feminismo**, como bien sabemos es un tema que genera un fuerte impacto en la sociedad actualmente, sin embargo las más interesadas en este movimiento por la igualdad de derechos son las mujeres.
 
 ### Feminismo
 El feminismo lucha contra el heteropatriarcado, una corriente social en la que todos participamos con pequeños actos que nos han enseñado a lo largo de los años y que sitúan a los hombres con más derechos, oportunidades o seguridad que las mujeres. De ahí que aún haya gente que no vea mal acosar o maltratar a las mujeres. No hay más que ver los casos de violencia doméstica en los que hay muertes o la cantidad de mujeres violadas a lo largo y ancho del mundo.
 
-![](http://sv.emedemujer.com/wp-content/uploads/sites/14/2017/03/FEMINISMO.jpg)
+Es por ello que se eligio el siguiente logo como representación de la Libertad por lo que tanto luchamos. 
 
-## Entrevista A Usuarios
+![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/imagenes/logoWeb.png)
 
-Para poder tener más información de acuerdo a lo que nos vamos a enfocar, hemos realizado entrevistas a diversos usuarios y asi recolectar la información necesaria para poder realizar las primeras tareas, usamos **Google Form** para asi compartirlo por otras redes sociales, grupos entre otros.
+# UX
+
+Al realizar las encuestas reflejamos en las respuestas que aproximadamente el 85.7% les intereso el tema del feminismo, además que se tomarón el tiempo de dejar sus telefonos para poder contactarlas y realizar las entrevistas. Ellas son las principales usuarias en la cual nos enfocaremos.
+
+usamos **Google Form** para asi compartirlo por otras redes sociales, grupos entre otros.
+
+![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico1.png)
+
+
+![grafico2](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Fotos_Encuesta/grafico2.png)
+
+
+![grafico3](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico3.png)
+
+
+![grafico4](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico4.png)
+
 
 > A continuación el link de nuestro formulario:
 https://docs.google.com/forms/d/e/1FAIpQLSc0CZelFqq_H-9UH8oGG5wl5NcCAw0rl1tVbaXfcXj_JgyRxw/viewform?usp=send_form
+
+## Entrevista A Usuarios
+
+Para poder tener más información de acuerdo a lo que nos vamos a enfocar, hemos realizado entrevistas a diversos usuarios que dejaron sus datos en la anterior encuesta y asi recolectar la información necesaria para poder realizar las primeras tareas. 
+
 
 #### Los Resultados Fueron los sgtes:
 
@@ -58,20 +77,6 @@ El 45% realiza sus propios post.
 El 25% Solo usa para chat.
  
 > ¿sueles unirte a comunidades en Redes sociales?¿Por que motivo?
-
-![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico1.png)
-
-
-![grafico2](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Fotos_Encuesta/grafico2.png)
-
-
-![grafico3](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico3.png)
-
-
-![grafico4](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico4.png)
-
-
-
 
 ## Sketch
 
@@ -105,6 +110,11 @@ El 25% Solo usa para chat.
 **PANTALLA 2 / MONITOR** 
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/figma4.png)
+
+## TESTING CON USUARIOS
+
+
+
 
 
 a continuación el link del proyecto

@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
@@ -13,43 +16,115 @@
  
 </head>
 
-<body class="w3-theme-l5">
-    
-    
+<body>   
   <div id="root">
     <div class="containerG">
-        <a href="" id="link"><img src="" id="imagen"></a>    
+        <div id="myCarousel" class="carousel slide w3-hide-medium w3-hide-small" data-ride="carousel" >
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+          
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" class="carrusel" role="listbox">
+              <div class="item active">
+                <img class="carrusel" src="imagenes/imagen1.jpg" alt="feminismo" style="width:100%;height:100%;">
+                <div class="carousel-caption">
+                  <h3>Freew!</h3>
+                </div>
+              </div>
+          
+              <div class="item">
+                <img class="carrusel" src="imagenes/imagen2.jpg" alt="feminismo" style="width:100%;height:100%;">
+                <div class="carousel-caption">
+                  <h3>FreeW!</h3>
+                </div>
+              </div>
+          
+              <div class="item">
+                <img  class="carrusel" src="imagenes/imagen3.jpg" alt="feminismo" style="width:100%; height:100%;">
+                <div class="carousel-caption">
+                    <h3>FreeW!</h3>
+                </div>
+              </div>
+          
+              <div class="item">
+                <img  class="carrusel" src="imagenes/imagen4.jpg" alt="feminismo" style="width:100%;height:100%;">
+                <div class="carousel-caption">
+                    <h3>FreeW!</h3>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+
         
-      <div id="prueba">
+      <div class="prueba">
+        
+          <img src="imagenes/logoWeb.png" >
         
           <ul class="tab-group"> 
-              <li class="active" id="ingreso"><a href="#signup">Sign Up</a></li>
-              <li class="tab"  id="register"><a href="#login">Log In</a></li>
+              <li class="active" id="ingreso"><a href="#signup" onclick="document.getElementById('Signin').style.display='block'">Iniciar Sesión</a></li>
+              
+              <div id="Signin" class="w3-modal w3-animate-zoom w3-card-4" class="prueba" onclick="this.style.display='none'">
+                  <div class="modals" >  
+                 <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+                 <img src="imagenes/logoWeb.png" > 
+                 <form action="">
+                <label >Correo Electronico:</label>
+                <input id="email" class=" w3-border w3-margin-bottom" type="email"required><br><br>
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" type="password" placeholder="Contraseña" class=" w3-border password" required><br>
+                <button id='ingresa' class="login">Conectarme</button><br>
+                <p>Inicia Sesión con: </p><br>
+                <button id="google" class="btnSocialGoogle"> <a href="indexMuro.html"><img src="imagenes/gmail.png" class="imgLog"> </button></a>
+                <button id="facebook" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
+                <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Recordar Contraseña
+              </form>
+              </div>   
+          </div> 
+              <li class="tab"  id="register"><a href="#login" onclick="document.getElementById('Signup').style.display='block'">Registrarse</a></li>
+              <div id="Signup" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+                <div class="modals" >  
+                <img src="imagenes/logoWeb.png" >
+                <h1> Registrate</h1>
+                <form action="">
+                  <label for="">Nombres</label>
+                  <input id="name" type="text" class=" w3-border correo" placeholder="name" ><br><br>
+                  <label for="">Correo Electronico</label>
+                  <input id="email1" type="email" class=" w3-border correo" placeholder="correo Electronico" ><br><br>
+                  <label for="">Contraseña</label>
+                  <input id="pass" type="password" placeholder="password" class=" w3-border password"></input><br>
+                  <button id="registrar" class="login">Registrarme</button><br>
+                </form>
+              
+            </div>
           </ul><br>    
                         
-             <div id='inForm'>       
+           
 
-                  <h1>Sign Up for FreeW!</h1>
-                  <input id="email" type="email" class="correo" placeholder="Username" required ><br><br>
-                  <input id="contrasena" type="password" placeholder=" password" class="password" required><br>
-                  <button id='ingresa' class="login">Get Started</button><br>
-                  <p>Sign Up with</p><br>
-                  <button id="google" class="btnSocialGoogle"> <a href="indexMuro.html"><img src="imagenes/gmail.png" class="imgLog"> </button></a>
-                  <button id="facebook" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
-            </div> 
-            <div id="outForm" class="form">
-                  <h1>Log in for FreeW!</h1>
-                  <input id="email1" type="email" class="correo" placeholder="Username" ><br><br>
-                  <input id="pass" type="password" placeholder="password" class="password"></input><br>
-                  <button id="registrar" class="login">Registrarse</button><br>
-            </div>  
+            </div>
             
       </div>    
     </div>
   </div>  
-              
-                  
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>                  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
    
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
