@@ -131,7 +131,7 @@ Por ello se les propuso **FreeW!** Una red social En la cual podran compartir cu
 
 **PANTALLA MURO**
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting1.png) 
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting2.png) 
 
 
 
