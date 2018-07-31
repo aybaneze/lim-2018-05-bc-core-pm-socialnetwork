@@ -21,8 +21,6 @@ function guardaDatos(user) {
         .set(usuario)
 }
 
-
-
 var provider = new firebase.auth.GoogleAuthProvider();
 $('#google').click( () => {
     firebase.auth().signInWithPopup(provider)
@@ -30,9 +28,7 @@ $('#google').click( () => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').show()
-            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
-            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
+            window.location.href = 'indexMuro.html'
         });
 })
 
@@ -47,40 +43,53 @@ $('#facebook').click(() => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').show(); 
-            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
-            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
+            window.location.href= 'indexMuro.html'
+           
         });
 })
 
 $('#ingresa').click(()=>{
     const emailIngreso = document.getElementById("email").value;
     const contrasenaIngreso = document.getElementById("contrasena").value;
+    if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(emailIngreso)){
     firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
         .then(function (result) {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
-});
-})
+            window.location.href = 'indexMuro.html';
+
+        
+}).catch(function (error) {
+    alert("contraseña incorrecta");
+});}
+else{
+    alert("correo electronico incorrecto");
+}
+        })
+
 document.getElementById('registrar').addEventListener("click", loginEmail);
 function loginEmail() {
     const email1 = document.getElementById("email1").value;
     const pass = document.getElementById("pass").value;
-
+if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email1)){
     firebase.auth().createUserWithEmailAndPassword(email1, pass)
         .then(result => {
             const user = firebase.auth().currentUser;
             user.sendEmailVerification().then(function () {
                 // enviando Email
                 console.log('enviando correo---')
+<<<<<<< HEAD
                 guardaDatos(result.user);
+=======
+                alert("Ya estas registradx!");
+>>>>>>> e53a149869334e8fb5f4bf7500a7e281e70a66e7
             }).catch(function (error) {
                 console.log(error)
             });
         })
         .catch(error => console.log(`Error ${error.code}:${error.message}`))
+<<<<<<< HEAD
 }
 
 document.getElementById('cerrar').addEventListener("click", cerrar);
@@ -224,6 +233,13 @@ function cerrar(){
 
 
 
+=======
+    }else{
+        alert("correo electronico incorrecto");
+    }
+}
+
+>>>>>>> e53a149869334e8fb5f4bf7500a7e281e70a66e7
 
 var imagenes=new Array(
     ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
@@ -231,14 +247,13 @@ var imagenes=new Array(
     ['imagenes/frase3.png','http://www.lawebdelprogramador.com/pdf/'],
     ['imagenes/frase4.png','http://www.lawebdelprogramador.com/pdf/'],
 );
-//  Funcion para cambiar la imagen y link 
-function rotarImagenes()
-{   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
+
+   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
     var index=Math.floor((Math.random()*imagenes.length));
     // cambiamos la imagen y la url
     document.getElementById("imagen").src=imagenes[index][0];
     document.getElementById("link").href=imagenes[index][1];
-}
+
 // Función que se ejecuta una vez cargada la página
 onload= function()
 {

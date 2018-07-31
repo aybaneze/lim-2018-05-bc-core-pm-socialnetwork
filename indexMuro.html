@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>FreeW</title>
+  <!-- firestore -->
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+</head>
+<body class="w3-theme-l5">
+              
+     <div id='data'>
+                    <div class="w3-container w3-teal w3-top" style="float:right">
+                             <a href="#" class="w3-bar-item w3-button w3-hover-white" title="friends"><i class="fa fa-group" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">1</span></a>
+                             <a href="#" class="w3-bar-item w3-button w3-hover-white" title="Messages"><i class="fa fa-comments" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">10</span></a>
+                             <button   class="w3-button" title="Notifications"><i class="fa fa-bell" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">3</span></button>
+                             <div class="w3-dropdown-hover">                                   
+                               <button   class="w3-button w3-padding-large"  title="Notifications"><i class="fa fa-th-list" style="font-size:36px;"></i></button>
+                               <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
+                                 <a href="#" class="w3-bar-item w3-button">Profile</a>
+                                 <a href="#" class="w3-bar-item w3-button">Settings</a>
+                                 <a href="#" class="w3-bar-item w3-button">Help me!</a>
+                                 <button  id="botoncerrar" class="w3-button w3-padding-large w3-hide-small" title="Cerrar Sesión" class="w3-bar-item w3-button"><i class="fa fa-close"></i>Salir</button> 
+                               </div>
+                            </div>
+                           </div>              
+        <div class="container2">
+         <aside class="w3-hide-small">
+          <div class="w3-container w3-content" style="max-width:1400px;margin-top:5px">    
+                    <!-- Profile -->
+                    <div class="w3-card w3-round w3-white">
+                      <div class="w3-container">
+                       <h4 class="w3-center">My Profile</h4>
+                       <h4><span id="UserCount"></span></h4>
+                       <img src="imagenes/perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:100px"></p><br>
+                        <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+                          <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/perfil.png">
+                      </div>
+                     
+                       <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+                       <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+                       <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+                    </div>
+                  </div>
+                  <br>
+      </aside>
+      <section>  
+
+                    <div class="postea" class="w3-col m7">
+                            <div class="w3-row-padding">
+                                <div class="w3-card w3-round w3-white">
+                                  <div class="w3-container w3-padding">
+                                    <h6 class="w3-opacity">Estado</h6>
+                                    <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
+                                    <button id ='boton' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+                                    <button class="w3-button w3-theme"><i class="fa fa-camera"></i>  Photo</button> 
+                                     </div>
+                                </div>
+                            </div>
+
+      <div id= 'content'>
+    </div>
+</div>
+
+    </section>
+
+
+    <div id="aside1" class="w3-hide-small">
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+            <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Some text..</p>
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+            <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>Some other text..</p>
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+            <i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+          <div id="Demo3" class="w3-hide w3-container">
+            <div class="w3-row-padding">
+              <br>
+              <div class="w3-half">
+                <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+              </div>
+              <div class="w3-half">
+                <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+              </div>
+              <div class="w3-half">
+                <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+              </div>
+              <div class="w3-half">
+                <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+              </div>
+              <div class="w3-half">
+                <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+              </div>
+              <div class="w3-half">
+                <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+    
+
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+   <script src="data.js"></script>
+    <script src='dataMuro.js'></script>
+
+</body>
+
+</html>

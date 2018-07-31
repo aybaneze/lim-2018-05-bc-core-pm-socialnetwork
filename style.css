@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .logoGo{
     margin-top: 5px;
 }
@@ -9,6 +10,18 @@ body{ #facebook{
     width: 10%;
 }
     background: rgb(255, 255, 255);
+=======
+#titulo{
+    width: 20%;
+}
+#cerrar{
+    display: none;
+}
+body{ 
+    background: url(imagenes/Captura.jpg);
+    background-size: cover;
+    
+>>>>>>> e53a149869334e8fb5f4bf7500a7e281e70a66e7
  font-family: 'Amatic SC'; 
 padding: 0px;
     margin: 0px;
@@ -23,18 +36,9 @@ padding: 0px;
 
 .containerG {
 margin:0px;
-background-color:#FEFEFE;
 width: 100%;
 }
 
-#root{
-    background-color: #FEFEFE;
-}
-
-#data{
-    display: none;
-    margin: 0px;
-}
 
 
 #registrar{
@@ -94,9 +98,8 @@ background-color:#b1fdce;
 #prueba{
         
     height: 500px;
-    max-width: 400px;
-    padding: 10px; 
-    margin: 30px 100px;
+    max-width: 400%;
+    margin:  100px;
     border-radius: 15px;
     float: right;
     text-align: center;
@@ -133,7 +136,7 @@ section{
 
 #content{
     height: 400px;
-    width: 700px;
+    max-width: 600px;
 }
 
 aside{
