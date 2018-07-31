@@ -113,6 +113,14 @@ El 25% Solo usa para chat.
 
 ## TESTING CON USUARIOS
 
+**PANTALLA DE REGISTRO**
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/imagenes/userTesting.png)
+
+**PANTALLA DE iNICIO DE SESIÓN**
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/imagenes/userTesting1.png) 
+
 
 
 
