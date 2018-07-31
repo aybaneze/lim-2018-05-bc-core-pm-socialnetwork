@@ -1,4 +1,10 @@
-
+body{ 
+    background: url(../imagenes/Captura.jpg);
+    background-size: cover;  
+    font-family: 'Amatic SC'; 
+    padding: 0px;
+    margin: 0px;
+}
 #perfil{
      margin:25px;
 }
@@ -8,14 +14,7 @@
 #cerrar{
     display: none;
 }
-body{ 
-    background: url(imagenes/Captura.jpg);
-    background-size: cover;
-    
- font-family: 'Amatic SC'; 
-padding: 0px;
-    margin: 0px;
-}
+
 #pencil{
 color:white;
 }
@@ -266,4 +265,8 @@ li a:hover {
         font-size: 20px;
         font-family: 'Titillium Web';
         
+    }
+    
+    #data{
+        display: none;
     }

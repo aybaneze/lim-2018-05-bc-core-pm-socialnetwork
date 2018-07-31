@@ -28,7 +28,7 @@ $('#google').click( () => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            window.location.href = 'indexMuro.html'
+            $('#data').show();
         });
 })
 
@@ -43,7 +43,7 @@ $('#facebook').click(() => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            window.location.href= 'indexMuro.html'
+            $('#data').show();
            
         });
 })
@@ -57,7 +57,7 @@ $('#ingresa').click(()=>{
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            window.location.href = 'indexMuro.html';
+            $('#data').show();
 
         
 }).catch(function (error) {

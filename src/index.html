@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>FreeW</title>
+ 
+</head>
+
+<body class="w3-theme-l5">
+    
+    
+  <div id="root">
+    <div class="containerG">
+        <a href="" id="link"><img src="" id="imagen"></a>    
+        
+      <div id="prueba">
+        
+          <ul class="tab-group"> 
+              <li class="active" id="ingreso"><a href="#signup">Inicia Sesión</a></li>
+              <li class="tab"  id="register"><a href="#login">Registrate</a></li>
+          </ul><br>    
+                        
+             <div id='inForm'>       
+
+                  <h1>Sign Up for FreeW!</h1>
+                  <input id="email" type="email" class="correo" placeholder="Correo Electronico " required ><br><br>
+                  <input id="contrasena" type="password" placeholder=" password" class="password" required><br>
+                  <button id='ingresa' class="login">Get Started</button><br>
+                  <p>Sign Up with</p><br>
+                  <button id="google" class="btnSocialGoogle"> <a href="indexMuro.html"><img src="imagenes/gmail.png" class="imgLog"> </button></a>
+                  <button id="facebook" class="btnSocialFacebook"><img src="imagenes/face.png" class="imgLog"></button>
+            </div> 
+            <div id="outForm" class="form">
+                  <h1>Log in for FreeW!</h1>
+                  <input id="email1" type="email" class="correo" placeholder="Username" ><br><br>
+                  <input id="pass" type="password" placeholder="password" class="password"></input><br>
+                  <button id="registrar" class="login">Registrarse</button><br>
+            </div>  
+            
+      </div>    
+    </div>
+  </div>  
+  
+  <div id='data'>
+    <div class="w3-container w3-teal">
+               <div class="w3-dropdown-hover w3-teal">   
+                  <a href="#" class="w3-bar-item w3-button w3-hover-white" title="friends"><i class="fa fa-group" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">1</span></a>
+                  <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
+                  <a href="#" class="w3-bar-item w3-button">Oshin Te envio una invitación</a>
+                  <a href="#" class="w3-bar-item w3-button">Ana Te envio una invitación</a>
+                  <a href="#" class="w3-bar-item w3-button">karla Te envio una invitación</a>
+                 </div>
+                </div> 
+             <div class="w3-dropdown-hover">   
+                <a href="#" class="w3-bar-item w3-button w3-hover-white" title="Messages"><i class="fa fa-comments" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">10</span></a>                                
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
+                  <a href="#" class="w3-bar-item w3-button">Ana: Hola!</a>
+                  <a href="#" class="w3-bar-item w3-button">Oshin: Ya me uní</a>
+                  <a href="#" class="w3-bar-item w3-button">karla: como estas?</a>
+                 </div>
+                </div>
+             <div class="w3-dropdown-hover">                                   
+                <button   class="w3-button" title="Notifications"><i class="fa fa-bell" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">3</span></button>
+                  <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
+                  <a href="#" class="w3-bar-item w3-button">Tienes un Nuevo me gusta</a>
+                  <a href="#" class="w3-bar-item w3-button">2 solicitudes</a>
+                  <a href="#" class="w3-bar-item w3-button">Oshin se unio!</a>
+                 </div>
+                </div>                                
+                 <button  id="botoncerrar" class="w3-button w3-padding-large w3-hide-small" title="Cerrar Sesión" class="w3-bar-item w3-button"><i class="fa fa-close"></i>Salir</button> 
+             
+            </div>
+                       
+<div class="container2">
+<aside class="w3-hide-medium">
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:5px">    
+    <!-- Profile -->
+    <div class="w3-card w3-round w3-teal">
+      <div class="w3-container">
+       <h4 class="w3-center">Mi Perfil</h4>
+       <h4><span id="UserCount"></span></h4>
+       <img src="imagenes/perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:160px" id = 'perfil' onclick="document.getElementById('modal01').style.display='block'">
+        <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+          <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/perfil.png">
+      </div>               
+       <p id='pencil'><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme-white"></i> DISEÑADOR, UX</p>
+       <p id= 'ciudad'><i class="fa fa-home fa-fw w3-margin-right w3-text-theme-white"></i> Lima - Peru</p>
+       <p id='fecha'><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme-white"></i> 27/Junio/1996</p>
+    </div>
+  </div>
+  <br>
+</aside>
+<section>  
+
+    <div class="postea" class="w3-col m7">
+            <div class="w3-row-padding">
+                <div class="w3-card w3-round w3-white">
+                  <div class="w3-container w3-padding">
+                    <h6 class="w3-opacity">Estado</h6>
+                    <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
+                    <button id ='boton' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  PUBLICAR</button> 
+                    <button class="w3-button w3-theme"><i class="fa fa-camera"></i>  FOTO</button> 
+                     </div>
+                </div>
+            </div>
+
+<div id= 'content'>
+</div>
+</div>
+
+</section>
+
+
+<div id="aside1" class="w3-hide-small">
+<div class="w3-card w3-round" class="w3-hide-medium">
+<div class="w3-white">
+<button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+<i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> MENSAJES</button>
+<div id="Demo1" class="w3-hide w3-container w3-teal">
+<p>ANA: HOLA</p>
+<p>OSHIN: QUE HACES?</p>
+</div>
+<button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+<i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> EVENTOS</button>
+<div id="Demo2" class="w3-hide w3-container w3-teal">
+<p>Tienes 1 evento</p>
+</div>
+<button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+<i class="fa fa-users fa-fw w3-margin-right"></i> MIS FOTOS</button>
+<div id="Demo3" class="w3-hide w3-container w3-teal">
+<div class="w3-row-padding">
+<br>
+<div class="w3-half">
+<img src="imagenes/frase2.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal02').style.display='block'">
+<div id="modal02" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/frase2.png">
+</div>   
+</div>
+<div class="w3-half">
+<img src="imagenes/frase3.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal03').style.display='block'">
+<div id="modal03" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/frase3.png">
+</div> 
+</div>
+<div class="w3-half">
+<img src="imagenes/frase4.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal04').style.display='block'">
+<div id="modal04" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/frase4.png">
+</div> 
+</div>
+<div class="w3-half">
+<img src="imagenes/frase1.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal05').style.display='block'">
+<div id="modal05" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/frase1.png">
+</div> 
+</div>
+<div class="w3-half">
+<img src="imagenes/perfil.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal06').style.display='block'">
+<div id="modal06" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/perfil.png">
+</div> 
+</div>
+<div class="w3-half">
+<img src="imagenes/fuerza.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal07').style.display='block'">
+<div id="modal07" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+    <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/fuerza.png">
+</div> 
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+
+
+</div>
+</div>
+
+  
+                  
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+   
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
+        authDomain: "nuestra-red-social.firebaseapp.com",
+        databaseURL: "https://nuestra-red-social.firebaseio.com",
+        projectId: "nuestra-red-social",
+        storageBucket: "nuestra-red-social.appspot.com",
+        messagingSenderId: "202930589167"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src='data.js'></script>
+    <script src='dataMuro.js'></script>
+
+</body>
+
+</html>
