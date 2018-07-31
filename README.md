@@ -26,6 +26,8 @@ Es por ello que se eligio el siguiente logo como representación de la Libertad 
 
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/imagenes/logoWeb.png)
 
+silueta de una mujer con las manos extendidas 
+
 # UX
 
 Al realizar las encuestas reflejamos en las respuestas que aproximadamente el 85.7% les intereso el tema del feminismo, además que se tomarón el tiempo de dejar sus telefonos para poder contactarlas y realizar las entrevistas. Ellas son las principales usuarias en la cual nos enfocaremos.
@@ -39,9 +41,6 @@ usamos **Google Form** para asi compartirlo por otras redes sociales, grupos ent
 
 
 ![grafico3](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico3.png)
-
-
-![grafico4](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/grafico4.png)
 
 
 > A continuación el link de nuestro formulario:
@@ -60,6 +59,7 @@ ALgunas de las preguntas iniciales fueron:
 
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/RedesSociales.png)
 
+
 > ¿Con que frecuencia usas las redes sociales?
 
 El 70% usan de manera Diaria las redes Sociales
@@ -77,6 +77,14 @@ El 45% realiza sus propios post.
 El 25% Solo usa para chat.
  
 > ¿sueles unirte a comunidades en Redes sociales?¿Por que motivo?
+
+## Analisis de los resultados:
+
+Facebook es la red social más conocida y más usada actualmente, y con mucha utilidad para poder comunicarnos, sea por chats, mensajes, videollamada, llamadas, entre otras cosas, podemos compartir información como tambien publicarlas. Sin embargo esta red puede ser usada por muchos usuarios con distintos gustos y pensamientos. Dentro de facebook existen comunidades, grupos y eventos en la cual muchos pueden participar.
+
+Nuestras usuarias resaltaron que a pesar que exista grupos, comunidades etc. Hay una disconformidad ya que no existe restricciones para ingresar a esos grupos, personas infiltradas ingresan para agredirlas, ellas destacan que sirve mucho para compartir información sin embargo no están contentas respecto al uso que le dan usuarios que no comparten el tema.
+
+Por ello se les propuso **FreeW!** Una red social En la cual podran compartir cualquier tipo de información respecto al Feminismo, además podrán tener un filtro respecto a las personas que quieran añadir a su perfil. 
 
 ## Sketch
 
@@ -121,7 +129,9 @@ El 25% Solo usa para chat.
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting1.png) 
 
+**PANTALLA MURO**
 
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting1.png) 
 
 
 
