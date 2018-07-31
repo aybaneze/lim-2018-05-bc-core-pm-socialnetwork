@@ -1,4 +1,13 @@
-body{ 
+.logoGo{
+    margin-top: 5px;
+}
+.logo{
+    margin-top: 5px;
+}
+
+body{ #facebook{
+    width: 10%;
+}
     background: rgb(255, 255, 255);
  font-family: 'Amatic SC'; 
 padding: 0px;
@@ -33,31 +42,6 @@ width: 100%;
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
     font-size:17px;
-}
-.btnSocialFacebook {
-
-        font-weight: 500;
-        border: none;
-         
-        text-decoration:none;
-        padding:15px;
-        background:#4A6EA8;
-        font-size:20px;
-        float: right;
-       
-        text-align:center;
-        cursor:pointer;
-        transition:.5s ease;
-        margin-right: 30px;
-        margin-top: 5px;
-        max-width:200px;
-        width: 150px;
-        margin-top: 5px;
-        height: 50px;
-       
-}
-.btnSocialFacebook:hover{
-    background:#003a97;
 }
 
 .btnSocialGoogle{
