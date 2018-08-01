@@ -43,15 +43,15 @@ db.collection("users").onSnapshot((querySnapshot) => {
         content.innerHTML +=`
            <div id=${doc.id}></div>  
                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                <img src="imagenes/perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
                 <span class="w3-right w3-opacity">16 min</span>
-                <h4>Andrea Ybañez</h4><br>
+                <div id='nam'></div><br>
                 <div>${doc.data().first}</div>
                 <hr class="w3-clear">
-                <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-                <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')">Elimina</button>           
-                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')">Editar</button>
+                <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
+                <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
+                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')"><i class="far fa-trash-alt"></i>Elimina</button>           
+                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')"><i class="far fa-edit"></i> Editar</button>
                 </div> 
                 </div><br>`
     });
