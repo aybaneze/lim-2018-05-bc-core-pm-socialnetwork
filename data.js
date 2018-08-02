@@ -1,14 +1,17 @@
-const register = document.getElementById('register');
-register.addEventListener('click',()=>{
-    document.getElementById('outForm').style.display='block';
-    document.getElementById('inForm').style.display='none';
-})
-const ingreso = document.getElementById('ingreso');
-ingreso.addEventListener('click',()=>{
-    document.getElementById('inForm').style.display='block';
-    document.getElementById('outForm').style.display='none';
-})
-
+window.onload = ( ) =>{
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            console.log('Inicio Logueado');
+            
+           $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+user.photoURL+"'/>");
+           $('#UserCount').append("<p>"+user.displayName+"</p>");
+        //    $('#ProfilePhoto').append("<img style='height:200px;width:200px;float:center' src='"+user.photoURL+"'/>");
+        //    $('#nameUser').append("<p style='font-size:30px'>"+user.displayName+"</p>");
+        } else {
+           console.log('no esta logeado');
+        }
+    });
+}
 
 function guardaDatos(user) {
     var usuario = {
@@ -22,14 +25,6 @@ function guardaDatos(user) {
         .set(usuario)
 }
 
-const google = document.getElementById('google');
-const facebook = document.getElementById('facebook');
-const facebook1= document.getElementById('facebook1');
-const google1 = document.getElementById('google1');
-
-
-
-
 var provider = new firebase.auth.GoogleAuthProvider();
 const inGoogle= ()=>{
     firebase.auth().signInWithPopup(provider)
@@ -38,10 +33,6 @@ const inGoogle= ()=>{
             guardaDatos(result.user);
             $('#root').hide();
             $('#data').show()
-            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
-            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
-            $('#ProfilePhoto').append("<img style='height:200px;width:200px;float:center' src='"+result.user.photoURL+"'/>");
-            $('#nameUser').append("<p style='font-size:30px'>"+result.user.displayName+"</p>");
          
         });
 }
@@ -55,16 +46,11 @@ const inFacebook = () => {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
-            $('#data').show(); 
-            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
-            $('#UserCount').append("<p>"+result.user.displayName+"</p>");
+            $('#data').show();
         });
 }
 
-google.addEventListener('click',inGoogle);
-facebook.addEventListener('click',inFacebook);
-google1.addEventListener('click', inGoogle)
-facebook1.addEventListener('click', inFacebook)
+
 
 
 
@@ -82,7 +68,7 @@ $('#ingresa').click(()=>{
 });
 })
 
-document.getElementById('registrar').addEventListener("click", loginEmail);
+
 function loginEmail() {
     const email1 = document.getElementById("email1").value;
     const pass = document.getElementById("pass").value;
@@ -101,7 +87,7 @@ function loginEmail() {
 }
 
 
-document.getElementById('botoncerrar').addEventListener('click', cerrar);
+
 function cerrar() {
     firebase.auth().signOut()
         .then(function result() {
@@ -110,56 +96,123 @@ function cerrar() {
             $('#root').show();
         });
 } 
-firebase.initializeApp({
-    apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
-    authDomain: "nuestra-red-social.firebaseapp.com",
-    projectId: "nuestra-red-social"
-});
 
-// Initialize Cloud Firestore through Firebase
-// var db = firebase.firestore();
 
-// function guardar() {
-//     let post = document.getElementById('post').value;
-//     db.collection("users").add({
-//         first: post,
-        
-    
-//     })
-//         .then(function (docRef) {
-//             console.log("Document written with ID: ", docRef.id);
-//             document.getElementById("post").value = '';
-//         })
-//         .catch(function (error) {
-//             console.error("Error adding document: ", error);
-//         });
 
-// }   
 
-// leer datos
-let content = document.getElementById('content');
-db.collection("users").onSnapshot((querySnapshot) => {
-    console.log(querySnapshot)
-    content.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-        content.innerHTML +=`
-           <div id=${doc.id}></div>  
-                <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
-                <span class="w3-right w3-opacity">16 min</span>
-                <div id='nam'></div><br>
-                <div>${doc.data().first}</div>
-                <hr class="w3-clear">
-                <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
-                <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
-                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')"><i class="far fa-trash-alt"></i>Elimina</button>           
-                <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')"><i class="far fa-edit"></i> Editar</button>
-                </div> 
-                </div><br>`
-    });
-});
+// let content = document.getElementById('content');
+// db.collection("users").onSnapshot((querySnapshot) => {
+//     console.log(querySnapshot)
+//     content.innerHTML = '';
+//     querySnapshot.forEach((doc) => {
+//         content.innerHTML +=`
+//            <div id=${doc.id}></div>  
+//                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+//                 <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
+//                 <span class="w3-right w3-opacity">16 min</span>
+//                 <div id='nam'></div><br>
+//                 <div>${doc.data().first}</div>
+//                 <hr class="w3-clear">
+//                 <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
+//                 <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
+//                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')"><i class="far fa-trash-alt"></i>Elimina</button>           
+//                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')"><i class="far fa-edit"></i> Editar</button>
+//                 </div> 
+//                 </div><br>`
+//     });
+// });
 
-// borrar datos
+
+function writeNewPost(uid, body) {
+    // A post entry.
+    var postData = {
+      uid: uid,
+      body: body,
+    };
+  
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
+  
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/posts/' + newPostKey] = postData;
+    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+  
+    firebase.database().ref().update(updates);
+    return newPostKey;
+}
+
+
+
+let post=document.getElementById('post');
+let content=document.getElementById('content');
+const botonpostea=document.getElementById('botonpostea');
+
+botonpostea.addEventListener('click',()=>{
+    let userId=firebase.auth().currentUser.uid;
+    console.log(userId);
+    content.innerHTML= '';
+    const newPost= writeNewPost(userId,post.value);
+    content.innerHTML+=`
+                
+                    <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                    <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
+                    <span class="w3-right w3-opacity">16 min</span>
+                    <div id=${newPost}></div><br>
+                    <hr class="w3-clear">
+                    <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
+                    <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${newPost}')"><i class="far fa-trash-alt"></i>Elimina</button>           
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${newPost}')"><i class="far fa-edit"></i> Editar</button>
+                    </div> 
+                    </div><br>`
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // leer datos
+// let content = document.getElementById('content');
+// db.collection("users").onSnapshot((querySnapshot) => {
+//     console.log(querySnapshot)
+//     content.innerHTML = '';
+//     querySnapshot.forEach((doc) => {
+//         content.innerHTML +=`
+//            <div id=${doc.id}></div>  
+//                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+//                 <img src="imagenes/perfil.png" class="w3-left w3-circle w3-margin-right" style="width:60px" onclick="document.getElementById('modal01').style.display='block'">
+//                 <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+//                           <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/perfil.png">
+//                       </div>
+//                 <span class="w3-right w3-opacity">16 min</span>
+//                 <h4>Andrea Ybañez</h4><br>
+//                 <div>${doc.data().first}</div>
+//                 <hr class="w3-clear">
+//                 <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Me Gusta</button> 
+//                 <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> Comentar</button> 
+//                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')"><i class="fa fa-close"></i> Elimina</button>           
+//                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')"><i class="fa fa-pencil"></i> Editar</button>
+//                 </div> 
+//                 </div><br>`
+//     });
+// });
+
+// // borrar datos
 
 function eliminar(id){
     db.collection("users").doc(id).delete().then(function () {
@@ -171,7 +224,7 @@ function eliminar(id){
 
 
 
-//editar
+// //editar
 function editar(id,post){
     document.getElementById('post').value = post;
 
@@ -199,28 +252,7 @@ function editar(id,post){
 
 
 
-var imagenes=new Array(
-    ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
-    ['imagenes/frase2.png','http://www.lawebdelprogramador.com/foros/'],
-    ['imagenes/frase3.png','http://www.lawebdelprogramador.com/pdf/'],
-    ['imagenes/frase4.png','http://www.lawebdelprogramador.com/pdf/'],
-);
-//  Funcion para cambiar la imagen y link 
-function rotarImagenes()
-{   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
-    var index=Math.floor((Math.random()*imagenes.length));
-    // cambiamos la imagen y la url
-    document.getElementById("imagen").src=imagenes[index][0];
-    document.getElementById("link").href=imagenes[index][1];
-}
-// Función que se ejecuta una vez cargada la página
-onload= function()
-{
-    // Cargamos una imagen aleatoria
-    rotarImagenes();
-    // Indicamos que cada 5 segundos cambie la imagen
-    setInterval(rotarImagenes,4000);
-}
+
 
 
 

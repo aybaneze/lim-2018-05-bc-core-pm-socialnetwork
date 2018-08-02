@@ -18,3 +18,5 @@ google.addEventListener('click',inGoogle);
 facebook.addEventListener('click',inFacebook);
 google1.addEventListener('click', inGoogle)
 facebook1.addEventListener('click', inFacebook)
+document.getElementById('registrar').addEventListener("click", loginEmail);
+document.getElementById('botoncerrar').addEventListener('click', cerrar);
