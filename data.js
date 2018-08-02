@@ -96,11 +96,7 @@ function cerrar() {
             $('#root').show();
         });
 } 
-firebase.initializeApp({
-    apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
-    authDomain: "nuestra-red-social.firebaseapp.com",
-    projectId: "nuestra-red-social"
-});
+
 
 
 
@@ -148,7 +144,7 @@ function writeNewPost(uid, body) {
 
 
 
-
+let post=document.getElementById('post');
 let content=document.getElementById('content');
 const botonpostea=document.getElementById('botonpostea');
 
@@ -156,19 +152,18 @@ botonpostea.addEventListener('click',()=>{
     let userId=firebase.auth().currentUser.uid;
     console.log(userId);
     content.innerHTML= '';
-    const newPost=writeNewPost(userId,post.value);
+    const newPost= writeNewPost(userId,post.value);
     content.innerHTML+=`
-               <div id=${doc.id}></div>  
+                
                     <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                     <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
                     <span class="w3-right w3-opacity">16 min</span>
-                    <div id='nam'></div><br>
-                    <div>${doc.data().first}</div>
+                    <div id=${newPost}></div><br>
                     <hr class="w3-clear">
                     <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
                     <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
-                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')"><i class="far fa-trash-alt"></i>Elimina</button>           
-                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')"><i class="far fa-edit"></i> Editar</button>
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${newPost}')"><i class="far fa-trash-alt"></i>Elimina</button>           
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${newPost}')"><i class="far fa-edit"></i> Editar</button>
                     </div> 
                     </div><br>`
 })
@@ -219,41 +214,41 @@ botonpostea.addEventListener('click',()=>{
 
 // // borrar datos
 
-// function eliminar(id){
-//     db.collection("users").doc(id).delete().then(function () {
-//         console.log("Document successfully deleted!");
-//     }).catch(function (error) {
-//         console.error("Error removing document: ", error);
-//     });
-// }
+function eliminar(id){
+    db.collection("users").doc(id).delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing document: ", error);
+    });
+}
 
 
 
 // //editar
-// function editar(id,post){
-//     document.getElementById('post').value = post;
+function editar(id,post){
+    document.getElementById('post').value = post;
 
-//     let boton = document.getElementById('boton');
-//     boton.innerHTML = 'Editar';
+    let boton = document.getElementById('boton');
+    boton.innerHTML = 'Editar';
 
-//     boton.onclick = function () {
-//         var Ref = db.collection("users").doc(id);
+    boton.onclick = function () {
+        var Ref = db.collection("users").doc(id);
 
-//         let post = document.getElementById('post').value;
+        let post = document.getElementById('post').value;
 
-//         return Ref.update({
-//             first: post
-//         })
-//             .then(function () {
-//                 console.log("ya subio");
-//                 boton.innerHTML = 'postear';
-//             })
-//             .catch(function (error) {
-//                 // The document probably doesn't exist.
-//                 console.error("Error updating document: ", error);
-//             });
-//     }
-// }
+        return Ref.update({
+            first: post
+        })
+            .then(function () {
+                console.log("ya subio");
+                boton.innerHTML = 'postear';
+            })
+            .catch(function (error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+    }
+}
 
 
 
