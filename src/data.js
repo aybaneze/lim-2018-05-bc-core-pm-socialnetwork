@@ -9,6 +9,20 @@ ingreso.addEventListener('click',()=>{
     document.getElementById('outForm').style.display='none';
 })
 
+window.onload = () =>{
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            console.log('Inicio Logueado');
+           $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+user.photoURL+"'/>");
+           $('#UserCount').append("<p>"+user.displayName+"</p>");
+        //    $('#ProfilePhoto').append("<img style='height:200px;width:200px;float:center' src='"+user.photoURL+"'/>");
+        //    $('#nameUser').append("<p style='font-size:30px'>"+user.displayName+"</p>");
+        } else {
+           console.log('no esta logeado');
+        }
+    });
+ }
+
 function guardaDatos(user) {
     var usuario = {
         uid: user.uid,
@@ -88,29 +102,6 @@ if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email1)){
     }else{
         alert("correo electronico incorrecto");
     }
-}
-
-
-var imagenes=new Array(
-    ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
-    ['imagenes/frase2.png','http://www.lawebdelprogramador.com/foros/'],
-    ['imagenes/frase3.png','http://www.lawebdelprogramador.com/pdf/'],
-    ['imagenes/frase4.png','http://www.lawebdelprogramador.com/pdf/'],
-);
-
-   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
-    var index=Math.floor((Math.random()*imagenes.length));
-    // cambiamos la imagen y la url
-    document.getElementById("imagen").src=imagenes[index][0];
-    document.getElementById("link").href=imagenes[index][1];
-
-// Función que se ejecuta una vez cargada la página
-onload= function()
-{
-    // Cargamos una imagen aleatoria
-    rotarImagenes();
-    // Indicamos que cada 5 segundos cambie la imagen
-    setInterval(rotarImagenes,4000);
 }
 
 
