@@ -21,8 +21,17 @@ function guardaDatos(user) {
     firebase.database().ref('freww/' + user.uid)
         .set(usuario)
 }
+
+const google = document.getElementById('google');
+const facebook = document.getElementById('facebook');
+const facebook1= document.getElementById('facebook1');
+const google1 = document.getElementById('google1');
+
+
+
+
 var provider = new firebase.auth.GoogleAuthProvider();
-$('#google').click( () => {
+const inGoogle= ()=>{
     firebase.auth().signInWithPopup(provider)
         .then(function (result) {
             console.log(result.user);
@@ -35,9 +44,11 @@ $('#google').click( () => {
             $('#nameUser').append("<p style='font-size:30px'>"+result.user.displayName+"</p>");
          
         });
-})
+}
+
+
 const log = new firebase.auth.FacebookAuthProvider();
-$('#facebook').click(() => {
+const inFacebook = () => {
     log.addScope('public_profile');
     firebase.auth().signInWithPopup(log)
         .then(function (result) {
@@ -48,7 +59,17 @@ $('#facebook').click(() => {
             $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+result.user.photoURL+"'/>");
             $('#UserCount').append("<p>"+result.user.displayName+"</p>");
         });
-})
+}
+
+google.addEventListener('click',inGoogle);
+facebook.addEventListener('click',inFacebook);
+google1.addEventListener('click', inGoogle)
+facebook1.addEventListener('click', inFacebook)
+
+
+
+
+
 $('#ingresa').click(()=>{
     const emailIngreso = document.getElementById("email").value;
     const contrasenaIngreso = document.getElementById("contrasena").value;
