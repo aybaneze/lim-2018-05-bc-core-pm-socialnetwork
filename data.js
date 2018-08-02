@@ -5,6 +5,8 @@ window.onload = ( ) =>{
             
            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+user.photoURL+"'/>");
            $('#UserCount').append("<p>"+user.displayName+"</p>");
+            $('#root').hide();
+            $('#data').show()
         //    $('#ProfilePhoto').append("<img style='height:200px;width:200px;float:center' src='"+user.photoURL+"'/>");
         //    $('#nameUser').append("<p style='font-size:30px'>"+user.displayName+"</p>");
         } else {
@@ -135,13 +137,11 @@ function writeNewPost(uid, body) {
   
     // Write the new post's data simultaneously in the posts list and the user's post list.
     var updates = {};
-    updates['/posts/' + newPostKey] = postData;
-    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+    updates['/freww-posts/' + uid + '/' + newPostKey] = postData;
   
     firebase.database().ref().update(updates);
     return newPostKey;
 }
-
 
 
 let post=document.getElementById('post');
@@ -149,16 +149,15 @@ let content=document.getElementById('content');
 const botonpostea=document.getElementById('botonpostea');
 
 botonpostea.addEventListener('click',()=>{
-    let userId=firebase.auth().currentUser.uid;
-    console.log(userId);
-    content.innerHTML= '';
+    var userId=firebase.auth().currentUser.uid;
+    return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
     const newPost= writeNewPost(userId,post.value);
     content.innerHTML+=`
                 
                     <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                     <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
                     <span class="w3-right w3-opacity">16 min</span>
-                    <div id=${newPost}></div><br>
+                    <div id=${newPost}>${post.value}</div><br>
                     <hr class="w3-clear">
                     <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
                     <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
@@ -167,12 +166,37 @@ botonpostea.addEventListener('click',()=>{
                     </div> 
                     </div><br>`
 })
+    
+    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+    return username;
+});
+function retenerPost(){
+    firebase.database().ref.once('value', function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+           
+            content.innerHTML += `
+                
+                    <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                    <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
+                    <span class="w3-right w3-opacity">16 min</span>
+                    <div id=${newPost}>${post.value}</div><br>
+                    <hr class="w3-clear">
+                    <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
+                    <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${newPost}')"><i class="far fa-trash-alt"></i>Elimina</button>           
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${newPost}')"><i class="far fa-edit"></i> Editar</button>
+                    </div> 
+                    </div><br>`
+        });
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+            // ...
+    });
 
 
 
-
-
-
+}
+   
 
 
 
