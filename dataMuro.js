@@ -2,6 +2,7 @@ const google = document.getElementById('google');
 const facebook = document.getElementById('facebook');
 const facebook1= document.getElementById('facebook1');
 const google1 = document.getElementById('google1');
+const botoncerrar=document.getElementById('botoncerrar');
 
 const register = document.getElementById('register');
 register.addEventListener('click',()=>{
@@ -19,4 +20,7 @@ facebook.addEventListener('click',inFacebook);
 google1.addEventListener('click', inGoogle)
 facebook1.addEventListener('click', inFacebook)
 document.getElementById('registrar').addEventListener("click", loginEmail);
-document.getElementById('botoncerrar').addEventListener('click', cerrar);
+
+let post=document.getElementById('post');
+let content=document.getElementById('content');
+const botonpostea=document.getElementById('botonpostea');
