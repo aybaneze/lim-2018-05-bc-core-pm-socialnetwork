@@ -1,16 +1,16 @@
-window.onload = ( ) =>{
-    firebase.auth().onAuthStateChanged(function(user) {
+window.onload = () => {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             console.log('Inicio Logueado');
-            
-           $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='"+user.photoURL+"'/>");
-           $('#UserCount').append("<p>"+user.displayName+"</p>");
+
+            $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='" + user.photoURL + "'/>");
+            $('#UserCount').append("<p>" + user.displayName + "</p>");
             $('#root').hide();
             $('#data').show()
-        //    $('#ProfilePhoto').append("<img style='height:200px;width:200px;float:center' src='"+user.photoURL+"'/>");
-        //    $('#nameUser').append("<p style='font-size:30px'>"+user.displayName+"</p>");
+            //    $('#ProfilePhoto').append("<img style='height:200px;width:200px;float:center' src='"+user.photoURL+"'/>");
+            //    $('#nameUser').append("<p style='font-size:30px'>"+user.displayName+"</p>");
         } else {
-           console.log('no esta logeado');
+            console.log('no esta logeado');
         }
     });
 }
@@ -22,20 +22,20 @@ function guardaDatos(user) {
         email: user.email,
         foto: user.photoURL
     }
-    
+
     firebase.database().ref('freww/' + user.uid)
         .set(usuario)
 }
 
 var provider = new firebase.auth.GoogleAuthProvider();
-const inGoogle= ()=>{
+const inGoogle = () => {
     firebase.auth().signInWithPopup(provider)
         .then(function (result) {
             console.log(result.user);
             guardaDatos(result.user);
             $('#root').hide();
             $('#data').show()
-         
+
         });
 }
 
@@ -58,7 +58,7 @@ const inFacebook = () => {
 
 
 
-$('#ingresa').click(()=>{
+$('#ingresa').click(() => {
     const emailIngreso = document.getElementById("email").value;
     const contrasenaIngreso = document.getElementById("contrasena").value;
     firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
@@ -67,7 +67,7 @@ $('#ingresa').click(()=>{
             guardaDatos(result.user);
             $('#root').hide();
             $('#data').append("<img src ='imagenes/sin_perfil.png' />").show();
-});
+        });
 })
 
 
@@ -97,7 +97,7 @@ function cerrar() {
             window.location.href = 'index.html'
             $('#root').show();
         });
-} 
+}
 
 
 
@@ -115,8 +115,8 @@ function cerrar() {
 //                 <div id='nam'></div><br>
 //                 <div>${doc.data().first}</div>
 //                 <hr class="w3-clear">
-//                 <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
-//                 <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
+//                 <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
+//                 <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
 //                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')"><i class="far fa-trash-alt"></i>Elimina</button>           
 //                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')"><i class="far fa-edit"></i> Editar</button>
 //                 </div> 
@@ -126,147 +126,69 @@ function cerrar() {
 
 
 function writeNewPost(uid, body) {
+    console.log('write');
     // A post entry.
     var postData = {
-      uid: uid,
-      body: body,
+        uid: uid,
+        body: body,
     };
-  
+
     // Get a key for a new Post.
     var newPostKey = firebase.database().ref().child('posts').push().key;
-  
+
     // Write the new post's data simultaneously in the posts list and the user's post list.
     var updates = {};
-    postData.id = newPostKey;
-    updates['/freww/' + newPostKey] = postData;
-    updates['/freww-posts/' + uid + '/' + newPostKey] = postData;
-  
+    updates['/freww-posts/' +postData.uid + '/' + newPostKey] = postData;
+    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
     firebase.database().ref().update(updates);
     return newPostKey;
-
-}
-function editar  (postId, postData) {
-    const updates = {};
-    updates['/posts/' + postId] = postData;
-    firebase.database().ref('/posts/' + postId).update(postData);
-    //return firebase.database().ref().update(updates);
-    return true;
 }
 
 
+let post = document.getElementById('post');
+let content = document.getElementById('content');
+const botonpostea = document.getElementById('botonpostea');
 
-let post=document.getElementById('post');
-let content=document.getElementById('content');
-const botonpostea=document.getElementById('botonpostea');
+const promesita = firebase.database().ref('/posts').once('value');
+const div = document.createElement('div');
+function valposteos() { 
+    const posteos = promesita.then(function (snapshot) {
 
-botonpostea.addEventListener('click',()=>{
-    let userId=firebase.auth().currentUser.uid;
-    console.log(userId);
-    content.innerHTML= '';
-    const newPost= writeNewPost(userId,post.value);
-    content.innerHTML+=`
+        Object.keys(snapshot.val()).reverse().map(item => {
+            const p = document.createElement('p');
+
+
+
+            p.innerHTML = content.innerHTML += `
                 
                     <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                     <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
                     <span class="w3-right w3-opacity">16 min</span>
-                    <div id=${newPost}>${post.value}</div><br>
+                    <div id=${item}>${snapshot.val()[item].body}</div><br>
                     <hr class="w3-clear">
-                    <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
-                    <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
-                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${newPost}')"><i class="far fa-trash-alt"></i>Elimina</button>           
+                    <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
+                    <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar()"><i class="far fa-trash-alt"></i>Elimina</button>           
                     <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar()"><i class="far fa-edit"></i> Editar</button>
                     </div> 
                     </div><br>`
-    return firebase.database().ref().update(updates);
-                })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // leer datos
-// let content = document.getElementById('content');
-// db.collection("users").onSnapshot((querySnapshot) => {
-//     console.log(querySnapshot)
-//     content.innerHTML = '';
-//     querySnapshot.forEach((doc) => {
-//         content.innerHTML +=`
-//            <div id=${doc.id}></div>  
-//                 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-//                 <img src="imagenes/perfil.png" class="w3-left w3-circle w3-margin-right" style="width:60px" onclick="document.getElementById('modal01').style.display='block'">
-//                 <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-//                           <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/perfil.png">
-//                       </div>
-//                 <span class="w3-right w3-opacity">16 min</span>
-//                 <h4>Andrea Ybañez</h4><br>
-//                 <div>${doc.data().first}</div>
-//                 <hr class="w3-clear">
-//                 <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Me Gusta</button> 
-//                 <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> Comentar</button> 
-//                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar('${doc.id}')"><i class="fa fa-close"></i> Elimina</button>           
-//                 <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar('${doc.id}','${doc.data().first}')"><i class="fa fa-pencil"></i> Editar</button>
-//                 </div> 
-//                 </div><br>`
-//     });
-// });
-
-// // borrar datos
-
-function eliminar(id){
-    db.collection("users").doc(id).delete().then(function () {
-        console.log("Document successfully deleted!");
-    }).catch(function (error) {
-        console.error("Error removing document: ", error);
-    });
-}
-
-
-
-// //editar
-function editar(id,post){
-    document.getElementById('post').value = post;
-
-    let boton = document.getElementById('boton');
-    boton.innerHTML = 'Editar';
-
-    boton.onclick = function () {
-        var Ref = db.collection("users").doc(id);
-
-        let post = document.getElementById('post').value;
-
-        return Ref.update({
-            first: post
+           ;
+            return div.appendChild(p)
         })
-            .then(function () {
-                console.log("ya subio");
-                boton.innerHTML = 'postear';
-            })
-            .catch(function (error) {
-                // The document probably doesn't exist.
-                console.error("Error updating document: ", error);
-            });
-    }
+        return snapshot.val() ;
+    });
+    console.log(posteos);
 }
 
-
-
-
-
-
-
-
+console.log(valposteos());
+content.appendChild(div)
+botonpostea.addEventListener('click', () => {
+    console.log('entra al evento')
+    var userId = firebase.auth().currentUser.uid;
+    // return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+        const newPost = writeNewPost(userId, post.value);
+        console.log(post.value);
+    document.getElementById('post').innerHTML=' ';
+    return 'creo';
+});
 
