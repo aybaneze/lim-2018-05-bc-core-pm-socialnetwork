@@ -139,7 +139,7 @@ function writeNewPost(uid, body) {
     // Write the new post's data simultaneously in the posts list and the user's post list.
     var updates = {};
     updates['/freww-posts/' +postData.uid + '/' + newPostKey] = postData;
-    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+    updates['/posts/' + uid + '/' + newPostKey] = postData;
     firebase.database().ref().update(updates);
     return newPostKey;
 }
@@ -154,7 +154,7 @@ const div = document.createElement('div');
 function valposteos() { 
     const posteos = promesita.then(function (snapshot) {
 
-        Object.keys(snapshot.val()).reverse().map(item => {
+        Object.keys(snapshot.val()).map(item => {
             const p = document.createElement('p');
 
 
@@ -188,7 +188,6 @@ botonpostea.addEventListener('click', () => {
     // return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
         const newPost = writeNewPost(userId, post.value);
         console.log(post.value);
-    document.getElementById('post').innerHTML=' ';
     return 'creo';
 });
 
