@@ -2,8 +2,16 @@ const google = document.getElementById('google');
 const facebook = document.getElementById('facebook');
 const facebook1= document.getElementById('facebook1');
 const google1 = document.getElementById('google1');
-const botoncerrar=document.getElementById('botoncerrar');
-const ingresa=document.getElementById('ingresa');
+const btnLogout=document.getElementById('botoncerrar');
+const btnSignin=document.getElementById('btnSignin');
+const registrar= document.getElementById('registrar');
+const name= document.getElementById('name');
+const pass= document.getElementById('pass');
+const email1= document.getElementById('email1');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const Init= document.getElementById("Init");
+const data = document.getElementById('data');
 
 
 const register = document.getElementById('register');
@@ -17,14 +25,17 @@ ingreso.addEventListener('click',()=>{
     document.getElementById('outForm').style.display='none';
 })
 
-google.addEventListener('click',inGoogle)
-facebook.addEventListener('click',inFacebook)
-google1.addEventListener('click', inGoogle)
-facebook1.addEventListener('click', inFacebook)
-document.getElementById('registrar').addEventListener("click", loginEmail);
-ingresa.addEventListener('click',Login);
+// google.addEventListener('click',inGoogle)
+// facebook.addEventListener('click',inFacebook)
+// google1.addEventListener('click', inGoogle)
+// facebook1.addEventListener('click', inFacebook)
+// document.getElementById('registrar').addEventListener("click", loginEmail);
+registrar.addEventListener('click', registerFunction)
+btnSignin.addEventListener('click', signinFunction)
+btnLogout.addEventListener('click', logoutFunction)
 
-let post=document.getElementById('post');
-let content=document.getElementById('content');
-const botonpostea=document.getElementById('botonpostea');
-botonpostea.addEventListener('click',postear);
+
+// let post=document.getElementById('post');
+// let content=document.getElementById('content');
+// const botonpostea=document.getElementById('botonpostea');
+// botonpostea.addEventListener('click',postear);
