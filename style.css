@@ -25,13 +25,18 @@ margin:0px;
 background-color:#FEFEFE;
 width: 100%;
 }
-#root{
+#Init{
     background-color: #FEFEFE;
-}
-#data{
+} 
+
+.hiden {
     display: none;
+}
+
+#data{
     margin: 0px;
 }
+
 #registrar{
     margin-left: 45px;
     font-family: 'Amatic SC', cursive;
