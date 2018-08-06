@@ -3,7 +3,12 @@ window.onload = () => {
         if (user) {
             data.classList.remove("hiden");
             Init.classList.add("hiden");
-          console.log('Inicio sesion srta')
+
+             Profile.innerHTML="<img style='height:106px;width:106px;border-radius:100px;float:center' src='" + user.photoURL + "'/>";
+            UserCount.innerHTML="<p>" + user.displayName + "</p>";   
+           
+          
+            console.log('Inicio sesion srta')
         } else {
             Init.classList.remove("hiden");
             data.classList.add('hiden');
@@ -13,9 +18,11 @@ window.onload = () => {
 }
 
 
+
 const registerFunction = () =>{
-firebase.auth().createUserWithEmailAndPassword(email1.value , pass.value)
+firebase.auth().createUserWithEmailAndPassword( email1.value , pass.value)
 .then(function(){
+    state.name = name.value;
     console.log('se creo el usuario');
     alert("Usted está registradx")
 })
@@ -45,23 +52,40 @@ const logoutFunction = () =>{
         })
 }
 
+const inGoogle = () =>{
+var provider = new firebase.auth.GoogleAuthProvider();
+firebase.auth().signInWithPopup(provider).then(function(result) {
+    console.log('inicie sesion con google');
+  }).catch(function(error) {
+     var errorCode = error.code;
+    var errorMessage = error.message;
+    var email = error.email;
+    var credential = error.credential;
+    // ...
+  });
+}
+
+const inFacebook = () =>{
+    var provider = new firebase.auth.FacebookAuthProvider();
+provider.setCustomParameters({
+    'display' : 'popup'
+});
+    firebase.auth().signInWithPopup(provider).then(function(result){
+        console.log('inicie sesion con facebook')
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+}
 
 
 
-
-// window.onload = () => {
-//     firebase.auth().onAuthStateChanged(function (user) {
-//         if (user) {
-//             console.log('Inicio Logueado');
-//             $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='" + user.photoURL + "'/>");
-//             $('#UserCount').append("<p>" + user.displayName + "</p>");
-//             $('#root').hide();
-//             $('#data').show()
-//         } else {
-//             console.log('no esta logeado');
-//         }
-//     });
-// }
 
 // function guardaDatos(user) {
 //     var usuario = {

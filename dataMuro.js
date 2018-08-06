@@ -12,6 +12,12 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const Init= document.getElementById("Init");
 const data = document.getElementById('data');
+const Profile = document.getElementById('Profile');
+const UserCount = document.getElementById('UserCount');
+
+const state = {
+    name: null,
+}
 
 
 const register = document.getElementById('register');
@@ -25,11 +31,10 @@ ingreso.addEventListener('click',()=>{
     document.getElementById('outForm').style.display='none';
 })
 
-// google.addEventListener('click',inGoogle)
-// facebook.addEventListener('click',inFacebook)
-// google1.addEventListener('click', inGoogle)
-// facebook1.addEventListener('click', inFacebook)
-// document.getElementById('registrar').addEventListener("click", loginEmail);
+google.addEventListener('click',inGoogle)
+facebook.addEventListener('click',inFacebook)
+google1.addEventListener('click', inGoogle)
+facebook1.addEventListener('click', inFacebook)
 registrar.addEventListener('click', registerFunction)
 btnSignin.addEventListener('click', signinFunction)
 btnLogout.addEventListener('click', logoutFunction)
