@@ -14,11 +14,15 @@ const Init= document.getElementById("Init");
 const data = document.getElementById('data');
 const Profile = document.getElementById('Profile');
 const UserCount = document.getElementById('UserCount');
+const btnPost = document.getElementById('botonpostea');
+const content = document.getElementById('content');
+const post=document.getElementById('post');
 
 const state = {
     name: null,
 }
 
+btnPost.addEventListener('click', postear);
 
 const register = document.getElementById('register');
 register.addEventListener('click',()=>{

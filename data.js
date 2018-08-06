@@ -17,7 +17,34 @@ window.onload = () => {
       });
 }
 
+function writeUserData(userId, name, email, photoURL) {
+    firebase.database().ref('users/' + userId).set({
+      username: name,
+      email: email,
+      profile_picture : photoURL,
+      nombre: state.name
+    });
+  }
 
+  function writeNewPost(uid, body) {
+    // A post entry.
+    var postData = {
+    
+      uid: uid,
+      body: body,
+    
+    };
+  
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
+  
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/posts/' + newPostKey] = postData;
+    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+  
+    return firebase.database().ref().update(updates);
+  }
 
 const registerFunction = () =>{
 firebase.auth().createUserWithEmailAndPassword( email1.value , pass.value)
@@ -56,6 +83,8 @@ const inGoogle = () =>{
 var provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth().signInWithPopup(provider).then(function(result) {
     console.log('inicie sesion con google');
+    var user = result.user;
+    writeUserData(user.uid, user.displayName, user.email, user.photoURL);
   }).catch(function(error) {
      var errorCode = error.code;
     var errorMessage = error.message;
@@ -86,6 +115,61 @@ provider.setCustomParameters({
 
 
 
+const postear = () => {
+    let userId = firebase.auth().currentUser.uid;
+    const newPost = writeNewPost(userId, post.value); 
+
+    let btnUpdate = document.createElement("button");
+    btnUpdate.setAttribute("value","update");
+    btnUpdate.setAttribute("type","button");
+    let btnDelete = document.createElement("button");
+    btnDelete.setAttribute("value","delete");
+    btnDelete.setAttribute("type","button");
+    let contPost = document.createElement("div");
+    let textArea = document.createElement ("textarea");
+    textArea.setAttribute("id",newPost);
+
+    textArea.innerHTML = post.value;
+
+btnDelete.addEventListener('click', () =>{
+
+    firebase.database().ref().child('/user-post/'+ userId + '/' + newPost).remove();
+    firebase.database().ref().child('/post/'+ userId + '/' + newPost).remove();
+
+    while( postMessage.firstChild) post.removeChild(post.firstChild);
+    alert('post eliminado');
+    reload_page();
+})
+
+btnUpdate.addEventListener('click', ()=>{
+    const newUpdate = document.getElementById(newPost);
+    const nwePostUpdate = {
+        body : newUpdate.value,
+    }
+
+    let updateUser = {};
+    let updatePost = {};
+
+    updateUser['/user-post/' + userId + '/' + newPost] =nwePostUpdate;
+    updatePost['/post/' + newPost] = nuevoPost;
+
+    firebase.database().ref().update(updateUser);
+    firebase.database().ref().update(updatePost);
+});
+
+contPost.appendChild(textArea);
+contPost.appendChild(btnUpdate);
+contPost.appendChild(btnDelete);
+content.appendChild(contPost);
+
+
+}
+
+function reload_page(){
+    window.location.reload();
+}
+
+
 // window.onload = () => {
 //     firebase.auth().onAuthStateChanged(function (user) {
 //         if (user) {
@@ -106,7 +190,7 @@ provider.setCustomParameters({
 //         uid: user.uid,
 //         nombre: user.displayName,
 //         email: user.email,
-//         foto: user.photoURL
+//         foto: userphotoURL
 //     }
 
 //     firebase.database().ref('freww/' + user.uid)
@@ -233,34 +317,51 @@ provider.setCustomParameters({
 // });
 
 
-function writeNewPost(uid, body) {
-    console.log('write');
-    // A post entry.
-    var postData = {
-        uid: uid,
-        body: body,
-    };
+// function writeNewPost(uid, body) {
+//     console.log('write');
+//     // A post entry.
+//     var postData = {
+//         uid: uid,
+//         body: body,
+//     };
 
-    // Get a key for a new Post.
-    var newPostKey = firebase.database().ref().child('posts').push().key;
+//     // Get a key for a new Post.
+//     var newPostKey = firebase.database().ref().child('posts').push().key;
 
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    var updates = {};
-    updates['/freww-posts/' +postData.uid + '/' + newPostKey] = postData;
-    updates['/posts/' + uid + '/' + newPostKey] = postData;
-    firebase.database().ref().update(updates);
-    return newPostKey;
-}
+//     // Write the new post's data simultaneously in the posts list and the user's post list.
+//     var updates = {};
+//     updates['/freww-posts/' +postData.uid + '/' + newPostKey] = postData;
+//     updates['/posts/' + uid + '/' + newPostKey] = postData;
+//     firebase.database().ref().update(updates);
+//     return newPostKey;
+// }
+
+
+// // console.log(valposteos());
+// // content.appendChild(div)
+
+
+//         Object.keys(snapshot.val()).map(item => {
+//             const p = document.createElement('p');
+
+
+// // botonpostea.addEventListener('click', () => {
+// //     console.log('entra al evento')
+// //     var userId = firebase.auth().currentUser.uid;
+// //     // return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+// //         const newPost = writeNewPost(userId, post.value);
+// //         console.log(post.value);
+// //     return 'creo';
+// //     reload_page()
+// // });
+
+// // function reload_page() {
+// //     window.location.reload();
+// // }; 
 
 
 // console.log(valposteos());
 // content.appendChild(div)
-
-
-        Object.keys(snapshot.val()).map(item => {
-            const p = document.createElement('p');
-
-
 // botonpostea.addEventListener('click', () => {
 //     console.log('entra al evento')
 //     var userId = firebase.auth().currentUser.uid;
@@ -268,23 +369,6 @@ function writeNewPost(uid, body) {
 //         const newPost = writeNewPost(userId, post.value);
 //         console.log(post.value);
 //     return 'creo';
-//     reload_page()
 // });
-
-// function reload_page() {
-//     window.location.reload();
-// }; 
-
-
-console.log(valposteos());
-content.appendChild(div)
-botonpostea.addEventListener('click', () => {
-    console.log('entra al evento')
-    var userId = firebase.auth().currentUser.uid;
-    // return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
-        const newPost = writeNewPost(userId, post.value);
-        console.log(post.value);
-    return 'creo';
-});
 
 
