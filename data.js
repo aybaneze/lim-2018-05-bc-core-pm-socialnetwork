@@ -261,17 +261,22 @@ let post = document.getElementById('post');
 let content = document.getElementById('content');
 const botonpostea = document.getElementById('botonpostea');
 
-const promesita = firebase.database().ref('/posts').once('value');
+
 const div = document.createElement('div');
 function valposteos() {
+
+    while (div.firstChild) div.removeChild(div.firstChild);
+
+    var userId = firebase.auth().currentUser.uid;
+    const promesita = firebase.database().ref('/posts').child(userId).once('value');
+
     const posteos = promesita.then(function (snapshot) {
 
         Object.keys(snapshot.val()).map(item => {
 
             const p = document.createElement('p');
 
-
-            p.innerHTML = content.innerHTML += `
+            p.innerHTML = `
                 
                     <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                     <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
@@ -301,8 +306,9 @@ botonpostea.addEventListener('click', () => {
     var userId = firebase.auth().currentUser.uid;
     const newPost = writeNewPost(userId, post.value);
 
+    valposteos();
 
-    const p = document.createElement('p');
+/*     const p = document.createElement('p');
 
     p.innerHTML = content.innerHTML += `
                 
@@ -317,7 +323,7 @@ botonpostea.addEventListener('click', () => {
                     <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar()"><i class="far fa-edit"></i> Editar</button>
                     </div> 
                     </div><br>`
-        ;
-return (div);
+        ; */
+return 'creo';
 
 });
