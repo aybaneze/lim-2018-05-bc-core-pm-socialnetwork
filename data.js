@@ -236,6 +236,7 @@ provider.setCustomParameters({
 // }
 // });
 
+let postKeyUpdate = '';
 
 function writeNewPost(uid, body) {
     console.log('write');
@@ -245,17 +246,52 @@ function writeNewPost(uid, body) {
         body: body,
     };
 
-    // Get a key for a new Post.
-    var newPostKey = firebase.database().ref().child('posts').push().key;
+    if (postKeyUpdate == ''){
+        // Get a key for a new Post.
+        var newPostKey = firebase.database().ref().child('posts').push().key;
 
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    var updates = {};
-    updates['/freww-posts/' + postData.uid + '/' + newPostKey] = postData;
-    updates['/posts/' + uid + '/' + newPostKey] = postData;
+        // Write the new post's data simultaneously in the posts list and the user's post list.
+        var updates = {};
+        updates['/posts/' + uid + '/' + newPostKey] = postData;
+    }
+    else{
+        var updates = {};
+        updates['/posts/' + uid + '/' + postKeyUpdate] = postData;
+        postKeyUpdate = '';
+    }
     firebase.database().ref().update(updates);
     return newPostKey;
 }
 
+function updatePost(postkey, body){
+    
+}
+
+function removePost(postkey){
+    var uid = firebase.auth().currentUser.uid;
+    let path = '/posts/' + uid + '/' + postkey;
+    firebase.database().ref(path).remove().then(function () {
+        valposteos();
+    })
+    .catch(function (error) {
+        console.log("ERROR PE: " + error.message)
+    });
+    
+}
+
+function editPost(postkey)
+{
+    let uid = firebase.auth().currentUser.uid;
+    let path = '/posts/' + uid + '/' + postkey;
+    let promise =firebase.database().ref(path).once('value');
+    promise.then(snapshot => {
+
+        postKeyUpdate = postkey;
+        let msg = snapshot.val().body;
+
+        post.value = msg;
+    })
+}
 
 let post = document.getElementById('post');
 let content = document.getElementById('content');
@@ -285,8 +321,8 @@ function valposteos() {
                     <hr class="w3-clear">
                     <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
                     <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
-                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar()"><i class="far fa-trash-alt"></i>Elimina</button>           
-                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar()"><i class="far fa-edit"></i> Editar</button>
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "removePost('${item}')"><i class="far fa-trash-alt"></i>Elimina</button>           
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editPost('${item}')"><i class="far fa-edit"></i> Editar</button>
                     </div> 
                     </div><br>`
                 ;
