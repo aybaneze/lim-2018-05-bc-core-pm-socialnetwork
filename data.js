@@ -86,6 +86,20 @@ provider.setCustomParameters({
 
 
 
+// window.onload = () => {
+//     firebase.auth().onAuthStateChanged(function (user) {
+//         if (user) {
+//             console.log('Inicio Logueado');
+//             $('#Profile').append("<img style='height:106px;width:106px;border-radius:100px;float:center' src='" + user.photoURL + "'/>");
+//             $('#UserCount').append("<p>" + user.displayName + "</p>");
+//             $('#root').hide();
+//             $('#data').show()
+//         } else {
+//             console.log('no esta logeado');
+//         }
+//     });
+
+// }
 
 // function guardaDatos(user) {
 //     var usuario = {
@@ -216,10 +230,35 @@ provider.setCustomParameters({
 //     });
 //     console.log(posteos);
 // }
+// });
+
+
+function writeNewPost(uid, body) {
+    console.log('write');
+    // A post entry.
+    var postData = {
+        uid: uid,
+        body: body,
+    };
+
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
+
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/freww-posts/' +postData.uid + '/' + newPostKey] = postData;
+    updates['/posts/' + uid + '/' + newPostKey] = postData;
+    firebase.database().ref().update(updates);
+    return newPostKey;
+}
+
 
 // console.log(valposteos());
 // content.appendChild(div)
 
+
+        Object.keys(snapshot.val()).map(item => {
+            const p = document.createElement('p');
 
 
 // botonpostea.addEventListener('click', () => {
@@ -236,5 +275,16 @@ provider.setCustomParameters({
 //     window.location.reload();
 // }; 
 
+
+console.log(valposteos());
+content.appendChild(div)
+botonpostea.addEventListener('click', () => {
+    console.log('entra al evento')
+    var userId = firebase.auth().currentUser.uid;
+    // return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+        const newPost = writeNewPost(userId, post.value);
+        console.log(post.value);
+    return 'creo';
+});
 
 
