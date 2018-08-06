@@ -14,16 +14,9 @@ const Init= document.getElementById("Init");
 const data = document.getElementById('data');
 const Profile = document.getElementById('Profile');
 const UserCount = document.getElementById('UserCount');
-const btnPost = document.getElementById('botonpostea');
-const content = document.getElementById('content');
-const post=document.getElementById('post');
-
 const state = {
     name: null,
 }
-
-btnPost.addEventListener('click', postear);
-
 const register = document.getElementById('register');
 register.addEventListener('click',()=>{
     document.getElementById('outForm').style.display='block';
@@ -34,7 +27,6 @@ ingreso.addEventListener('click',()=>{
     document.getElementById('inForm').style.display='block';
     document.getElementById('outForm').style.display='none';
 })
-
 google.addEventListener('click',inGoogle)
 facebook.addEventListener('click',inFacebook)
 google1.addEventListener('click', inGoogle)
@@ -42,8 +34,6 @@ facebook1.addEventListener('click', inFacebook)
 registrar.addEventListener('click', registerFunction)
 btnSignin.addEventListener('click', signinFunction)
 btnLogout.addEventListener('click', logoutFunction)
-
-
 // let post=document.getElementById('post');
 // let content=document.getElementById('content');
 // const botonpostea=document.getElementById('botonpostea');
