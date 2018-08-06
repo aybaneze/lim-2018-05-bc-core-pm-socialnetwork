@@ -27,6 +27,7 @@ function guardaDatos(user) {
 }
 
 const registerFunction = () =>{
+if (/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email1.value)){
 firebase.auth().createUserWithEmailAndPassword( email1.value , pass.value)
 .then(function(){
     state.name = name.value;
@@ -36,10 +37,14 @@ firebase.auth().createUserWithEmailAndPassword( email1.value , pass.value)
 })
 .catch(function(error) {
     console.log(error.code , error.message );
-  });
+  });}
+  else{
+    alert("correo electronico incorrecto");
+  }
 }
 
 const signinFunction = () => {
+    if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email.value)){
     firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then ( function (){
         guardaDatos(result.user);
@@ -47,7 +52,10 @@ const signinFunction = () => {
     })
     .catch(function(error) {
         console.log(error.code , error.message)
-      });
+      });}
+      else{
+        alert("correo electronico incorrecto");
+      }
 
 }
 
@@ -176,7 +184,7 @@ function valposteos() {
                     <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
                     <div><img src="../imagenes/captura.jpg" class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
                     <span class="w3-right w3-opacity">16 min</span>
-                    <div><p style="font-size:20px;">Freew!</p></div>
+                    <div><p style="font-size:20px;"></p></div>
                     <div id=${item}>${snapshot.val()[item].body}</div><br>
                     <hr class="w3-clear">
                     <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
