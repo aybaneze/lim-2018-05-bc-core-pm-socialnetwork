@@ -1,13 +1,18 @@
-const register = document.getElementById('register');
-register.addEventListener('click',()=>{
-    document.getElementById('outForm').style.display='block';
-    document.getElementById('inForm').style.display='none';
-})
-const ingreso = document.getElementById('ingreso');
-ingreso.addEventListener('click',()=>{
-    document.getElementById('inForm').style.display='block';
-    document.getElementById('outForm').style.display='none';
-})
+window.onload = () => {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            data.classList.remove("hiden");
+            Init.classList.add("hiden");
+            Profile.innerHTML="<img style='height:106px;width:106px;border-radius:100px;float:center' src='" + user.photoURL + "'/>";
+            UserCount.innerHTML="<p>" + user.displayName + "</p>";  
+            console.log('Inicio sesion srta')
+        } else {
+            Init.classList.remove("hiden");
+            data.classList.add('hiden');
+            console.log('Inicio sesion srta')
+        }
+      });
+}
 
 function guardaDatos(user) {
     var usuario = {
@@ -16,105 +21,192 @@ function guardaDatos(user) {
         email: user.email,
         foto: user.photoURL
     }
-    
+
     firebase.database().ref('freww/' + user.uid)
         .set(usuario)
 }
 
+const registerFunction = () =>{
+firebase.auth().createUserWithEmailAndPassword( email1.value , pass.value)
+.then(function(){
+    state.name = name.value;
+    guardaDatos(result.user);
+    console.log('se creo el usuario');
+    alert("Usted está registradx")
+})
+.catch(function(error) {
+    console.log(error.code , error.message );
+  });
+}
+
+const signinFunction = () => {
+    firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+    .then ( function (){
+        guardaDatos(result.user);
+        console.log('inicio sesión');
+    })
+    .catch(function(error) {
+        console.log(error.code , error.message)
+      });
+
+}
+
+const logoutFunction = () =>{
+    firebase.auth().signOut().then(function () {
+        console.log('cerraste Sesion srta')
+            Init.classList.remove("hiden");
+            data.classList.add("hiden");
+        }).catch(function(error){
+            console.log('error al cerrar sesion');
+        })
+}
+
+const inGoogle = () =>{
 var provider = new firebase.auth.GoogleAuthProvider();
-$('#google').click( () => {
-    firebase.auth().signInWithPopup(provider)
-        .then(function (result) {
-            console.log(result.user);
-            guardaDatos(result.user);
-            $('#root').hide();
-            $('#data').show();
-        });
-})
-
-
-
-
-const log = new firebase.auth.FacebookAuthProvider();
-$('#facebook').click(() => {
-    log.addScope('public_profile');
-    firebase.auth().signInWithPopup(log)
-        .then(function (result) {
-            console.log(result.user);
-            guardaDatos(result.user);
-            $('#root').hide();
-            $('#data').show();
-           
-        });
-})
-
-$('#ingresa').click(()=>{
-    const emailIngreso = document.getElementById("email").value;
-    const contrasenaIngreso = document.getElementById("contrasena").value;
-    if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(emailIngreso)){
-    firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
-        .then(function (result) {
-            console.log(result.user);
-            guardaDatos(result.user);
-            $('#root').hide();
-            $('#data').show();
-
-        
-}).catch(function (error) {
-    alert("contraseña incorrecta");
-});}
-else{
-    alert("correo electronico incorrecto");
+firebase.auth().signInWithPopup(provider).then(function(result) {
+    guardaDatos(result.user);
+    console.log('inicie sesion con google');
+  }).catch(function(error) {
+     var errorCode = error.code;
+    var errorMessage = error.message;
+    var email = error.email;
+    var credential = error.credential;
+    // ...
+  });
 }
-        })
 
-document.getElementById('registrar').addEventListener("click", loginEmail);
-function loginEmail() {
-    const email1 = document.getElementById("email1").value;
-    const pass = document.getElementById("pass").value;
-if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email1)){
-    firebase.auth().createUserWithEmailAndPassword(email1, pass)
-        .then(result => {
-            const user = firebase.auth().currentUser;
-            user.sendEmailVerification().then(function () {
-                // enviando Email
-                console.log('enviando correo---')
-                alert("Ya estas registradx!");
-            }).catch(function (error) {
-                console.log(error)
-            });
-        })
-        .catch(error => console.log(`Error ${error.code}:${error.message}`))
-    }else{
-        alert("correo electronico incorrecto");
+const inFacebook = () =>{
+    var provider = new firebase.auth.FacebookAuthProvider();
+provider.setCustomParameters({
+    'display' : 'popup'
+});
+    firebase.auth().signInWithPopup(provider).then(function(result){
+        guardaDatos(result.user);
+        console.log('inicie sesion con facebook')
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+}
+
+
+let postKeyUpdate = '';
+
+function writeNewPost(uid, body) {
+    console.log('write');
+    // A post entry.
+    var postData = {
+        uid: uid,
+        body: body,
+        starCount:0,
+    };
+
+    if (postKeyUpdate == ''){
+        // Get a key for a new Post.
+        var newPostKey = firebase.database().ref().child('posts').push().key;
+
+        // Write the new post's data simultaneously in the posts list and the user's post list.
+        var updates = {};
+        updates['/posts/' + uid + '/' + newPostKey] = postData;
     }
+    else{
+        var updates = {};
+        updates['/posts/' + uid + '/' + postKeyUpdate] = postData;
+        postKeyUpdate = '';
+    }
+    firebase.database().ref().update(updates);
+    return newPostKey;
 }
 
 
-var imagenes=new Array(
-    ['imagenes/frase1.png','http://www.lawebdelprogramador.com/cursos/'],
-    ['imagenes/frase2.png','http://www.lawebdelprogramador.com/foros/'],
-    ['imagenes/frase3.png','http://www.lawebdelprogramador.com/pdf/'],
-    ['imagenes/frase4.png','http://www.lawebdelprogramador.com/pdf/'],
-);
+function removePost(postkey){
+    var uid = firebase.auth().currentUser.uid;
+    let path = '/posts/' + uid + '/' + postkey;
+    firebase.database().ref(path).remove().then(function () {
+        valposteos();
+    })
+    .catch(function (error) {
+        console.log("ERROR PE: " + error.message)
+    });
+    
+}
 
-   // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
-    var index=Math.floor((Math.random()*imagenes.length));
-    // cambiamos la imagen y la url
-    document.getElementById("imagen").src=imagenes[index][0];
-    document.getElementById("link").href=imagenes[index][1];
 
-// Función que se ejecuta una vez cargada la página
-onload= function()
+function editPost(postkey)
 {
-    // Cargamos una imagen aleatoria
-    rotarImagenes();
-    // Indicamos que cada 5 segundos cambie la imagen
-    setInterval(rotarImagenes,4000);
+    let uid = firebase.auth().currentUser.uid;
+    let path = '/posts/' + uid + '/' + postkey;
+    let promise =firebase.database().ref(path).once('value');
+    promise.then(snapshot => {
+
+        postKeyUpdate = postkey;
+        let msg = snapshot.val().body;
+
+        post.value = msg;
+    })
 }
 
+let post = document.getElementById('post');
+let content = document.getElementById('content');
+const botonpostea = document.getElementById('botonpostea');
 
 
+const div = document.createElement('div');
+function valposteos() {
 
+    while (div.firstChild) div.removeChild(div.firstChild);
+
+    var userId = firebase.auth().currentUser.uid;
+    const promesita = firebase.database().ref('/posts').child(userId).once('value');
+
+    const posteos = promesita.then(function (snapshot) {
+
+        Object.keys(snapshot.val()).map(item => {
+            
+            const p = document.createElement('p');
+
+            p.innerHTML = `
+                
+                    <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                    <div><img src="imagenes/perfil.png" class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
+                    <span class="w3-right w3-opacity">16 min</span>
+                    <div><p style="font-size:20px;">Freew!</p></div>
+                    <div id=${item}>${snapshot.val()[item].body}</div><br>
+                    <hr class="w3-clear">
+                    <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
+                    <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "removePost('${item}')"><i class="far fa-trash-alt"></i>Elimina</button>           
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editPost('${item}')"><i class="far fa-edit"></i> Editar</button>
+                    </div> 
+                    </div><br>`
+                ;
+            return div.appendChild(p)
+        })
+        return snapshot.val();
+    });
+
+    console.log(posteos);
+}
+
+//console.log(valposteos());
+content.appendChild(div)
+botonpostea.addEventListener('click', () => {
+    
+    console.log('entra al evento')
+
+    var userId = firebase.auth().currentUser.uid;
+    const newPost = writeNewPost(userId, post.value);
+
+    valposteos();
+
+return 'creo';
+
+});
 
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/style.css
 body{ 
     background: url(../imagenes/Captura.jpg);
     background-size: cover;  
@@ -10,11 +11,16 @@ body{
 }
 #titulo{
     width: 20%;
+=======
+.logoGo{
+    margin-top: 5px;
+>>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 }
-#cerrar{
-    display: none;
+.logo{
+    margin-top: 5px;
 }
 
+<<<<<<< HEAD:src/style.css
 #pencil{
 color:white;
 }
@@ -25,6 +31,16 @@ color:white;
 #ciudad{
     color:white;
   
+=======
+body{   
+    background: rgb(255, 255, 255);
+    font-family: 'Amatic SC'; 
+    padding: 0px;
+    margin: 0px;
+}
+#UserProfile{
+    display:none;
+>>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 }
 
 .frase{
@@ -32,13 +48,22 @@ color:white;
     margin-left: 40px;
     width: 500px;
 }
-
 .containerG {
 margin:0px;
+background-color:#FEFEFE;
 width: 100%;
 }
+#Init{
+    background-color: #FEFEFE;
+} 
 
+.hiden {
+    display: none;
+}
 
+#data{
+    margin: 0px;
+}
 
 #registrar{
     margin-left: 45px;
@@ -46,6 +71,7 @@ width: 100%;
     font-weight: bold;
     font-size:17px;
 }
+<<<<<<< HEAD:src/style.css
 .btnSocialFacebook {
 
         font-weight: 500;
@@ -86,15 +112,15 @@ width: 100%;
  margin-top: 5px;
  height: 50px;
 }
+=======
+>>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 
 .imgLog{
     height: 30px;
     width: 30px;       
 }
-
 .buttons:hover{
 background-color:#b1fdce;
-
 }
 .buttons{
     float: right; 
@@ -108,19 +134,15 @@ background-color:#b1fdce;
     font-size: 26px;
     font-family: 'Courier New', Courier, monospace;
 }
-
-
 .form{
     display: none;
 }
-
-#prueba{
-        
-    height: 500px;
-    max-width: 400%;
-    margin:  100px;
+#prueba{    
+    height: 530px;
+    max-width: 360px;
+    padding: 10px; 
+    margin: 10px 50px;
     border-radius: 15px;
-    float: right;
     text-align: center;
     color: #181717;
     background:#ffffff;
@@ -136,7 +158,6 @@ background-color:#b1fdce;
     width: 80%;
     margin: 80px 40px;
 }
-
 #post{
     margin-top: 5px;
     width: 100%;
@@ -145,43 +166,42 @@ background-color:#b1fdce;
 .postea{
 margin-top: 50px;
 }
-
 section{    
      float: left;
      width: 60%;
      margin-top: 30px;
     
     }
-
 #content{
     height: 400px;
+<<<<<<< HEAD:src/style.css
     width: 100%;
+=======
+    width: 700px;
+>>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 }
-
 aside{
     width: 270px;
     float: left;
     padding: 0px;
     margin-top: 50px;
 }
-
 #aside1{
     float: left;
     width: 250px;
     margin-top: 50px;
     margin-left: 10px;
-
 }
 #Profile{
   margin-left:40px;
 }
 
-.tab-group {
-    list-style:none;
-    padding:10px;
-    margin:0 0 20px 5px;
+#logoWeb{
+    width: 80%;
+    height: 130px;
 }
 
+<<<<<<< HEAD:src/style.css
 tab-group:after {
       content: "";
       display: table;
@@ -213,26 +233,17 @@ li a:hover {
 
 .tab a{
     background:#19ff66;
+=======
+.inferior{
+    margin-top: 20px;
 }
-    .correo {
-        color:#504f4f;
-        font-size: 18px;
-        border:1px solid #000000;
-        background-color: #fffFff;
-        margin: 0px 10px;
-        width: 350px;
-      
-    }
 
-    .password{
-        color:#504f4f;
-        font-size: 18px;
-        border:1px solid #000000;
-        background-color: #fffFff;
-        width: 350px;
-        margin: 10px 20px;
-    }
+.boton-redes{
+    margin-top: 30px;
+>>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
+}
 
+<<<<<<< HEAD:src/style.css
     .login{
             border:0;
             outline:none;
@@ -270,3 +281,16 @@ li a:hover {
     #data{
         display: none;
     }
+=======
+label{
+    margin-bottom: 5px;
+    float: center;
+}
+
+#ProfilePhoto{
+    margin:60px 20px;
+}
+#nameUSer{
+    font-family: 'roboto';
+}
+>>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
