@@ -1,37 +1,10 @@
-<<<<<<< HEAD:src/style.css
-body{ 
-    background: url(../imagenes/Captura.jpg);
-    background-size: cover;  
-    font-family: 'Amatic SC'; 
-    padding: 0px;
-    margin: 0px;
-}
-#perfil{
-     margin:25px;
-}
-#titulo{
-    width: 20%;
-=======
 .logoGo{
     margin-top: 5px;
->>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 }
 .logo{
     margin-top: 5px;
 }
 
-<<<<<<< HEAD:src/style.css
-#pencil{
-color:white;
-}
-#fecha{
-    color: white;
-    margin-bottom: 20px;
-}
-#ciudad{
-    color:white;
-  
-=======
 body{   
     background: rgb(255, 255, 255);
     font-family: 'Amatic SC'; 
@@ -40,7 +13,6 @@ body{
 }
 #UserProfile{
     display:none;
->>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 }
 
 .frase{
@@ -71,49 +43,6 @@ width: 100%;
     font-weight: bold;
     font-size:17px;
 }
-<<<<<<< HEAD:src/style.css
-.btnSocialFacebook {
-
-        font-weight: 500;
-        border: none;
-         
-        text-decoration:none;
-        padding:15px;
-        background:#4A6EA8;
-        font-size:20px;
-        float: right;
-       
-        text-align:center;
-        cursor:pointer;
-        transition:.5s ease;
-        margin-right: 30px;
-        margin-top: 5px;
-        max-width:200px;
-        width: 150px;
-        margin-top: 5px;
-        height: 50px;
-       
-}
-
-
-.btnSocialGoogle{
-    font-weight: 500;
-    border: none;
- padding:15px;
- background:#DF4B38;
- font-size:20px;
- float:left;
- max-width:200px;
- width: 150px;
- text-align:center;
- cursor:pointer;
- transition:.5s ease;
- margin-left: 30px;
- margin-top: 5px;
- height: 50px;
-}
-=======
->>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 
 .imgLog{
     height: 30px;
@@ -174,11 +103,7 @@ section{
     }
 #content{
     height: 400px;
-<<<<<<< HEAD:src/style.css
-    width: 100%;
-=======
     width: 700px;
->>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 }
 aside{
     width: 270px;
@@ -201,87 +126,14 @@ aside{
     height: 130px;
 }
 
-<<<<<<< HEAD:src/style.css
-tab-group:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-li a {
-        display:block;
-        text-decoration:none;
-        padding:15px;
-        background:rgba(#a0b3b0,.25);
-        color:#a0b3b0;
-        font-size:20px;
-        float:left;
-        width:50%;
-        text-align:center;
-        cursor:pointer;
-        transition:.5s ease;
-}
-li a:hover {
-          background:#19ff66;
-          color:#fffFff;
-        
-      }
-.active a {
-        background:rgb(96, 240, 168);
-        color:#fffFff;
-}
-
-.tab a{
-    background:#19ff66;
-=======
 .inferior{
     margin-top: 20px;
 }
 
 .boton-redes{
     margin-top: 30px;
->>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
 }
 
-<<<<<<< HEAD:src/style.css
-    .login{
-            border:0;
-            outline:none;
-            border-radius:0;
-            padding:15px 0;
-            font-size:20px;
-            background:#19ff66;
-            color: #ffffff;
-            width: 50%;
-            margin: 15px;
-            height: 55px;
-    }
-    
-    .login:hover{
-            background:#13232f;
-    }
-    
-    h1{
-            text-align:center;
-            color: #000000;;
-            font-weight:300;
-            margin:0 0 10px;
-    }
-
-    p{
-        text-align:center;
-        color:#000000;
-        font-weight:400;
-        margin:10px 0 0px;
-        font-size: 20px;
-        font-family: 'Titillium Web';
-        
-    }
-    
-    #data{
-        display: none;
-    }
-=======
 label{
     margin-bottom: 5px;
     float: center;
@@ -293,4 +145,3 @@ label{
 #nameUSer{
     font-family: 'roboto';
 }
->>>>>>> 5dd8973d884534c32d01e27033b21b8b8bd6acbe:style.css
