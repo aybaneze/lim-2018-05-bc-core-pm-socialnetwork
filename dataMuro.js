@@ -34,7 +34,3 @@ facebook1.addEventListener('click', inFacebook)
 registrar.addEventListener('click', registerFunction)
 btnSignin.addEventListener('click', signinFunction)
 btnLogout.addEventListener('click', logoutFunction)
-// let post=document.getElementById('post');
-// let content=document.getElementById('content');
-// const botonpostea=document.getElementById('botonpostea');
-// botonpostea.addEventListener('click',postear);
