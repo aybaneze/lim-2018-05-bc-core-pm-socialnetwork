@@ -3,7 +3,7 @@ window.onload = () => {
         if (user) {
             data.classList.remove("hiden");
             Init.classList.add("hiden");
-            Profile.innerHTML="<img style='height:106px;width:106px;border-radius:100px;float:center' src='" + user.photoURL + "'/>";
+            Profile.innerHTML="<img style='height:110px;width:110px;border-radius:100px;float:center;' src='" + user.photoURL + "'/>";
             UserCount.innerHTML="<p>" + user.displayName + "</p>";  
             console.log('Inicio sesion srta')
         } else {
@@ -197,7 +197,8 @@ function valposteos() {
 
             p.innerHTML = `
                     <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:90%;"><br>
-                    <div><img src="../imagenes/captura.jpg" class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
+                    <div><img src="../imagenes/captura.jpg" class="w3-left w3-circle w3-margin-right" style="width:100px;heigth:120px;"></div>
+                    <div><h1>FREEW!<h1></div>
                     <span class="w3-right w3-opacity">16 min</span>
                     <div><p style="font-size:20px;"></p></div>
                     <div id=${item}>${snapshot.val()[item].body}</div><br>
@@ -214,7 +215,7 @@ function valposteos() {
                     </div> 
                     <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick="document.getElementById('modals').style.display='block'"><i class="far fa-edit"></i>Editar</button>
                     <div id="modals" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-                    <div style="background:white;width:40%;margin:30%;padding:30px;text-align:center;">
+                    <div style="background:white;width:40%;margin:10% 30%;padding:30px;text-align:center;">
                     <p>¿Desea editar su publicación?</p>
                     <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editPost('${item}')"><i class="far fa-edit"></i> SI</button>
                     <button class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-edit"></i> NO</button>
