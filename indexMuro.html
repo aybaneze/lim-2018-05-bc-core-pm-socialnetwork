@@ -1,168 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/regular.css" integrity="sha384-zkhEzh7td0PG30vxQk1D9liRKeizzot4eqkJ8gB3/I+mZ1rjgQk+BSt2F6rT2c+I"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap-social.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/solid.js" integrity="sha384-YmNA3b9AQuWW8KZguYfqJa/YhKNTwGVD5pQc1cN0ZAVRudFFtR17HR7rooNcVXe4"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/regular.js" integrity="sha384-YdSTwqfKxyP06Jj3UzTeumv8M+Pme60+KND4oF+5r5VeUCvdkw7NhSzFYWbe00ba"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/brands.js" integrity="sha384-4BRtleJgTYsMKIVuV1Z7lNE29r4MxwKR7u88TWG2GaXsmSljIykt/YDbmKndKGID"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/fontawesome.js" integrity="sha384-QcnrgQuRmocjIBY6ByWMmDvUg3HO4MSdVjY7ynJwZfvTDhVPPQOUI9TRzc6/7ZO1"
+    crossorigin="anonymous"></script>
   <title>FreeW</title>
-  <!-- firestore -->
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 </head>
-<body class="w3-theme-l5">
-              
-     <div id='data'>
-                    <div class="w3-container w3-teal">
-                               <div class="w3-dropdown-hover w3-teal">   
-                                  <a href="#" class="w3-bar-item w3-button w3-hover-white" title="friends"><i class="fa fa-group" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">1</span></a>
-                                  <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
-                                  <a href="#" class="w3-bar-item w3-button">Oshin Te envio una invitación</a>
-                                  <a href="#" class="w3-bar-item w3-button">Ana Te envio una invitación</a>
-                                  <a href="#" class="w3-bar-item w3-button">karla Te envio una invitación</a>
-                                 </div>
-                                </div> 
-                             <div class="w3-dropdown-hover">   
-                                <a href="#" class="w3-bar-item w3-button w3-hover-white" title="Messages"><i class="fa fa-comments" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">10</span></a>                                
-                                <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
-                                  <a href="#" class="w3-bar-item w3-button">Ana: Hola!</a>
-                                  <a href="#" class="w3-bar-item w3-button">Oshin: Ya me uní</a>
-                                  <a href="#" class="w3-bar-item w3-button">karla: como estas?</a>
-                                 </div>
-                                </div>
-                             <div class="w3-dropdown-hover">                                   
-                                <button   class="w3-button" title="Notifications"><i class="fa fa-bell" style="font-size:32px;"></i><span class="w3-badge w3-right w3-large w3-red">3</span></button>
-                                  <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
-                                  <a href="#" class="w3-bar-item w3-button">Tienes un Nuevo me gusta</a>
-                                  <a href="#" class="w3-bar-item w3-button">2 solicitudes</a>
-                                  <a href="#" class="w3-bar-item w3-button">Oshin se unio!</a>
-                                 </div>
-                                </div>
-                             <div class="w3-dropdown-hover">                                   
-                               <button   class="w3-button w3-padding-large"  title="Notifications"><i class="fa fa-th-list" style="font-size:36px;"></i></button>
-                               <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:100px">
-                                 <a href="#" class="w3-bar-item w3-button">Profile</a>
-                                 <a href="#" class="w3-bar-item w3-button">Settings</a>
-                                 <a href="#" class="w3-bar-item w3-button">Help me!</a>
-                                 <button  id="botoncerrar" class="w3-button w3-padding-large w3-hide-small" title="Cerrar Sesión" class="w3-bar-item w3-button"><i class="fa fa-close"></i>Salir</button> 
-                               </div>
-                            </div>
-                           </div>              
-        <div class="container2">
-         <aside class="w3-hide-medium">
-          <div class="w3-container w3-content" style="max-width:1400px;margin-top:5px">    
-                    <!-- Profile -->
-                    <div class="w3-card w3-round w3-teal">
-                      <div class="w3-container">
-                       <h4 class="w3-center">Mi Perfil</h4>
-                       <h4><span id="UserCount"></span></h4>
-                       <img src="imagenes/perfil.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:160px" id = 'perfil' onclick="document.getElementById('modal01').style.display='block'">
-                        <div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-                          <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/perfil.png">
-                      </div>               
-                       <p id='pencil'><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme-white"></i> Designer, UX</p>
-                       <p id= 'ciudad'><i class="fa fa-home fa-fw w3-margin-right w3-text-theme-white"></i> Lima-Peru</p>
-                       <p id='fecha'><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme-white"></i> 27/Junio/1996</p>
-                    </div>
-                  </div>
-                  <br>
-      </aside>
-      <section>  
 
-                    <div class="postea" class="w3-col m7">
-                            <div class="w3-row-padding">
-                                <div class="w3-card w3-round w3-white">
-                                  <div class="w3-container w3-padding">
-                                    <h6 class="w3-opacity">Estado</h6>
-                                    <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
-                                    <button id ='boton' onclick = 'guardar()' class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
-                                    <button class="w3-button w3-theme"><i class="fa fa-camera"></i>  Photo</button> 
-                                     </div>
-                                </div>
-                            </div>
+<body>
 
-      <div id= 'content'>
+  <div id="data">
+    <div class="w3-container w3-teal w3-top" style="float:right">
+      <div class="w3-hover">
+        <button class="w3-button w3-padding-large">Notificaciones</button>
+        <button class="w3-button w3-padding-large">Mensajes</button>
+        <button class="w3-button w3-padding-large">Amigos</button>
+        <button id='perfil' class="w3-button w3-padding-large">Mi Perfil</button>
+        <button id="botoncerrar" class="w3-button w3-padding-large w3-hide-small" title="Cerrar Sesión">Salir</button>
+      </div>
     </div>
-</div>
 
-    </section>
-
-
-    <div id="aside1" class="w3-hide-small">
-      <div class="w3-card w3-round class="w3-hide-medium">
-        <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align">
-            <i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> MENSAJES</button>
-          <div id="Demo1" class="w3-hide w3-container w3-teal">
-            <p>ANA: HOLA</p>
-            <p>OSHIN: QUE HACES?</p>
+    <div class="container2">
+      <aside>
+        <div class="w3-container w3-content" style="max-width:1400px;margin-top:5px">
+          <!-- Profile -->
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container">
+            </div>
           </div>
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align">
-            <i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> EVENTOS</button>
-          <div id="Demo2" class="w3-hide w3-container w3-teal">
-            <p>Tienes 1 evento</p>
+          <br>
+      </aside>
+      <section>
+        <div class="postea" class="w3-col m7">
+          <div class="w3-row-padding">
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container w3-padding">
+                <h6 class="w3-opacity">Estado</h6>
+                <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding">
+                <br>
+                <button id='botonpostea' class="w3-button w3-theme">
+                  <i class="fas fa-edit"></i> Publicar</button>
+                <button class="w3-button w3-theme">
+                  <i class="fa fa-camera"></i> Foto</button>
+              </div>
+            </div>
           </div>
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align">
-            <i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
-          <div id="Demo3" class="w3-hide w3-container w3-teal">
-            <div class="w3-row-padding">
-              <br>
-              <div class="w3-half">
-                <img src="imagenes/frase2.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal02').style.display='block'">
-                <div id="modal02" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-                  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/frase2.png">
-              </div>   
-              </div>
-              <div class="w3-half">
-                <img src="imagenes/frase3.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal03').style.display='block'">
-                <div id="modal03" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-                  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/frase3.png">
-              </div> 
-              </div>
-              <div class="w3-half">
-                <img src="imagenes/frase4.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal04').style.display='block'">
-                <div id="modal04" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-                  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/frase4.png">
-              </div> 
-              </div>
-              <div class="w3-half">
-                <img src="imagenes/frase1.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal05').style.display='block'">
-                <div id="modal05" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-                  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/frase1.png">
-              </div> 
-              </div>
-              <div class="w3-half">
-                <img src="imagenes/perfil.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal06').style.display='block'">
-                <div id="modal06" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-                  <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/perfil.png">
-              </div> 
-              </div>
-              <div class="w3-half">
-                <img src="imagenes/fuerza.png" style="width:100%" class="w3-margin-bottom" onclick="document.getElementById('modal07').style.display='block'">
-                <div id="modal07" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
-                    <img class="w3-modal-content" style="width:30%;margin-left:450px" style="margin:40px" src="imagenes/fuerza.png">
-                </div> 
+          <div id='content'>
+          </div>
+        </div>
+      </section>
+      <div id="aside1">
+        <div class="w3-card w3-round">
+          <div class="w3-white">
+            <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+              <i class="fas fa-users"></i> Grupos </button>
+            <div id="Demo1" class="w3-hide w3-container">
+              <p>Some text..</p>
+            </div>
+            <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+              <i class="fas fa-calendar-alt"></i> Eventos </button>
+            <div id="Demo2" class="w3-hide w3-container">
+              <p>Some other text..</p>
+            </div>
+            <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align">
+              <i class="fas fa-images"></i> Fotos </button>
+            <div id="Demo3" class="w3-hide w3-container">
+              <div class="w3-row-padding">
+                <br>
+                <div class="w3-half">
+                  <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+                </div>
+                <div class="w3-half">
+                  <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+                </div>
+                <div class="w3-half">
+                  <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+                </div>
+                <div class="w3-half">
+                  <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+                </div>
+                <div class="w3-half">
+                  <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+                </div>
+                <div class="w3-half">
+                  <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <br>
+
       </div>
-      <br>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAd-_QsITc2hsVEPLgnB2TSVLe2xkfT8fs",
+          authDomain: "nuestra-red-social.firebaseapp.com",
+          databaseURL: "https://nuestra-red-social.firebaseio.com",
+          projectId: "nuestra-red-social",
+          storageBucket: "nuestra-red-social.appspot.com",
+          messagingSenderId: "202930589167"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script src='Muro.js'></script>
+</body>
 
-    
-
-    </div>
-  </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-
-   <script src="data.js"></script>
-    <script src='dataMuro.js'></script>
+</html>
 
 </body>
 

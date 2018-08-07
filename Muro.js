@@ -1,107 +1,8 @@
-window.onload = () => {
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            data.classList.remove("hiden");
-            Init.classList.add("hiden");
 
-            Profile.innerHTML = "<img style='height:106px;width:106px;border-radius:100px;float:center' src='" + user.photoURL + "'/>";
-            UserCount.innerHTML = "<p>" + user.displayName + "</p>";
-
-
-            console.log('Inicio sesion srta')
-        } else {
-            Init.classList.remove("hiden");
-            data.classList.add('hiden');
-            console.log('Inicio sesion srta')
-        }
-    });
+document.getElementById('perfil').addEventListener('click', perfil);
+function perfil() {
+    window.location.href = 'index.html'
 }
-
-document.getElementById('muro').addEventListener('click', muro);
-function muro() {
-    window.location.href = 'indexMuro.html'
-}
-function guardaDatos(user) {
-    var usuario = {
-        uid: user.uid,
-        nombre: user.displayName,
-        email: user.email,
-        foto: user.photoURL
-    }
-
-    firebase.database().ref('freww/' + user.uid)
-        .set(usuario)
-}
-
-const registerFunction = () => {
-    firebase.auth().createUserWithEmailAndPassword(email1.value, pass.value)
-        .then(function () {
-            state.name = name.value;
-            guardaDatos(result.user);
-            console.log('se creo el usuario');
-            alert("Usted está registradx")
-        })
-        .catch(function (error) {
-            console.log(error.code, error.message);
-        });
-}
-
-const signinFunction = () => {
-    firebase.auth().signInWithEmailAndPassword(email.value, password.value)
-        .then(function () {
-            guardaDatos(result.user);
-            console.log('inicio sesión');
-        })
-        .catch(function (error) {
-            console.log(error.code, error.message)
-        });
-
-}
-
-const logoutFunction = () => {
-    firebase.auth().signOut().then(function () {
-        console.log('cerraste Sesion srta')
-        Init.classList.remove("hiden");
-        data.classList.add("hiden");
-    }).catch(function (error) {
-        console.log('error al cerrar sesion');
-    })
-}
-
-const inGoogle = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-        guardaDatos(result.user);
-        console.log('inicie sesion con google');
-    }).catch(function (error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
-        // ...
-    });
-}
-
-const inFacebook = () => {
-    var provider = new firebase.auth.FacebookAuthProvider();
-    provider.setCustomParameters({
-        'display': 'popup'
-    });
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-        guardaDatos(result.user);
-        console.log('inicie sesion con facebook')
-    }).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
-}
-
 
 let postKeyUpdate = '';
 
@@ -109,6 +10,7 @@ function writeNewPost(uid, body) {
     console.log('write');
     // A post entry.
     var postData = {
+        
         uid: uid,
         body: body,
     };
@@ -143,7 +45,6 @@ function removePost(postkey) {
 
 }
 
-
 function editPost(postkey) {
     let uid = firebase.auth().currentUser.uid;
     let path = '/posts/' + uid + '/' + postkey;
@@ -177,7 +78,7 @@ function valposteos() {
             const p = document.createElement('p');
 
             p.innerHTML = `
-                    <div class="w3-card w3-round w3-white">
+             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
                     <p>${snapshot.val()[item].uid}</p>
                     <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
