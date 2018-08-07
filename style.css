@@ -6,7 +6,8 @@
 }
 
 body{   
-    background: rgb(255, 255, 255);
+    background:url(imagenes/Captura.jpg);
+    background-size: cover;
     font-family: 'Amatic SC'; 
     padding: 0px;
     margin: 0px;
@@ -20,10 +21,44 @@ body{
     margin-left: 40px;
     width: 500px;
 }
+#Init{
+background: url(imagenes/Captura.jpg); 
+background-size: cover;
+}
 .containerG {
-margin:0px;
-background-color:#FEFEFE;
-width: 100%;
+margin-left: 50px;
+background: url(imagenes/Captura.jpg);
+background-size: cover;
+padding-left:500px;
+padding-top:100px;
+}
+#facebook{
+background:#3B5998;
+color: white;
+font-size:20px;
+}
+#google{
+margin-top: -15px;
+background:#DB4437;
+color: white;
+font-size:20px;
+}
+#google1{
+    margin-top: -15px;
+background:#DB4437;
+color: white;
+font-size:20px;
+}
+#facebook1{
+background:#3B5998;
+color: white;
+font-size:20px;
+}
+#registrar{
+    margin-right: 50px;
+}
+#res{
+   margin-top: -30px;
 }
 #Init{
     background-color: #FEFEFE;
@@ -66,7 +101,8 @@ background-color:#b1fdce;
 .form{
     display: none;
 }
-#prueba{    
+#prueba{ 
+      
     height: 530px;
     max-width: 360px;
     padding: 10px; 
@@ -74,7 +110,7 @@ background-color:#b1fdce;
     border-radius: 15px;
     text-align: center;
     color: #181717;
-    background:#ffffff;
+    background:white;
     border-radius:4px;
     box-shadow: 0 4px 10px 4px;
 }
