@@ -26,7 +26,11 @@ function guardaDatos(user) {
         .set(usuario)
 }
 
+
+
+
 const registerFunction = () =>{
+if(email1.value !== '' && pass.value !== '' && name.value !== ''){
 if (/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email1.value)){
 firebase.auth().createUserWithEmailAndPassword( email1.value , pass.value)
 .then(function(){
@@ -42,8 +46,13 @@ firebase.auth().createUserWithEmailAndPassword( email1.value , pass.value)
     alert("correo electronico incorrecto");
   }
 }
+else{
+    alert("debe llenar los campos vacios obligatoriamente");
+}
+}
 
 const signinFunction = () => {
+    if(email.value !== '' && password.value !== ''){
     if(/^[a-zA-Z0-9._-]+@+[a-z]+.+[a-z]/.test(email.value)){
     firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then ( function (){
@@ -52,12 +61,15 @@ const signinFunction = () => {
     })
     .catch(function(error) {
         console.log(error.code , error.message)
+        alert('Datos incorrectos')
       });}
       else{
         alert("correo electronico incorrecto");
       }
 
-}
+}else{
+    alert("debe llenar los campos vacios obligatoriamente")
+}}
 
 const logoutFunction = () =>{
     firebase.auth().signOut().then(function () {
@@ -113,6 +125,7 @@ function writeNewPost(uid, body) {
         uid: uid,
         body: body,
         starCount:0,
+ 
     };
 
     if (postKeyUpdate == ''){
@@ -149,14 +162,15 @@ function removePost(postkey){
 function editPost(postkey)
 {
     let uid = firebase.auth().currentUser.uid;
+   
     let path = '/posts/' + uid + '/' + postkey;
     let promise =firebase.database().ref(path).once('value');
     promise.then(snapshot => {
 
         postKeyUpdate = postkey;
         let msg = snapshot.val().body;
-
         post.value = msg;
+    
     })
 }
 
@@ -171,6 +185,8 @@ function valposteos() {
     while (div.firstChild) div.removeChild(div.firstChild);
 
     var userId = firebase.auth().currentUser.uid;
+
+
     const promesita = firebase.database().ref('/posts').child(userId).once('value');
 
     const posteos = promesita.then(function (snapshot) {
@@ -180,8 +196,7 @@ function valposteos() {
             const p = document.createElement('p');
 
             p.innerHTML = `
-                
-                    <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+                    <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:90%;"><br>
                     <div><img src="../imagenes/captura.jpg" class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
                     <span class="w3-right w3-opacity">16 min</span>
                     <div><p style="font-size:20px;"></p></div>
@@ -189,9 +204,23 @@ function valposteos() {
                     <hr class="w3-clear">
                     <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
                     <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
-                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "removePost('${item}')"><i class="far fa-trash-alt"></i>Elimina</button>           
-                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editPost('${item}')"><i class="far fa-edit"></i> Editar</button>
+                     <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick="document.getElementById('modalsRemove').style.display='block'"><i class="far fa-trash-alt"></i>Eliminar</button>          
+                     <div id="modalsRemove" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+                    <div style="background:white;width:40%;margin:10% 30%;padding:30px;text-align:center;">
+                    <p>¿Desea Eliminar su publicación?</p>
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "removePost('${item}')"><i class="far fa-trash-alt"></i> SI</button>          
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-trash-alt"></i> NO</button>
+                    </div>
                     </div> 
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick="document.getElementById('modals').style.display='block'"><i class="far fa-edit"></i>Editar</button>
+                    <div id="modals" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+                    <div style="background:white;width:40%;margin:30%;padding:30px;text-align:center;">
+                    <p>¿Desea editar su publicación?</p>
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editPost('${item}')"><i class="far fa-edit"></i> SI</button>
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-edit"></i> NO</button>
+                    </div>
+                    </div> 
+                
                     </div><br>`
                 ;
             return div.appendChild(p)
