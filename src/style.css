@@ -6,7 +6,7 @@
 }
 
 body{   
-    background:url(imagenes/Captura.jpg);
+    background:url(../imagenes/Captura.jpg);
     background-size: cover;
     font-family: 'Amatic SC'; 
     padding: 0px;
@@ -28,37 +28,36 @@ body{
     width: 500px;
 }
 #Init{
-background: url(imagenes/Captura.jpg); 
+background: url(../imagenes/Captura.jpg); 
 background-size: cover;
 }
 .containerG {
-margin-left: 50px;
+
 background: url(imagenes/Captura.jpg);
 background-size: cover;
-padding-left:500px;
-padding-top:100px;
+
 }
 #facebook{
 background:#3B5998;
 color: white;
-font-size:20px;
+font-size:100%;
 }
 #google{
 margin-top: -15px;
 background:#DB4437;
 color: white;
-font-size:20px;
+font-size:100%;
 }
 #google1{
-    margin-top: -15px;
+margin-top: -15px;
 background:#DB4437;
 color: white;
-font-size:20px;
+font-size:100%;
 }
 #facebook1{
 background:#3B5998;
 color: white;
-font-size:20px;
+font-size:100%;
 }
 #registrar{
     margin-right: 50px;
@@ -110,7 +109,7 @@ background-color:#b1fdce;
 #prueba{ 
       
     height: 530px;
-    max-width: 360px;
+    max-width: 390px;
     padding: 10px; 
     margin: 10px 50px;
     border-radius: 15px;
