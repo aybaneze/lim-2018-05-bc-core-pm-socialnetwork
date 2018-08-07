@@ -79,9 +79,8 @@ function valposteos() {
 
             p.innerHTML = `
             <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:90%;"><br>
-            <div><img src="../imagenes/captura.jpg" class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
+            <img src="../imagenes/logoWeb.png" id="logoWeb">  
             <span class="w3-right w3-opacity">16 min</span>
-            <div><p style="font-size:20px;"></p></div>
             <div id=${item}>${snapshot.val()[item].body}</div><br>
             <hr class="w3-clear">
             <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
