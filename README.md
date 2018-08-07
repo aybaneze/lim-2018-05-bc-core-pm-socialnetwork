@@ -17,10 +17,19 @@ Considerando de que nuestra cliente no tenia un tema definido y tomando como pun
 
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/Fotos_Encuesta/temas.png)
 
-El tema más votado fue **Feminismo**, como bien sabemos es un tema que genera un fuerte impacto en la sociedad actualmente, sin embargo las más interesadas en este movimiento por la igualdad de derechos son las mujeres.
+## Conclusiones
+al realizar la encuesta concluimos en que nuestra red social seria dirigida solo para mujeres, pues en las respuestas de nuestros encuestados varones notamos el desisnteres por este tema, siendo las mujeres las mas interesadas en que exista un red social dirigida para ellas donde tenga como tema principal el feminismo, corriente que viene creciendo  pero que no cuenta con una red socila exclusiva a esta corriente y que toman como plataformas a las diferentes redes sociales.
+Es asi que nace la idea  de crear freew, una red social hecha por mujeres para mujeres cuyo objetivo es informar sobre la corriente feminista()
+-------------------------------------------- 
+La encuesta arrojó que el  tema más votado fue **El Feminismo** con un45% a favor  de dencuestadas se siente identificada con este tema, considerando que nuestro publico objetivo esta dirigido a toda las mujeres que quiern ser representadas con esta corriente feminista y que ademas un estudio de Nielsen muestra que las mujeres dedican a diario cerca de diez minutos a interactuar en las redes sociales desde sus móviles o apps, mientras que los hombres pasan menos de siete minutos, es que nace la idea
 
-### Feminismo
-El feminismo lucha contra el heteropatriarcado, una corriente social en la que todos participamos con pequeños actos que nos han enseñado a lo largo de los años y que sitúan a los hombres con más derechos, oportunidades o seguridad que las mujeres. De ahí que aún haya gente que no vea mal acosar o maltratar a las mujeres. No hay más que ver los casos de violencia doméstica en los que hay muertes o la cantidad de mujeres violadas a lo largo y ancho del mundo.
+
+Tras todas las plataformas de las redes sociales se encuentran millones de mujeres a las que parece que les encanta usar el móvil.
+
+La diversidad puede no ser sorprendente, pero la información detallada por plataforma sí lo es.
+
+![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/gh-pages/Fotos_Encuesta/graficoComparativo.png)
+
 
 Es por ello que se eligio el siguiente logo como representación de la Libertad por lo que tanto luchamos. 
 
@@ -122,6 +131,10 @@ Por ello se les propuso **FreeW!** Una red social En la cual podran compartir cu
 ## TESTING CON USUARIOS
 
 **PANTALLA DE REGISTRO**
+
+Al realizar los sketchs anteriores, los usuarios dieron algunas sugerencias respecto a los colores, ya que eran muy fuertes, además los logos de redes sociales estaban muy grandes.
+
+Es Por ello que se realizo otros skecth y se les mostró,   
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting.png)
 
