@@ -21,7 +21,7 @@ Considerando de que nuestra cliente no tenia un tema definido y tomando como pun
 
 Al realizar la encuesta concluimos en que nuestra red social seria dirigida solo para mujeres, pues en las respuestas de nuestros encuestados varones notamos el desisnteres por este tema, siendo las mujeres las mas interesadas en que exista un red social dirigida para ellas donde tenga como tema principal el feminismo, corriente que viene creciendo  pero que no cuenta con una red socila exclusiva a esta corriente y que toman como plataformas a las diferentes redes sociales.
 Es asi que nace la idea  de crear freew, una red social hecha por mujeres para mujeres cuyo objetivo es informar sobre la corriente feminista()
--------------------------------------------- 
+
 La encuesta arrojó que el  tema más votado fue **El Feminismo** con un45% a favor  de dencuestadas se siente identificada con este tema, considerando que nuestro publico objetivo esta dirigido a toda las mujeres que quiern ser representadas con esta corriente feminista y que ademas un estudio de Nielsen muestra que las mujeres dedican a diario cerca de diez minutos a interactuar en las redes sociales desde sus móviles o apps, mientras que los hombres pasan menos de siete minutos, es que nace la idea
 
 
@@ -135,9 +135,11 @@ Por ello se les propuso **FreeW!** Una red social En la cual podran compartir cu
 
 Al realizar los sketchs anteriores, los usuarios dieron algunas sugerencias respecto a los colores, ya que eran muy fuertes, además los logos de redes sociales estaban muy grandes.
 
-Es Por ello que se realizo otros skecth y se les mostró,   
+Es Por ello que se realizo otros skecth y se les mostró para que puedan interactuar.   
 
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting.png)
+
+Se les cambio los botones, los colores, ya que eran muy llamativos.
 
 **PANTALLA DE iNICIO DE SESIÓN**
 
