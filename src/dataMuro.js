@@ -34,3 +34,8 @@ facebook1.addEventListener('click', inFacebook)
 registrar.addEventListener('click', registerFunction)
 btnSignin.addEventListener('click', signinFunction)
 btnLogout.addEventListener('click', logoutFunction)
+
+document.getElementById('muro').addEventListener('click', muro);
+function muro() {
+    window.location.href = 'indexMuro.html'
+}
