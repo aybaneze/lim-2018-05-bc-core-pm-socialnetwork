@@ -50,10 +50,10 @@ function editPost(postkey) {
     let path = '/posts/' + uid + '/' + postkey;
     let promise = firebase.database().ref(path).once('value');
     promise.then(snapshot => {
-
+        
         postKeyUpdate = postkey;
         let msg = snapshot.val().body;
-
+        
         post.value = msg;
     })
 }
@@ -61,16 +61,15 @@ function editPost(postkey) {
 let post = document.getElementById('post');
 let content = document.getElementById('content');
 const botonpostea = document.getElementById('botonpostea');
-
-
 const div = document.createElement('div');
+
+
 function valposteos() {
 
     while (div.firstChild) div.removeChild(div.firstChild);
 
     var userId = firebase.auth().currentUser.uid;
-    const promesita = firebase.database().ref('/posts').child(userId).once('value');
-
+    const promesita = firebase.database().ref('/posts').once('value');
     const posteos = promesita.then(function (snapshot) {
 
         Object.keys(snapshot.val()).map(item => {
@@ -115,6 +114,7 @@ function valposteos() {
 
 //console.log(valposteos());
 content.appendChild(div)
+
 botonpostea.addEventListener('click', () => {
     console.log('entra al evento')
 
@@ -123,22 +123,6 @@ botonpostea.addEventListener('click', () => {
 
     valposteos();
 
-    /*     const p = document.createElement('p');
-    
-        p.innerHTML = content.innerHTML += `
-                    
-                        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-                        <div id='prof' class="w3-left w3-circle w3-margin-right" style="width:60px"></div>
-                        <span class="w3-right w3-opacity">16 min</span>
-                        <div id=id=${newPost}>${post.value}</div><br>
-                        <hr class="w3-clear">
-                        <button id="fb-root" data-layout="button_count" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="far fa-thumbs-up"></i> Me Gusta</button> 
-                        <button id="plusone-div" type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comentar</button> 
-                        <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "eliminar()"><i class="far fa-trash-alt"></i>Elimina</button>           
-                        <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editar()"><i class="far fa-edit"></i> Editar</button>
-                        </div> 
-                        </div><br>`
-            ; */
     return 'creo';
 
 });
