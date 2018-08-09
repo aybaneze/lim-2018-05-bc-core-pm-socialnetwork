@@ -155,6 +155,7 @@ function removePost(postkey) {
     let path = '/posts/' + uid + '/' + postkey;
     firebase.database().ref(path).remove().then(function () {
         valposteos();
+        alert("desea eliminar su comentario")
     })
         .catch(function (error) {
             console.log("ERROR PE: " + error.message)
