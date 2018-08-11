@@ -121,6 +121,7 @@ const inFacebook = () => {
 }
 
 
+
 let postKeyUpdate = '';
 
 function writeNewPost(uid, body) {
@@ -135,15 +136,17 @@ function writeNewPost(uid, body) {
 
     if (postKeyUpdate == '') {
         // Get a key for a new Post.
-        var newPostKey = firebase.database().ref().child('posts').push().key;
+        var newPostKey = firebase.database().ref().child('user-posts').push().key;
 
         // Write the new post's data simultaneously in the posts list and the user's post list.
         var updates = {};
+        updates['/user-posts/' + newPostKey] = postData;
         updates['/posts/' + uid + '/' + newPostKey] = postData;
     }
     else {
         var updates = {};
-        updates['/posts/' + uid + '/' + postKeyUpdate] = postData;
+        updates['/user-posts/'+  newPostKey] = postData;
+     updates['/posts/' + uid + '/' + newPostKey] = postData;
         postKeyUpdate = '';
     }
     firebase.database().ref().update(updates);
@@ -205,17 +208,15 @@ function valposteos() {
                     <div style="font-size:20px;" id=${item}>${snapshot.val()[item].body}</div><br>
                     <hr class="w3-clear">
                     <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick ="like('${item}','${userId}')"><i class="far fa-thumbs-up"></i> Me Gusta ${snapshot.val()[item].likeCount}</button>  
-                      <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "removePost('${item}')"><i class="far fa-trash-alt"></i> ELIMINAR</button>         
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "removePost('${item}')"><i class="far fa-trash-alt"></i> ELIMINAR</button>         
                     <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editPost('${item}')"><i class="far fa-edit"></i>EDITAR</button>
                     </div>
                     </div> 
-                    </div><br>`
-                ;
+                    </div><br>`;
             return div.appendChild(p)
         })
         return snapshot.val();
     });
-
     console.log(posteos);
 }
 

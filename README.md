@@ -32,11 +32,19 @@ La diversidad puede no ser sorprendente, pero la información detallada por plat
 ![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/gh-pages/Fotos_Encuesta/graficoComparativo.png)
 
 
-Es por ello que se eligio el siguiente logo como representación de la Libertad por lo que tanto luchamos. 
 
-![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/imagenes/logoWeb.png)
 
-silueta de una mujer con las manos extendidas 
+## Elementos de redes sociales:
+
+Google+: Se trata de una combinación de servicios de diferentes tipos, incluyendo recomendaciones, video chat y mensajería grupal ,que abarcan múltiples facetas de nuestras relaciones e interacciones en la web. Al igual que otros servicios en la web, tenemos un perfil personal, desde donde podemos compartir links interesantes, ideas, videos, fotos.
+
+Twitter: La red con sistema microblogging que permite enviar mensajes de texto plano de corta longitud, con un máximo de 140 caracteres, llamados tweets, que se muestran en la página principal del usuario. Los usuarios pueden suscribirse a los tweets de otros usuarios  – a esto se le llama "seguir" y a los suscriptores se les llaman "seguidores. Los usuarios pueden twittear desde la web del servicio, desde aplicaciones oficiales externas (como para smartphones), o mediante el servicio de mensajes cortos (SMS) disponible en ciertos países.
+
+Facebook: En septiembre de 2006 se abrió a todos los públicos, cerrando ese año con más de 140 millones de usuarios. Después de crearse una cuenta, el sistema te dirá quiénes de tus contactos de tu libreta de correo electrónico tienen ya un perfil en facebook . Selecciona aquellos que quieras que estén en tu red de amigos. facebook les enviará un mail para que confirmen la solicitud de amistad, tambien el sistema contiene juegos , chat y foros entre muchas otras cosas
+
+
+
+
 
 # UX
 
@@ -92,9 +100,20 @@ El 25% Solo usa para chat.
 
 Facebook es la red social más conocida y más usada actualmente, y con mucha utilidad para poder comunicarnos, sea por chats, mensajes, videollamada, llamadas, entre otras cosas, podemos compartir información como tambien publicarlas. Sin embargo esta red puede ser usada por muchos usuarios con distintos gustos y pensamientos. Dentro de facebook existen comunidades, grupos y eventos en la cual muchos pueden participar.
 
-Nuestras usuarias resaltaron que a pesar que exista grupos, comunidades etc. Hay una disconformidad ya que no existe restricciones para ingresar a esos grupos, personas infiltradas ingresan para agredirlas, ellas destacan que sirve mucho para compartir información sin embargo no están contentas respecto al uso que le dan usuarios que no comparten el tema.
+A medida que fuimos recolectando información con las encuestas y entrevistas Nuestras usuarias resaltaron que a pesar que exista grupos, comunidades etc. Hay una disconformidad ya que no existe restricciones para ingresar a esos grupos, personas infiltradas ingresan para agredirlas, ellas destacan que sirve mucho para compartir información sin embargo no están contentas respecto al uso que le dan usuarios que no comparten el tema.
 
-Por ello se les propuso **FreeW!** Una red social En la cual podran compartir cualquier tipo de información respecto al Feminismo, además podrán tener un filtro respecto a las personas que quieran añadir a su perfil. 
+Por ello se les propuso **FreeW!** Una red social En la cual podran compartir cualquier tipo de información respecto al Feminismo, además podrán tener un filtro respecto a las personas que quieran añadir a su perfil, esto solucionaría el problema de no aceptar a personas que esten disconformes con cosas del interes de una misma. 
+Además podran postear, dar likes, poder poner sus estados como publicos y privados. cabe resaltar que la prioridad de esta red social es poder llegar a más mujeres y poder darles una visión más clara respecto al tema del feminismo.
+
+Es por ello que se eligio el siguiente logo como representación de la Libertad por lo que tanto luchamos. 
+
+![grafico1](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/develop/imagenes/logoWeb.png)
+
+silueta de una mujer con las manos extendidas 
+
+Los usuarios indicaron que al usar **FreeW!** les serviriá de mucho ya que podran compartir información, y estar alertas de los nuevos casos que puedan existir respecto a maltrato violaciones y feminicidio, y apoyarse entre los usuarios y además de que puedan llegar a mas usuarios y ser una red más amplia. 
+
+Nos aseguramos que los usuarios usen Freew! ya que podrán revisar cualquier tipo de información y que esta será netamente relacionado al feminismo, y que además se compartiran a todas las comunidades que existen sobre feminismo y tambien se tendra mucho más privacidad y seguimiento respecto a los usuarios que ingresen, esto les facilitara y podran ser totalmente libres sin necesidad de prejuicios, además que cumple funciones similares a los de otras redes sociales.
 
 ## Sketch
 
@@ -150,8 +169,16 @@ Se les cambio los botones, los colores, ya que eran muy llamativos.
 ![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/userTesting2.png) 
 
 
+## Testing con prototipo de alta fidelidad
 
+Para poder asegurarnos que los usuarios podrian ingresar con normalidad testeamos el html, nos indicaron que no tenian problema en el inicio de sesión y que además estaba bien elegir esas 2 redes sociales para logearse ya que la mayoria utiliza más esas cuentas. además se le facilita para no escribir mucho.
 
-a continuación el link del proyecto
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/gh-pages/Sketch/logTuser.png) 
 
-https://aybaneze.github.io/lim-2018-05-bc-core-pm-socialnetwork/
+Respecto al registrarse nos sugirieron tambien insertar un cuadro para llenar nombres y diferenciar entre registrar e iniciar sesión, es por ello que se añadió. y dijeron que se veia mejor, a continuación la imagen: 
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/gh-pages/Sketch/regTuser.png) 
+
+Respecto al perfil, habia un boton de comentar, las usuarias indicaron que se retire ya que no tenia funcionalidad, además el idioma seleccionado fue el español ya que muy pocas entendian el ingles, se le añadieron iconos a los botones para que se vea más dinamico.
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/gh-pages/Sketch/regTuser.png) 

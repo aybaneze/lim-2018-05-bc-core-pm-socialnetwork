@@ -57,7 +57,7 @@
         </button>
       </div>
       <div class="inferior">
-        <label>¿No tienes una centa?</label> 
+        <label>¿No tienes una cuenta?</label> 
         <button type="button" class="btn btn-link" id="register">
          <a href="#login">Registrate</a>
          </button>
@@ -135,26 +135,6 @@
                 <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align">
                   <i class="fas fa-images"></i> Fotos </button>
                 <div id="Demo3" class="w3-hide w3-container">
-                  <div class="w3-row-padding">
-                    <br>
-                    <div class="w3-half">
-                      <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
-                    </div>
-                    <div class="w3-half">
-                      <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-                    </div>
-                    <div class="w3-half">
-                      <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
-                    </div>
-                    <div class="w3-half">
-                      <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
-                    </div>
-                    <div class="w3-half">
-                      <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-                    </div>
-                    <div class="w3-half">
-                      <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
-                    </div>
                   </div>
                 </div>
               </div>
@@ -172,6 +152,10 @@
                   <input id="post" type="text" placeholder='Que estas pensando' class="w3-border w3-padding"><br>
                   <button id ='botonpostea' class="w3-button w3-theme"><i class="fas fa-edit"></i> Publicar</button> 
                   <button class="w3-button w3-theme"><i class="fa fa-camera"></i> Foto</button> 
+                  <select id="privacity">
+                    <option value="Publico">Publico</option>
+                    <option value="Privado">Privado</option>
+                  </select>
                    </div>
                 </div>
               </div>
@@ -208,5 +192,6 @@
   </script>
   <script src='data.js'></script>
   <script src ='dataMuro.js'></script>
+
 </body>
 </html>
