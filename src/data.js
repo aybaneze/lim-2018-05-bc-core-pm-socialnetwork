@@ -11,7 +11,9 @@ window.onload = () => {
             data.classList.add('hiden');
             console.log('Inicio sesion srta')
         }
+        valposteos()
     });
+
 }
 
 function guardaDatos(user) {
@@ -127,7 +129,7 @@ function writeNewPost(uid, body) {
     var postData = {
         uid: uid,
         body: body,
-        starCount: 0,
+        likeCount: 0,
 
     };
 
@@ -166,13 +168,15 @@ function removePost(postkey) {
 function editPost(postkey) {
     let uid = firebase.auth().currentUser.uid;
     let path = '/posts/' + uid + '/' + postkey;
-
     let promise = firebase.database().ref(path).once('value');
 
     promise.then(snapshot => {
         postKeyUpdate = postkey;
+       
         let msg = snapshot.val().body;
+        
         post.value = msg;
+        console.log(post)
 
     })
 }
@@ -186,16 +190,10 @@ const botonpostea = document.getElementById('botonpostea');
 
 const div = document.createElement('div');
 function valposteos() {
-
     while (div.firstChild) div.removeChild(div.firstChild);
-
     var userId = firebase.auth().currentUser.uid;
-
-
     const promesita = firebase.database().ref('/posts').child(userId).once('value');
-
     const posteos = promesita.then(function (snapshot) {
-
         Object.keys(snapshot.val()).map(item => {
             const p = document.createElement('p');
 
@@ -206,7 +204,7 @@ function valposteos() {
                     <div><p style="font-size:20px;"></p></div>
                     <div style="font-size:20px;" id=${item}>${snapshot.val()[item].body}</div><br>
                     <hr class="w3-clear">
-                    <button id= 'contando'  class="w3-button w3-theme-d1 w3-margin-bottom" onclick ="like(1)"><i class="far fa-thumbs-up"></i> Me Gusta <span id="countText"></span></button>  
+                    <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick ="like('${item}','${userId}')"><i class="far fa-thumbs-up"></i> Me Gusta ${snapshot.val()[item].likeCount}</button>  
                       <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "removePost('${item}')"><i class="far fa-trash-alt"></i> ELIMINAR</button>         
                     <button class="w3-button w3-theme-d1 w3-margin-bottom" onclick = "editPost('${item}')"><i class="far fa-edit"></i>EDITAR</button>
                     </div>
@@ -220,13 +218,22 @@ function valposteos() {
 
     console.log(posteos);
 }
-let count = 0;
-function like() {
-    const countText = document.getElementById('contando');
-    count = count + 1;
-    countText.innerHTML = count;
 
+
+function like(postkey,uid) {
+    let postIds= firebase.database().ref('posts/'+ uid + '/' + postkey); 
+    postIds.transaction(function(element){
+        console.log(element)
+     if(element){
+         element.likeCount++; 
+        window.location.reload(true);
+     }
+     return element;
+    })  
+    
 }
+
+
 //console.log(valposteos());
 content.appendChild(div)
 botonpostea.addEventListener('click', () => {
@@ -241,3 +248,4 @@ botonpostea.addEventListener('click', () => {
     return 'creo';
 
 });
+
