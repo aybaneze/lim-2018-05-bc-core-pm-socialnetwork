@@ -43,6 +43,7 @@ const registerFunction = () => {
                 })
                 .catch(function (error) {
                     console.log(error.code, error.message);
+                    alert(error.message)
                 });
         }
         else {
@@ -64,7 +65,7 @@ const signinFunction = () => {
                 })
                 .catch(function (error) {
                     console.log(error.code, error.message)
-                    alert('Datos incorrectos')
+                    alert(error.message)
                 });
         }
         else {
