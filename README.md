@@ -181,4 +181,6 @@ Respecto al registrarse nos sugirieron tambien insertar un cuadro para llenar no
 
 Respecto al perfil, habia un boton de comentar, las usuarias indicaron que se retire ya que no tenia funcionalidad, además el idioma seleccionado fue el español ya que muy pocas entendian el ingles, se le añadieron iconos a los botones para que se vea más dinamico.
 
-![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/gh-pages/Sketch/regTuser.png) 
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/figma3.png)
+
+![](https://github.com/aybaneze/lim-2018-05-bc-core-pm-socialnetwork/blob/master/Sketch/profileTuser.png) 
