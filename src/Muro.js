@@ -60,8 +60,9 @@ function writeNewPost(uid, body) {
 
 
 function removePost(postkey) {
-    var uid = firebase.auth().currentUser.uid;
-    let path = '/posts/' + uid + '/' + postkey;
+  
+    let path = '/user-posts/' + postKey;
+    console.log(path)
     firebase.database().ref(path).remove().then(function () {
         valposteos();
         alert("desea eliminar su comentario")
@@ -99,11 +100,11 @@ const div = document.createElement('div');
 function valposteos() {
     while (div.firstChild) div.removeChild(div.firstChild);
    let promise = firebase.database().ref().child('user-posts').once('value');
+   console.log(promise)
     let posteos = promise.then(function (snapshot) {
         Object.keys(snapshot.val()).map(item => {
-   
+          
             const p = document.createElement('p');
-
             p.innerHTML = `
                     <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:90%;"><br>
                     <div><img src="../imagenes/logoWeb.png" id="logoWeb"  style="width:30%;heigth:20%;"></div>
@@ -142,14 +143,18 @@ function like(postkey) {
 //console.log(valposteos());
 content.appendChild(div)
 botonpostea.addEventListener('click', () => {
-
-    console.log('entra al evento')
-
-    var userId = firebase.auth().currentUser.uid;
-    const newPost = writeNewPost(userId, post.value);
-
-    valposteos();
-
-    return 'creo';
-
-});
+    let textVacio = post.value.trim();
+    console.log(textVacio)
+   if(post.value != '' && textVacio != "" ){
+       console.log('entra al evento')
+       var userId = firebase.auth().currentUser.uid;
+       const newPost = writeNewPost(userId, post.value);
+       valposteos();
+       post.value ='';
+       return 'creo';
+   }
+   else{
+       alert("Para publicar debes poner texto");
+   }
+   });
+   
