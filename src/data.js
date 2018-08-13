@@ -121,7 +121,6 @@ const inFacebook = () => {
 }
 
 
-
 let postKeyUpdate = '';
 
 function writeNewPost(uid, body) {
@@ -136,17 +135,15 @@ function writeNewPost(uid, body) {
 
     if (postKeyUpdate == '') {
         // Get a key for a new Post.
-        var newPostKey = firebase.database().ref().child('user-posts').push().key;
+        var newPostKey = firebase.database().ref().child('posts').push().key;
 
         // Write the new post's data simultaneously in the posts list and the user's post list.
         var updates = {};
-        updates['/user-posts/' + newPostKey] = postData;
         updates['/posts/' + uid + '/' + newPostKey] = postData;
     }
     else {
         var updates = {};
-        updates['/user-posts/'+  newPostKey] = postData;
-     updates['/posts/' + uid + '/' + newPostKey] = postData;
+        updates['/posts/' + uid + '/' + postKeyUpdate] = postData;
         postKeyUpdate = '';
     }
     firebase.database().ref().update(updates);
@@ -239,14 +236,16 @@ function like(postkey,uid) {
 content.appendChild(div)
 botonpostea.addEventListener('click', () => {
 
+if(post.value != ''){
     console.log('entra al evento')
-
     var userId = firebase.auth().currentUser.uid;
     const newPost = writeNewPost(userId, post.value);
-
     valposteos();
-
+    post.value ='';
     return 'creo';
-
+}
+else{
+    alert("Para publicar debes poner texto");
+}
 });
 

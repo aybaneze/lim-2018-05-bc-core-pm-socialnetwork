@@ -44,8 +44,6 @@ Facebook: En septiembre de 2006 se abrió a todos los públicos, cerrando ese a�
 
 
 
-
-
 # UX
 
 Al realizar las encuestas reflejamos en las respuestas que aproximadamente el 85.7% les intereso el tema del feminismo, además que se tomarón el tiempo de dejar sus telefonos para poder contactarlas y realizar las entrevistas. Ellas son las principales usuarias en la cual nos enfocaremos.
@@ -98,7 +96,9 @@ El 25% Solo usa para chat.
 
 ## Analisis de los resultados:
 
-Facebook es la red social más conocida y más usada actualmente, y con mucha utilidad para poder comunicarnos, sea por chats, mensajes, videollamada, llamadas, entre otras cosas, podemos compartir información como tambien publicarlas. Sin embargo esta red puede ser usada por muchos usuarios con distintos gustos y pensamientos. Dentro de facebook existen comunidades, grupos y eventos en la cual muchos pueden participar.
+Facebook es la red social más conocida y más usada actualmente, y con mucha utilidad para poder comunicarnos, sea por chats, videollamada, llamadas, entre otras cosas, podemos compartir información como tambien publicarlas. Sin embargo esta red puede ser usada por muchos usuarios con distintos gustos y pensamientos. Dentro de facebook existen comunidades, grupos y eventos en la cual muchos pueden participar. 
+
+twitter es otra de nuestras redes sociales en competencia en la cual, existen grupos de feminismo sin embargo esto es algo publico para todos, dentro de ellos hay paginas y comunidades, cabe resaltar que existen blog paginas web respecto al tema sin embargo no hay una red social basada en ello.
 
 A medida que fuimos recolectando información con las encuestas y entrevistas Nuestras usuarias resaltaron que a pesar que exista grupos, comunidades etc. Hay una disconformidad ya que no existe restricciones para ingresar a esos grupos, personas infiltradas ingresan para agredirlas, ellas destacan que sirve mucho para compartir información sin embargo no están contentas respecto al uso que le dan usuarios que no comparten el tema.
 
